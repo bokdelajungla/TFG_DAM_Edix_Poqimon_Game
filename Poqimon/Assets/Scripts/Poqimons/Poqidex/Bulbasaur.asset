@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Name: Bulbasaur
+  m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
+  poqimonId: 1
+  poqimonName: Bulbasaur
+  poqimonDescription: Bulbasaur can be seen napping in bright sunlight. There is
+    a seed on its back. By soaking up the sun's rays, the seed grows progressively
+    larger.
+  poqimonFrontSprite: {fileID: 923414779, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: 830431416, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonType1: 11
+  poqimonType2: 3
+  maxHP: 45
+  attack: 49
+  defense: 49
+  spAttack: 65
+  spDefense: 65
+  speed: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 00d870c8d68a87749b509820d0311b0d, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: ab2d476fa006d6a47a78b4e8f797fa7e, type: 2}
+    learnLevel: 3
