@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class PoqimonBaseObject : ScriptableObject
 {
-    [SerializeField] private int poqimonId;
-    public int PoqimonId => poqimonId;
+    [SerializeField] private int poqimonNumber;
+    public int PoqimonNumber => poqimonNumber;
     [SerializeField] private string poqimonName;
     public string PoqimonName => poqimonName;
     [TextArea][SerializeField] private string poqimonDescription;

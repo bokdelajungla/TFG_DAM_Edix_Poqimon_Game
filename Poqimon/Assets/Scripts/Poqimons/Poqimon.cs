@@ -27,6 +27,7 @@ public class Poqimon {
             }
             if(moves.Count >= 4)
             {
+                //TODO: Lógica de aprendido
                 break;
             }
         }
