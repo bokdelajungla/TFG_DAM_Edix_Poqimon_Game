@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -10733,12 +10733,12 @@ TextureImporter:
       platinum_189: 1375651576
       platinum_124: -926863015
       platinum_158: -926108777
-      platinum_132: -278903412
       platinum_38: -616253910
-      platinum_341: -1031005264
       platinum_31: 2080631957
-      platinum_489: 886182472
+      platinum_341: -1031005264
       platinum_206: -2058351790
+      platinum_489: 886182472
+      platinum_132: -278903412
       platinum_23: -1837338979
       platinum_246: -62064780
       platinum_349: 833756470
