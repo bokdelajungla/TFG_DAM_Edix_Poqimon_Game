@@ -65,6 +65,33 @@ public enum PoqimonType
     Fairy
 }
 
+public class TypeChart
+{
+    float[][] chart =
+    {
+                             //Defending type       
+    //AttkType               Normal,Fight,Flyng,Poisn, Grnd, Rock,  Bug,Ghost,Steel, Fire,Water,Grass,Elctr,Psych,  Ice,Dragn, Dark,Fairy//  
+    /*Normal*/   new float[] {    1,    1,    1,    1,    1, 0.5f,    1,    0, 0.5f,    1,    1,    1,    1,    1,    1,    1,    1,    1},
+    /*Fight*/    new float[] {    2,    1, 0.5f, 0.5f,    1,    2, 0.5f,    0,    2,    1,    1,    1,    1, 0.5f,    2,    1,    2, 0.5f},
+    /*Flying*/   new float[] {    1,    2,    1,    1,    1, 0.5f,    2,    1, 0.5f,    1,    1,    2, 0.5f,    1,    1,    1,    1,    1},
+    /*Poison*/   new float[] {    1,    1,    1, 0.5f, 0.5f, 0.5f,    1, 0.5f,    0,    1,    1,    2,    1,    1,    1,    1,    1,    2},
+    /*Ground*/   new float[] {    1,    1,    0,    2,    1,    2, 0.5f,    1,    2,    2,    1, 0.5f,    2,    1,    1,    1,    1,    1},
+    /*Rock*/     new float[] {    1, 0.5f,    2,    1, 0.5f,    1,    2,    1, 0.5f,    2,    1,    1,    1,    1,    2,    1,    1,    1},
+    /*Bug*/      new float[] {    1, 0.5f, 0.5f, 0.5f,    1,    1,    1, 0.5f, 0.5f, 0.5f,    1,    2,    1,    2,    1,    1,    2, 0.5f},
+    /*Ghost*/    new float[] {    0,    1,    1,    1,    1,    1,    1,    2,    1,    1,    1,    1,    1,    2,    1,    1, 0.5f,    1},
+    /*Steel*/    new float[] {    1,    1,    1,    1,    1,    2,    1,    1, 0.5f, 0.5f, 0.5f,    1, 0.5f,    1,    2,    1,    1,    2},
+    /*Fire*/     new float[] {    1,    1,    1,    1,    1, 0.5f,    2,    1,    2, 0.5f, 0.5f,    2,    1,    1,    2, 0.5f,    1,    1},
+    /*Water*/    new float[] {    1,    1,    1,    1,    2,    2,    1,    1,    1,    2, 0.5f, 0.5f,    1,    1,    1, 0.5f,    1,    1},
+    /*Grass*/    new float[] {    1,    1, 0.5f, 0.5f,    2,    2, 0.5f,    1, 0.5f, 0.5f,    2, 0.5f,    1,    1,    1, 0.5f,    1,    1},
+    /*Electr*/   new float[] {    1,    1,    2,    1,    0,    1,    1,    1,    1,    1,    2, 0.5f, 0.5f,    1,    1, 0.5f,    1,    1},
+    /*Psychc*/   new float[] {    1,    2,    1,    2,    1,    1,    1,    1, 0.5f,    1,    1,    1,    1, 0.5f,    1,    1,    0,    1},
+    /*Ice*/      new float[] {    1,    1,    2,    1,    2,    1,    1,    1, 0.5f, 0.5f, 0.5f,    2,    1,    1, 0.5f,    2,    1,    1},
+    /*Dragon*/   new float[] {    1,    1,    1,    1,    1,    1,    1,    1, 0.5f,    1,    1,    1,    1,    1,    1,    2,    1,    0},
+    /*Dark*/     new float[] {    1, 0.5f,    1,    1,    1,    1,    1,    2,    1,    1,    1,    1,    1,    2,    1,    1, 0.5f, 0.5f},
+    /*Fairy*/    new float[] {    1,    2,    1, 0.5f,    1,    1,    1,    1, 0.5f, 0.5f,    1,    1,    1,    1,    1,    2,    2,    1}
+    };
+}
+
 [Serializable]
 public class LearnableMove
 {
