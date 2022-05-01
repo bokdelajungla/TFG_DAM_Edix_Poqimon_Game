@@ -1,0 +1,3422 @@
+fileFormatVersion: 2
+guid: 86d448ce406ce3640905e6301d006bcb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hero & Heroine_37
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 456
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e531ab30ef8a44694b41a837ff5af8
+      internalID: -1722564594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_38
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 457
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208420f312052f64896b995eb8adeb1c
+      internalID: 641759408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_39
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 456
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168e131b7123e6442805d716d72bf043
+      internalID: 334124941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_40
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 457
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e883ac2c5b6c24c4eb99c5e35dc5deb9
+      internalID: -868035184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_41
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 459
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4334ef4c2f83806489eb64ec4587f7d5
+      internalID: 1069566298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 457
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7b5612e18362641adad0e2ef852a6e
+      internalID: -167578534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 456
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3b7c52da7c55a4ba14cf2acd9f0906
+      internalID: 1695103285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_44
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 456
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4ad639823d3e34090ade08a365760c
+      internalID: 1212165023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_45
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 456
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baf3894ebe438a4cb454dbdeb062a76
+      internalID: 235750743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_46
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 459
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebfe8ed6a420354da920d21a747e8be
+      internalID: 802449786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_47
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 465
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898b1a188a0a2bf44a236b5da2c01fed
+      internalID: -617844530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_48
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 458
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9464cf188902e354da75e89871144cff
+      internalID: -301594493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_49
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 456
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af30215e5ed9dcb4abda913b175e0a56
+      internalID: 1961077996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_50
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 460
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc85f30d1d57984db7f4113eebd2b67
+      internalID: 2029211279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_51
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 460
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74768919c98bbc4a989ace9abc3a151
+      internalID: 1755294245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_52
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 450
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cc32b8da7adc345ae78b5b73b7b85b
+      internalID: -1941434354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_53
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 424
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eee0e1f0b7626a4bacf55b5a614e648
+      internalID: -364968707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_54
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 425
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a0457fe2d43d946901c2830af7ae1e
+      internalID: -1686471426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_55
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 424
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7194bb8639254f4c8201a12f72c5ac8
+      internalID: 1015560604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_56
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 424
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6235f78c17c7c344ba06811b8381dcc
+      internalID: -1340090356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_57
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 426
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dc065b281adc440b240e7fb9239cf1
+      internalID: 1913084265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_58
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 424
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9311585dd3b6378428ef85e3566431ef
+      internalID: -1523534377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_59
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 424
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec20c7ae6f0886d43bc6f82e656e08d8
+      internalID: 1261055041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_60
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 424
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c806c45d95839b147bead326fd4653de
+      internalID: -2147443487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_61
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 424
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39318b0496cde35498a4163a3719c946
+      internalID: 1376175024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_62
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 425
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ed05464fbc1be42a9f89ef50e15f80
+      internalID: -1278910972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_63
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 424
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2ce93aedc6c6b41885f476bc4e3825
+      internalID: 175182090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_64
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 427
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d69a799fb5ea5409623cd4c5ca6bf8
+      internalID: 760370899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_65
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 426
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f411ed849ac7e68498bcf3a9272b6dcd
+      internalID: 1198897757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_66
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 426
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5777ead0a24a647874dfd03f0f94f8
+      internalID: -15109608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_67
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 426
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61bfc13bfaeae74f9bcd54ef6cba91f
+      internalID: 65927067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_68
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 401
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d01e0d06806efd4e85ba71aa1bbd9bb
+      internalID: 1783438907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_69
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 393
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53fbf5243d79fc4e9de2f06d9d0a24e
+      internalID: 93528160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_70
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 393
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8155274b1e8195c4c93f064f1f30b563
+      internalID: 912143412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_71
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 393
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a490acb9ae4c84243a550b845df51df0
+      internalID: 1903118074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_72
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 394
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e256cd1f2210c92409f2a477ae227127
+      internalID: -2017063922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 394
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0250ab35996c974886ee4be9cfe50be
+      internalID: 1532389518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_74
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 393
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ed900d91636634bad5a0fdc6fa493b
+      internalID: 65830987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_75
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 392
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129e9bcf30b122149a15ef4ed66cc44d
+      internalID: 1392470046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_76
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 392
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c121c21383751478b62206cc990572
+      internalID: -1720919997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_77
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 392
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70099a68660f3ca4f8263db754733f41
+      internalID: 1450442459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_78
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 393
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7045c2d6324a0419a9502ddfdbe361
+      internalID: -172704982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_79
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 393
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eed60469498b5443aedbf65a83ceaad
+      internalID: -730553252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_80
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 392
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba29841d673e5b040b3c27e2c0f36492
+      internalID: -436936003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_81
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 393
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79ed00c81db303499b7c59cdb694e2b
+      internalID: 1718018937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_82
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 396
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01a43ab1c5943d4e8da21665a01fa7d
+      internalID: -763070659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_83
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 396
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4783163c6009b48a8dcf2d43ec6c5f
+      internalID: -632446015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_84
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 353
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4236ca13e8a98d34c8c442a1bdc9f3ff
+      internalID: -1214170787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_85
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 353
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b92bf9c763c374bbb9fc7158002e04
+      internalID: -547297363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_86
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 353
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7014c25f46f8ab4083ce00e738b8182
+      internalID: 254200114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_87
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 353
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e44ce1af599b44ba56879109687dfc
+      internalID: -1627957079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_88
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 353
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0eb7b66476c5b748b302ce658a69afb
+      internalID: 147114078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_89
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 353
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35370c6dd7f9c8a45b6b4a170ee0a039
+      internalID: 467166443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_90
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 353
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020e6c65ad896334d9798873c12ee246
+      internalID: -1600023937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_91
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 353
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc68089d32bd51409ba063418ac7cab
+      internalID: 584265763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_92
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 353
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b500d129817343641acb0486f3593431
+      internalID: 2115823629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_93
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 353
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4aedc4c41000e642ab3cd3edb8526f6
+      internalID: -1045119759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_94
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 354
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff849e8371e376439fae4b1dc506a66
+      internalID: -1303881385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_95
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 354
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08a02abb5d446f4cacf5e16a9f25d89
+      internalID: 631663119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_96
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 354
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f8c95b448d0d244bf87576941e91f9
+      internalID: -1822118601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_97
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 288
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5ecc665aa162549a785f7236ced412
+      internalID: 1424125658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_98
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 299
+        width: 33
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db210e4da1b1d4a43882d3bffc1caea9
+      internalID: -288287205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_99
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 280
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bad13f92c135b14a97f704675ae1744
+      internalID: 159922200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_100
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 280
+        width: 63
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78e46eca9723e74aae87dd51b103f1d
+      internalID: 417796056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_101
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 280
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780ebea1034a4854dbfbb1840b66253b
+      internalID: -484896102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_102
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 280
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62614f7fa4b83f4d9e7f88c89680a5a
+      internalID: -169913311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_103
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 280
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930f582c5fb55f74c8afbb45ee0937a9
+      internalID: 1022738882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_104
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 285
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc915e99a5f76a4bab8861d7e242eec
+      internalID: 875792880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_105
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 240
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9a34b198852d74585bf687c3338359
+      internalID: -1119567932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_106
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 241
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1d72ee4c7e37248b891d7b706e7405
+      internalID: -167618942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_107
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 240
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d73e3552255fc49afff6cd941dbdbb
+      internalID: -1472877232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_108
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 241
+        width: 46
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fb41b6fa814fb47b69513ae636af20
+      internalID: 888869173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_109
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 240
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b660031529c33fc47871c8a547bd6f5f
+      internalID: 465310642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_110
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 240
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc21d1da16a388b4e89225464e681ccc
+      internalID: -1339642801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_111
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5392126900c49d045a3f0c0763452651
+      internalID: -1721456306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_112
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 243
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9971d6a49dd6ae4db6ef58b50578bff
+      internalID: 459044370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_113
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 249
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707b724368fd03d4db9aa0834f0a94df
+      internalID: 189754176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_114
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 242
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c345cde68e52254caa4673e8e7fcc0f
+      internalID: -686189350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_115
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 240
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d03f2ee6dd3f743998130a56c0f092
+      internalID: 1302607964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_116
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 244
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e90e73ca8003bd4ea882365f713489f
+      internalID: -1445830492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_117
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 244
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd49489d9708e31418511909586d3e88
+      internalID: 269945958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_118
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 234
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1dbb31139e88f74684c938ee9715b93
+      internalID: -224815307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_119
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 208
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdeca648cd8f2847bb9f216443ee73a
+      internalID: 615334126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_120
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 209
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0072bb9533ef8114e9e3300198563a33
+      internalID: -1483747332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_121
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 208
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dedc2a29f529614190b457c69c7a142
+      internalID: -108947625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_122
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 208
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2513c73923b7904d83f7189d39d51da
+      internalID: -229848358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_123
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 210
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182b62d35819ff149b142593c32c1f3a
+      internalID: -1249257567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_124
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 208
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4615dfd308671a24c94b0389a3c02544
+      internalID: -1735048190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_125
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 208
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1a9bd077fbaf3498103861d7523326
+      internalID: 1186783858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_126
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 208
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed89a305f653904eb028480084f8952
+      internalID: -951060253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_127
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 208
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f1451d1274a3945848935269b3880a
+      internalID: -2094613264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_128
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 209
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc824c97fde7ec1488133c48e41629a0
+      internalID: -1418118160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_129
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 209
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741108ec9a94c0d4f936c6aceea54338
+      internalID: -2142860545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_130
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 208
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7eb6d6e6f136147b163e78d2b690e8
+      internalID: -141468641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_131
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 209
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a61989ae4e04d04c8ac63571734ccb5
+      internalID: -355848364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_132
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 210
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57f67d5fa5238949814efcc75bed55d
+      internalID: -1954162809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_133
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 210
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93cb1190b867f74daff6e1e2c7a17e9
+      internalID: -1583775628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_134
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 185
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27883aae9b17d254085bfe14464f3673
+      internalID: 507814671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_135
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 177
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3436abb5ea5da254299242b1930ffaa9
+      internalID: 899839938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_136
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 177
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244b94ec9213c564699f6ca621332ab7
+      internalID: -373890977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_137
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 177
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee21d53d1744a6047b48f497700261a6
+      internalID: -1782779749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_138
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 178
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b0e3f765140334db126a4312dd4d7c
+      internalID: -396129125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_139
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 178
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2898ce05670fb9a46bc3578ed9498313
+      internalID: -656551585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_140
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 176
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f94e90eeded7e47a5beee298e3239c
+      internalID: -2027660454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_141
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 176
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112a81ef2723c444f82f4666375b22ab
+      internalID: 832368143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_142
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 176
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30dcdc71c0371b842abb5163f7a29cf3
+      internalID: -143469354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_143
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 177
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5d66cf30be3754ebf50053434fea9b
+      internalID: 556980766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_144
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 176
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aae1ccfb3d25f940a6521145dd3bb23
+      internalID: 236884447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_145
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 179
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc3527717ba1054d837295610f66743
+      internalID: -1330837696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_146
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 178
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c006f1ef8f3f74c9aec9a808a07255
+      internalID: 1354340491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_147
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 180
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d41420fb48e2d40ad2b6567da78855
+      internalID: -110021884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_148
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 180
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1edbf87e6a1770458d284842fef190a
+      internalID: -95275167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_149
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 137
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c05b5b87cc4b6c4ca972250ae0b26df
+      internalID: -1503825751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_150
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 137
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f920c2ad7ce8b74eb526ea9418f5d52
+      internalID: 1110023807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_151
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 137
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039e6e7da46f63e48b2cd127b45fd913
+      internalID: 1389009801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_152
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 137
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8fb1d24c70a764dad07398815a449a
+      internalID: -1163365200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_153
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 137
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c3d8475fec0d94487dfbefa2b849b2
+      internalID: -1922975843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_154
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 137
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d26836f9f315c24193c95109f77decb
+      internalID: -413788133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_155
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 137
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ec76c373ab8f446964aab6dd41f302
+      internalID: -1568464006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_156
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 137
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646bcad79eee5f04fbefca86e49c499a
+      internalID: 33310330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_157
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 137
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab9d2e20043d52499d86a60bc99e845
+      internalID: -2074155613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_158
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533c7d7f097ab6a41899fe2a7ffbc0bb
+      internalID: 2098089419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_159
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f4e586530aae24c851ca26da0c42ce
+      internalID: 1350498096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_160
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 138
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f699c4a3f69f44e9c6a2d5afa39f20
+      internalID: 68165787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_161
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 72
+        width: 88
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d12710514f6e1e4f9b954db8d6161a2
+      internalID: 158092481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_162
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 83
+        width: 38
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3725a3897a7a10641982e532aa3e0893
+      internalID: 1560296199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_163
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 64
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43029e548b36024f89b413978194590
+      internalID: 1143473418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_164
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 64
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b7f0e7a05386b4bb6ca3408bca30d0
+      internalID: 428864547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_165
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 64
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c51ceb629c00244aa890e982140fad5
+      internalID: -912818788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_166
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 64
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b21f1d4cf212c149874445a4da3a12e
+      internalID: -324646406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_167
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 64
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e18b59abc95004e93d97d74384e82a
+      internalID: -1552925332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_168
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 69
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1fcc3e93806dbd478362da8f52d24a0
+      internalID: -347943795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_170
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 16
+        width: 88
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057458fd21e5ea244982e696c23078b9
+      internalID: 1929719578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_171
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc4095a0f907c143af57fbd478cbf10
+      internalID: 144383675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_172
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c8521a3f5b15a4180a7eb58a411eb6
+      internalID: 933844313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_173
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 9
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07abc27db52d64245b7bed494bcd83b6
+      internalID: 1931940006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_174
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 9
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d41ec7421ad514398df44013da0f0c
+      internalID: 214719131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_175
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 12
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf0131dc122a3d4e8bf79cf7a8dcc1c
+      internalID: -1561069477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_176
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 12
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818830f30c493214bb986a072d49fb08
+      internalID: -671578475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_177
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 10
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d62fcde9ea1f445a4209fd8c87d351
+      internalID: 1608548838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_178
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 10
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ba30f124ec7d14f8b24870ecaae0a2
+      internalID: 96689540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_179
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 12
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66340ea418d23c6409024691348ad759
+      internalID: 598797204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_180
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 12
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17a4a04aff04ef4c93587c3d9c864db
+      internalID: -1567224892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_181
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 48
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f0da634afb05a4b9974deea4e77f86
+      internalID: 1850109360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_182
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 49
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95535cda8e046647b440352eba90daf
+      internalID: -200372079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_183
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 49
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a9609f60d44b649a7cc6faf7348eb4
+      internalID: -95068169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_184
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 49
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18109cbb42e562f4faa839e22434620a
+      internalID: 1378815664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero & Heroine_185
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 49
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2f9db468592b644b38e0aaf50c57cc
+      internalID: -1861810553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hero & Heroine_166: -324646406
+      Hero & Heroine_47: -617844530
+      Hero & Heroine_148: -95275167
+      Hero & Heroine_153: -1922975843
+      Hero & Heroine_71: 1903118074
+      Hero & Heroine_155: -1568464006
+      Hero & Heroine_132: -1954162809
+      Hero & Heroine_23: -1323216560
+      Hero & Heroine_116: -1445830492
+      Hero & Heroine_44: 1212165023
+      Hero & Heroine_165: -912818788
+      Hero & Heroine_173: 1931940006
+      Hero & Heroine_20: 257946688
+      Hero & Heroine_45: 235750743
+      Hero & Heroine_103: 1022738882
+      Hero & Heroine_110: -1339642801
+      Hero & Heroine_78: -172704982
+      Hero & Heroine_130: -141468641
+      Hero & Heroine_136: -373890977
+      Hero & Heroine_140: -2027660454
+      Hero & Heroine_89: 467166443
+      Hero & Heroine_66: -15109608
+      Hero & Heroine_101: -484896102
+      Hero & Heroine_99: 159922200
+      Hero & Heroine_84: -1214170787
+      Hero & Heroine_15: 1878442319
+      Hero & Heroine_26: 1765066388
+      Hero & Heroine_34: 170729098
+      Hero & Heroine_62: -1278910972
+      Hero & Heroine_27: -1882451793
+      Hero & Heroine_171: 144383675
+      Hero & Heroine_55: 1015560604
+      Hero & Heroine_43: 1695103285
+      Hero & Heroine_142: -143469354
+      Hero & Heroine_105: -1119567932
+      Hero & Heroine_98: -288287205
+      Hero & Heroine_113: 189754176
+      Hero & Heroine_115: 1302607964
+      Hero & Heroine_124: -1735048190
+      Hero & Heroine_38: 641759408
+      Hero & Heroine_75: 1392470046
+      Hero & Heroine_72: -2017063922
+      Hero & Heroine_172: 933844313
+      Hero & Heroine_161: 158092481
+      Hero & Heroine_70: 912143412
+      Hero & Heroine_181: 1850109360
+      Hero & Heroine_88: 147114078
+      Hero & Heroine_12: -905762565
+      Hero & Heroine_149: -1503825751
+      Hero & Heroine_135: 899839938
+      Hero & Heroine_158: 2098089419
+      Hero & Heroine_6: -1740719167
+      Hero & Heroine_17: -229659968
+      Hero & Heroine_29: -2016469521
+      Hero & Heroine_184: 1378815664
+      Hero & Heroine_85: -547297363
+      Hero & Heroine_127: -2094613264
+      Hero & Heroine_9: -377167083
+      Hero & Heroine_33: -684320576
+      Hero & Heroine_54: -1686471426
+      Hero & Heroine_10: -1730936675
+      Hero & Heroine_86: 254200114
+      Hero & Heroine_25: -907033939
+      Hero & Heroine_68: 1783438907
+      Hero & Heroine_167: -1552925332
+      Hero & Heroine_79: -730553252
+      Hero & Heroine_21: 677243052
+      Hero & Heroine_87: -1627957079
+      Hero & Heroine_137: -1782779749
+      Hero & Heroine_134: 507814671
+      Hero & Heroine_143: 556980766
+      Hero & Heroine_81: 1718018937
+      Hero & Heroine_145: -1330837696
+      Hero & Heroine_154: -413788133
+      Hero & Heroine_51: 1755294245
+      Hero & Heroine_74: 65830987
+      Hero & Heroine_102: -169913311
+      Hero & Heroine_8: 1983099790
+      Hero & Heroine_5: -958990123
+      Hero & Heroine_119: 615334126
+      Hero & Heroine_175: -1561069477
+      Hero & Heroine_159: 1350498096
+      Hero & Heroine_157: -2074155613
+      Hero & Heroine_117: 269945958
+      Hero & Heroine_108: 888869173
+      Hero & Heroine_139: -656551585
+      Hero & Heroine_58: -1523534377
+      Hero & Heroine_53: -364968707
+      Hero & Heroine_118: -224815307
+      Hero & Heroine_77: 1450442459
+      Hero & Heroine_133: -1583775628
+      Hero & Heroine_16: 1495256914
+      Hero & Heroine_150: 1110023807
+      Hero & Heroine_163: 1143473418
+      Hero & Heroine_90: -1600023937
+      Hero & Heroine_7: -305193944
+      Hero & Heroine_14: -1362445142
+      Hero & Heroine_67: 65927067
+      Hero & Heroine_28: -204331893
+      Hero & Heroine_141: 832368143
+      Hero & Heroine_147: -110021884
+      Hero & Heroine_121: -108947625
+      Hero & Heroine_109: 465310642
+      Hero & Heroine_42: -167578534
+      Hero & Heroine_73: 1532389518
+      Hero & Heroine_97: 1424125658
+      Hero & Heroine_176: -671578475
+      Hero & Heroine_179: 598797204
+      Hero & Heroine_30: -1888939731
+      Hero & Heroine_32: -2034580776
+      Hero & Heroine_61: 1376175024
+      Hero & Heroine_126: -951060253
+      Hero & Heroine_185: -1861810553
+      Hero & Heroine_128: -1418118160
+      Hero & Heroine_76: -1720919997
+      Hero & Heroine_104: 875792880
+      Hero & Heroine_164: 428864547
+      Hero & Heroine_60: -2147443487
+      Hero & Heroine_144: 236884447
+      Hero & Heroine_11: -332570986
+      Hero & Heroine_65: 1198897757
+      Hero & Heroine_35: 1268798396
+      Hero & Heroine_111: -1721456306
+      Hero & Heroine_39: 334124941
+      Hero & Heroine_63: 175182090
+      Hero & Heroine_31: -1985400751
+      Hero & Heroine_24: 57150985
+      Hero & Heroine_131: -355848364
+      Hero & Heroine_182: -200372079
+      Hero & Heroine_180: -1567224892
+      Hero & Heroine_169: 1561239167
+      Hero & Heroine_114: -686189350
+      Hero & Heroine_183: -95068169
+      Hero & Heroine_178: 96689540
+      Hero & Heroine_19: -746189090
+      Hero & Heroine_129: -2142860545
+      Hero & Heroine_94: -1303881385
+      Hero & Heroine_57: 1913084265
+      Hero & Heroine_174: 214719131
+      Hero & Heroine_48: -301594493
+      Hero & Heroine_162: 1560296199
+      Hero & Heroine_177: 1608548838
+      Hero & Heroine_138: -396129125
+      Hero & Heroine_69: 93528160
+      Hero & Heroine_160: 68165787
+      Hero & Heroine_83: -632446015
+      Hero & Heroine_36: -2120613285
+      Hero & Heroine_95: 631663119
+      Hero & Heroine_49: 1961077996
+      Hero & Heroine_22: -5474386
+      Hero & Heroine_91: 584265763
+      Hero & Heroine_107: -1472877232
+      Hero & Heroine_106: -167618942
+      Hero & Heroine_168: -347943795
+      Hero & Heroine_96: -1822118601
+      Hero & Heroine_120: -1483747332
+      Hero & Heroine_100: 417796056
+      Hero & Heroine_112: 459044370
+      Hero & Heroine_151: 1389009801
+      Hero & Heroine_64: 760370899
+      Hero & Heroine_146: 1354340491
+      Hero & Heroine_59: 1261055041
+      Hero & Heroine_40: -868035184
+      Hero & Heroine_56: -1340090356
+      Hero & Heroine_92: 2115823629
+      Hero & Heroine_50: 2029211279
+      Hero & Heroine_41: 1069566298
+      Hero & Heroine_46: 802449786
+      Hero & Heroine_80: -436936003
+      Hero & Heroine_82: -763070659
+      Hero & Heroine_156: 33310330
+      Hero & Heroine_37: -1722564594
+      Hero & Heroine_125: 1186783858
+      Hero & Heroine_122: -229848358
+      Hero & Heroine_152: -1163365200
+      Hero & Heroine_123: -1249257567
+      Hero & Heroine_52: -1941434354
+      Hero & Heroine_93: -1045119759
+      Hero & Heroine_170: 1929719578
+      Hero & Heroine_13: -1974993250
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
