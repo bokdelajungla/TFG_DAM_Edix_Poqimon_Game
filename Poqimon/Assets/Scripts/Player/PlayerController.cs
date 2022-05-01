@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    public LayerMask solidObjectLayer;
+    public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
     public LayerMask longGrassLayer;
 
@@ -17,10 +17,6 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
 
     // Start is called before the first frame update
-    // Start is called before the first frame update
-    public float speed;
-    public LayerMask solidObjectsLayer;
-
     private void Awake() {
         _animator = GetComponent<Animator>();
     }
@@ -62,7 +58,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator moveTowards(Vector3 destination) {
         isMoving = true;
         while (Vector3.Distance(transform.position, destination) > Mathf.Epsilon) {
-            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
             yield return null;
         }
 
@@ -71,7 +67,7 @@ public class PlayerController : MonoBehaviour
     }
     
     private bool isAvailable(Vector3 target) {
-        if (Physics2D.OverlapCircle(target, 0.15f, solidObjectsLayer)!= null) {
+        if (Physics2D.OverlapCircle(target, 0.15f, solidObjectsLayer | interactableLayer)!= null) {
             return false;
         }
 

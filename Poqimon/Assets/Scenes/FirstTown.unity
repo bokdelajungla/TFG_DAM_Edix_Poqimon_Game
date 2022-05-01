@@ -19018,10 +19018,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb9d96cbc94a2740bb808327b9b3026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  moveSpeed: 5
   solidObjectsLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  longGrassLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!95 &285588223
 Animator:
   serializedVersion: 4
