@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -54765,18 +54765,18 @@ TextureImporter:
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1805: -1592002316
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1679: 117209274
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2081: -1797547316
-      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_783: -540150990
-      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_197: -669305554
+      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1614: 1374076752
+      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2349: 1399993934
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2459: -1547683364
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2423: -1762761958
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_880: -590116805
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2265: -1642702542
+      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2547: 1457363416
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1232: 1396032685
-      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2349: 1399993934
+      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_197: -669305554
+      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_783: -540150990
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_631: 1054318537
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_603: -1282662506
-      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1614: 1374076752
-      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2547: 1457363416
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_855: 1508583985
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_30: 1834436398
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_681: 1498710548
@@ -54788,7 +54788,6 @@ TextureImporter:
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_774: -926508301
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1093: -21400256
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2429: -2075352022
-      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2445: 1514044111
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2271: 1172606778
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_315: -1920153380
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1027: 237300018
@@ -54798,6 +54797,7 @@ TextureImporter:
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1841: 1029249136
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1052: -604323549
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_882: -1192012100
+      Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_2445: 1514044111
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_860: 1057561614
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_533: 49277223
       Game Boy Advance - Pokemon FireRed LeafGreen - Tileset 1_1446: -100156958
