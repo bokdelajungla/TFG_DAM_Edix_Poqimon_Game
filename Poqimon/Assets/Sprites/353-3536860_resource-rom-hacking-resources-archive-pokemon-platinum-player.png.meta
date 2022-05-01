@@ -1,0 +1,4314 @@
+fileFormatVersion: 2
+guid: 7be3ec708221bee4ca7830e870276a5c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 475
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314f4b371b879af478539d6532f64795
+      internalID: 488682070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 476
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59caedcadad717045988edde7ce25762
+      internalID: 1974287618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 475
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df46cc321f1234441860a8aeb4fce3f6
+      internalID: 1018307518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 477
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0eaf8f05a4b98744879d3639c14fd86
+      internalID: 1433408113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 476
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f06c14a2562eb4abf96d5f90135f76
+      internalID: 968210672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 476
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde443e1fad1fff47b69fd63308b18bf
+      internalID: -1453020589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 476
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183c587c9dc767b4dac0de8e20dac183
+      internalID: 1143985367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_7
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 476
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ba6598195ae51448b3fb48a87f1236
+      internalID: 999441873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 476
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9d2220cdbf5494a898948d6b380d25
+      internalID: 1192699550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 473
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d7f656c04232a4d952676d1aa88b55
+      internalID: -1005258877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 478
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ffe7d955e785a408d650cc389b4cde
+      internalID: -1973967734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_11
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 476
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365707fb40ff9a24ba7e937f25144597
+      internalID: 709867854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_12
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 476
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e91f4b510bff384e95f47e21182536f
+      internalID: 68415799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 443
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70cfe31ecbc4cc468310e5650024b79
+      internalID: 212277865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_14
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 444
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110ac3c379ecaa440bf586a03d4a1f9f
+      internalID: -2057112167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_15
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 444
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de38ad1e90a094845bfaf434c691a997
+      internalID: -909290915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_16
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 445
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cb4269e626e2d4d8f5d0833c600f46
+      internalID: 1541235682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 444
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b1984f1a1bc9e419e1219515304234
+      internalID: 1685454283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_18
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 444
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9b8de96cbf3794c883a4a4b1afac7a
+      internalID: 961027355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_19
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 444
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d9d55a1adbc1c4a931cc94b11a8881
+      internalID: -511238554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_20
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 444
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a876b46b557a79a4fa218aec216fd7cf
+      internalID: -536596122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_21
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 444
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490addf9d7b2fc24f8fb5d307dd1f370
+      internalID: -1220812939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 441
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b54176e068e0943994a083b6e9d7a1
+      internalID: -1283379683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_23
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 446
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fb262eb2d0ac24bb82208d27655641
+      internalID: 457530548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_24
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 444
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ea793309d23504db214bb9669a0dd6
+      internalID: 300149449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_25
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 382
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a48e098e223414a80b1bc0989783d7
+      internalID: 1469874413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 412
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd546687c60fb3c43963ec967dc51366
+      internalID: 1903615712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_27
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 412
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa4adb357a5c7b43b5c2baa3b016f77
+      internalID: 1793168782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_28
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 411
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401b3b1b0b964d54282ccb8232269e8b
+      internalID: 1322691997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_29
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 413
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6250a682b60c64bacb4f906cd82cc6
+      internalID: -96701167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_30
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 412
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fcdc87e0ef3b49478d4503c316352a1
+      internalID: -1622739840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_31
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 412
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f0e88d06095df45b8c93636ca9bf13
+      internalID: 689532939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_32
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 412
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281f89bc29ecf6d40b1a25b1bcd59b33
+      internalID: 1007583795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_33
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 412
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd43e4844b6dd42428c72670dd675733
+      internalID: 436062740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_34
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 414
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93ed55dcd5a4c043a9746b7f5623a27
+      internalID: -1582903573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_35
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 412
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f479d23b4e93b4d41a8d229997afd3eb
+      internalID: 322250027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 380
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b6bfb758120a044bb67391ffbe71cf
+      internalID: -1313875234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_37
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 380
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715acb490e3d0334fadff056d4f2f95e
+      internalID: 797653549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_38
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 379
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e031babbfb6184ea0f1e6d21ed871a
+      internalID: -609103489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_39
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 381
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b244af84537fef54e94deb3ff845af82
+      internalID: 243190867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_40
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 380
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecfc2338861ee14f96e32b91eb69b35
+      internalID: 990192777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_41
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 380
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf46fecb99ef3747a4d90334c121202
+      internalID: -56820392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_42
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 380
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea2f808c61e2b14194f3bb274d7f6ad
+      internalID: 1501206024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_43
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 380
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa005e18d027b7d4dacb9f1600c73bf0
+      internalID: -1254395265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_44
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 381
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10fa40fbd135224a93659c2b2f2f267
+      internalID: 1221761928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_45
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 380
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f81fe27e382ea44b0c757f81416e87
+      internalID: -1657289238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_46
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 348
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad574623e0c6e2447834e9c36d2667f4
+      internalID: 2041460665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_47
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 348
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224ad4571e22c654f8ca21d87ee73fc3
+      internalID: -746686281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_48
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 348
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414213e6d4a6a5a4381b8f19c73cf8d0
+      internalID: -180013502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_49
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 348
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20d51bcef7c4e94c8dca16000af1448
+      internalID: 665126257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_50
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 348
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f2df6ea20bfba40a7978012cfc20a0
+      internalID: 1312672000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_51
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 348
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4296d75e68df47f48b20e3a1dfa37a60
+      internalID: -1805241705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_52
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 348
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0db69807010f1a48b8ca8989b67646d
+      internalID: -1381953918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_53
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 348
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0a0b5272c1c034e93f0681ebf6eaa0
+      internalID: 340581866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_54
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 348
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6b6da7f2be35046b4710dda3b88b83
+      internalID: -1579223662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_55
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 350
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38843607250ddc942835258fe1365989
+      internalID: -940164919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_56
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 350
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c89ed3db533904ea1db79d5f7e5ed8
+      internalID: 1374918671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_57
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 350
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9148f314c327c4abba30f86bf0e2f0
+      internalID: 2031557228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bceb7a887ae14bd4eb3352b1ff9e90b3
+      internalID: 172509313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_59
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 316
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cce299e44bda740833f6840d4f2760
+      internalID: -126494068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_60
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 316
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75d0963f1220b248bf8d97e62e4fea6
+      internalID: 2146375704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_61
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 316
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfcb9120b6456347ba4972389a92797
+      internalID: -162588490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_62
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 316
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3139316c721b9047b5304a23259de4d
+      internalID: 450068472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_63
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 316
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7da53f6c117a4419fc07c686ebdd53
+      internalID: 1924837514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_64
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 316
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e2552720b02de43b2ee1957fcb26d2
+      internalID: 1859374079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_65
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 316
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694b657276a8a50408739f2790bcb467
+      internalID: 760181224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_66
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 315
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8281481853b111d4881007b23169a06b
+      internalID: 1631706702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_67
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 318
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a84a070c8717e4fb60afee9f3daceb
+      internalID: 23217935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_68
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 318
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e237973623cd6147b25335daa8121cb
+      internalID: 808977331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_69
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 317
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6a8d64734b11a4aa02608ceb502171
+      internalID: 1951185007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_70
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 284
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07adbe04990c9e946a32717a87dea9fa
+      internalID: 1823883631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_71
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 284
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e579b78192c53c44ca0e9b43b2924473
+      internalID: 1147963496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_72
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 284
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577ff8dc131d28e4ab4bfc8e35a0def1
+      internalID: 732655073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_73
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 284
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25390aa43b883ff4b981e9e0d682ac6f
+      internalID: 42012459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_74
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 284
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdce30a643fe2cc4ca290b144a1588c8
+      internalID: -1265321184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_75
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 284
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b349d50c4298014bb7bf907e1e66e4c
+      internalID: 199476269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_76
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 284
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6dcfe6d615f564f90e8a019330d5a4
+      internalID: -1590170915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_77
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 284
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4386c82433332414cb31238625f013cc
+      internalID: 1822581625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_78
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 283
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37915fd5201814144b522dc700b5ff8e
+      internalID: -1674957919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_79
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 286
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9aebcbb442bd7d419b807e4bc908c70
+      internalID: -154509564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_80
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 287
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dc6ab79279dfd4f90a6f5c0f62e791
+      internalID: 1423445689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_81
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 286
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8cb8908b819584db91a7e58862bb85
+      internalID: 363683901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_82
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 252
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61155477e0fdcb145ad3a9f53e5e989b
+      internalID: -819997806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_83
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 252
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e640da2e2035964da542fb050fff7d0
+      internalID: -2136865465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_84
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 252
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3146f93a3f0ae478cc9c60e616c7b9
+      internalID: 1844881664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_85
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 252
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2868b58ab93de1c44b4e0549e17e6455
+      internalID: 261739131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_86
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 252
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5729f018918188f4699a502023ad120f
+      internalID: -1677823116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_87
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 252
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a788a2b5b50ce7e4f81cb81fb30d39a6
+      internalID: -1135151703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_88
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 252
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a2060c42b322d41ab976e854a337a8
+      internalID: 644136896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_89
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 252
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b53e68655866c4ba9f20ba17839c6b
+      internalID: -955685120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_90
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 252
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee07e5a571fa49439c69072e0434e22
+      internalID: 1739919205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_91
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 255
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d6c7fbb73553f49805dcd7f4b49b5c
+      internalID: -1963871751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_92
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 256
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b73454f488a83a4ca130a82bf8c3042
+      internalID: -1100412030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_93
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 256
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f8e588dc27f884788cc2dab28dbf39
+      internalID: 938415702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_94
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 256
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a137a219e6e3544bd1e1d4fa246240
+      internalID: -1318300626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_95
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 255
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e1e05f1b216a44d91261925158c35d
+      internalID: -41648406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_96
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 225
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772636a70f7a8014f8ed251fb6098fe2
+      internalID: -1608534245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_97
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 226
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b787f73d14b487340b068dacedaffd34
+      internalID: 1514243456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_98
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 225
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7211366aca811994782d761aa4749f87
+      internalID: -1973218634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_99
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 227
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a997f8109c430a240bd0d86b75df4155
+      internalID: -951337868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_100
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 226
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486390f3f4767c04b8c34d738fecb4ec
+      internalID: -1511100452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_101
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 226
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d112449c3036daa44984c2ebe5d57a2c
+      internalID: 1035767472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_102
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 226
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3eef0d9b2be1846a7e60d707b29302
+      internalID: -1775301583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_103
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 225
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e92b2f0afb329e479747d0aae59c4c1
+      internalID: -115871614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_104
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 225
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d5946b5efa2da4aba45357799f7352
+      internalID: 1670249590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_105
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 226
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17528be1a4210cf41b7ce6e3e64c6b34
+      internalID: 716254876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_106
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 227
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d4f85c2ca77d844b75b4adc387b86d
+      internalID: -1417187661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_107
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 227
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1df7df0c7c33644694a30554b6882f2
+      internalID: -289168544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_108
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 226
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24d80d7b80b63c4f813425b55d09127
+      internalID: -1470976562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_109
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca4a760efeebb846b488598cae4951f
+      internalID: -2120368157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_110
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 194
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01713b2282ec8a64486d37d9d45a2d32
+      internalID: 557038369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_111
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 194
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e300f232200dde4fa50a182bdcd2e72
+      internalID: -1436355152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_112
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 195
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b007b5d8bd30544b7807ef2ea936f4
+      internalID: 774767601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_113
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 194
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4259e2801368d37479ba453ee04e0775
+      internalID: -1782251472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_114
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 194
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ed8cb2c08e7404b89402d3439a282a
+      internalID: -148970492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_115
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 194
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9a6a4e442e5f94d852ef8a939716ce
+      internalID: -591649656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_116
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 193
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82bd9926180d3e4f93e835687df0d88
+      internalID: 1003702475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_117
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 193
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adcced9480643d418c8619ad3c66484
+      internalID: -223814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_118
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 194
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c80a245c041c2448e0afadd794a6f7
+      internalID: -51069444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_119
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 195
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17800780f4c335d428cd8d30b4837ece
+      internalID: 1178578659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_120
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 194
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec69a31007c44343849e0e12654e6ce
+      internalID: 1445055406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_121
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 162
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba24948752877f4ea1fad6f88178b22
+      internalID: -1436983076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_122
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 162
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43324ac36c2ee1e41a8e196bde47c1d2
+      internalID: 731290098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_123
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 161
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b64e7bc756d0a947876c0f268552fe2
+      internalID: -854865888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_124
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 163
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52de45082b6f59742af99f1a090da666
+      internalID: -1884808319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_125
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 162
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860da29d0cb9d714db9b407595c7b829
+      internalID: -1556541304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_126
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 162
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a6da517ddf32a4abf2cdc8a3a165d6
+      internalID: -1288195617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_127
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 162
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b282c488f4b828041a8b7461999699eb
+      internalID: -1367764268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_128
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 161
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafed14ea27fd5548ab382adedff9649
+      internalID: 1937675581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_129
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 162
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37ae052bf335754ca7cb7f9008f5fbe
+      internalID: 943644049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_130
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 163
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fb90ee3b312cd4f9edd337e36b38e2
+      internalID: -951467612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_131
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28aebfde44016c4f996339ade60f4ba
+      internalID: 870745066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_132
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 130
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e34cac9d101c64d8d414294cf2ea43
+      internalID: 201738388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_133
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 129
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76606e93426d330449188de5d4524a31
+      internalID: -1341764714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_134
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 130
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317a6bd96f4da3a4fb91dd9154772a28
+      internalID: 489609807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_135
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 130
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5ebdfd30355314f8cedb7463b2b73e
+      internalID: -48965333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_136
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 130
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7f18d52cfae5243ae2fa00b90b7ff5
+      internalID: 1731289024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_137
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 130
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6440328a9243545af7a1f3cbb7248b
+      internalID: 871940436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_138
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 129
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55874cc096baf0e4887ca8cb1e5dcb7d
+      internalID: 1132646769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_139
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 130
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae0a21156966df4189d887d0796301b
+      internalID: 348984933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_140
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 131
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afae3927bc42e1242b32f9757e4b4bd0
+      internalID: 1795352140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_141
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 97
+        width: 39
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f247721590978994a930946dc82f0f43
+      internalID: -1662230380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_142
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 97
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76d52c53c7ccd546a491039cf002443
+      internalID: 1781979683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_143
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 97
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed9e974fb5699141836437bc4344771
+      internalID: 3121870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_144
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 97
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939a1dbc3b7437a4d8ae35ddcc11947d
+      internalID: 1108855419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_145
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 97
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6f6d76186259e48acb3d65027f9b74
+      internalID: 541937023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_146
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 97
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d09f03f01bc924081eed68316a768a
+      internalID: 1568328540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_147
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 96
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adfd4009f9122c46858ab1637bd42de
+      internalID: 1057960607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_148
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a120e3c53d1ae544ba228dcf4f1f255
+      internalID: -670621600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_149
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 96
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1814f4908914204418b6a86ca8868ec7
+      internalID: -817891366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_150
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 96
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fb04adee8784f419bea488f5688776
+      internalID: -991093368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_151
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 96
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea2789b4e1325d4889ec8cff00d1d76
+      internalID: -1252933164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_152
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 96
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ab8a49661469e4abe60156e34f6b34
+      internalID: -2061419354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_153
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 96
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a74a62affaf7b40a60055eb721d524
+      internalID: -2090274021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_154
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fc150fe6a4aeb42a71009b72ef241b
+      internalID: -2114526337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_155
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 65
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52ce2b4cfc906c418e53964506edc08
+      internalID: 2134126207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_156
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 65
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771cd2370a708e24a95b84b8d5a26237
+      internalID: -1884582548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_157
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 65
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232a453845d53ca4f9a6c8d5d381abde
+      internalID: 2034387128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_158
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 65
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3395020d0a43a4cb16e02b3b8cf158
+      internalID: 1244256868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_159
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 64
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e4e2cae731c5b4e8cacb13000b2bc9
+      internalID: 1652824762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_160
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 64
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0e12d1c72d4184eb97a88631d87f06
+      internalID: 175239569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_161
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 64
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599651fceaa155f428e62fcef459cc2e
+      internalID: -1271513294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_162
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 63
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e580d9c291a32b64d8d2900a8c1661d2
+      internalID: 1875999502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_163
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 64
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0668b50cb4eb79f448d0098f326d0803
+      internalID: 1673344780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_164
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 64
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b68873b8e287d489ec5a32a4ea6b32
+      internalID: 1778833822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_165
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 63
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1f5a42771e2934686da0d2866f604d
+      internalID: 1518872314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_166
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2808320d7a75dbb47b6c2879ec5e5c7a
+      internalID: 2073420952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_167
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6df9e7888cfe540aa53a5eb109dc93
+      internalID: 819993194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_168
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 33
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a215957d0d6c434a82542821110a658
+      internalID: 1940655343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_169
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 33
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f697841344ce63041922edbfba0ac4a8
+      internalID: 1635824521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_170
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 33
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b309ed1d9a0af746b94528ccbc2b1f9
+      internalID: 117853886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_171
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 32
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85695d6a8f1192647a8bc9b6aeded521
+      internalID: -1342260079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_172
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 32
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b11f19b18a85214b939e9eb059b2d20
+      internalID: -238545517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_173
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 32
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3e5d96601ed3248a6aa3c653ac45d8
+      internalID: -1581399647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_174
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 31
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed85bab680795c4695c473ffdb017c9
+      internalID: 1152904401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_175
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 32
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b939c39e04ced47907bae9c6716947
+      internalID: -1703138966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_176
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 32
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e1019e7ea34464aac27d9fce52ad5a
+      internalID: -1405063492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_177
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 32
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ed4110a9d211c47a8c1c74d0c6b407
+      internalID: -1135086668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_178
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e346e2991be5f24da4b36d0776bac6c
+      internalID: 476370777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_179
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e664a1d679288ed43b3121d506b2f76b
+      internalID: 707095366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_180
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cb8750e5846f5498c781bdd25efe1d
+      internalID: -369585002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_181
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e0ec988a9371646a095d4cdadbf46e
+      internalID: 1368080666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_182
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b1bce5ce69d9349abc39e5944d7610
+      internalID: -392373874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_183
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7decd406c458042b5edc5c6797fbc8
+      internalID: -1385586474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_184
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165ee37ed796fc04799a24addd9970f2
+      internalID: -908795706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_185
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 0
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6dfd6edc49288448f10eff2962b22d
+      internalID: 1314987318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_186
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87112118cd40b6d4db6a3705b0c0cbdf
+      internalID: -1222148802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_187
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22143dd632ff7a4b8c812785a71755c
+      internalID: -47880749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_188
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8110bf44b3ff541bc2cb8081645b2f
+      internalID: -1030979613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_189
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e3a60a872e89f4fa6f3c2c93f7f26c
+      internalID: -1325726983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_140: 1795352140
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_181: 1368080666
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_7: 999441873
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_94: -1318300626
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_106: -1417187661
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_24: 300149449
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_99: -951337868
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_14: -2057112167
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_61: -162588490
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_31: 689532939
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_65: 760181224
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_5: -1453020589
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_147: 1057960607
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_152: -2061419354
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_177: -1135086668
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_96: -1608534245
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_81: 363683901
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_23: 457530548
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_70: 1823883631
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_55: -940164919
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_75: 199476269
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_2: 1018307518
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_102: -1775301583
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_67: 23217935
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_111: -1436355152
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_25: 1469874413
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_100: -1511100452
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_0: 488682070
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_1: 1974287618
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_6: 1143985367
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_97: 1514243456
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_173: -1581399647
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_34: -1582903573
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_110: 557038369
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_113: -1782251472
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_162: 1875999502
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_11: 709867854
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_155: 2134126207
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_184: -908795706
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_180: -369585002
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_79: -154509564
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_98: -1973218634
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_157: 2034387128
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_17: 1685454283
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_37: 797653549
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_45: -1657289238
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_165: 1518872314
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_27: 1793168782
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_109: -2120368157
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_167: 819993194
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_42: 1501206024
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_135: -48965333
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_186: -1222148802
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_36: -1313875234
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_80: 1423445689
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_172: -238545517
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_3: 1433408113
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_129: 943644049
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_153: -2090274021
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_53: 340581866
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_95: -41648406
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_175: -1703138966
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_48: -180013502
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_85: 261739131
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_120: 1445055406
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_171: -1342260079
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_30: -1622739840
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_74: -1265321184
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_69: 1951185007
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_93: 938415702
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_56: 1374918671
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_52: -1381953918
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_63: 1924837514
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_138: 1132646769
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_169: 1635824521
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_149: -817891366
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_148: -670621600
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_35: 322250027
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_154: -2114526337
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_18: 961027355
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_159: 1652824762
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_127: -1367764268
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_73: 42012459
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_40: 990192777
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_105: 716254876
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_82: -819997806
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_72: 732655073
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_107: -289168544
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_132: 201738388
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_62: 450068472
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_33: 436062740
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_123: -854865888
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_130: -951467612
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_19: -511238554
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_121: -1436983076
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_21: -1220812939
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_185: 1314987318
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_176: -1405063492
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_101: 1035767472
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_83: -2136865465
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_71: 1147963496
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_13: 212277865
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_78: -1674957919
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_114: -148970492
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_68: 808977331
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_89: -955685120
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_39: 243190867
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_44: 1221761928
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_168: 1940655343
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_141: -1662230380
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_47: -746686281
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_16: 1541235682
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_183: -1385586474
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_137: 871940436
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_8: 1192699550
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_145: 541937023
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_50: 1312672000
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_29: -96701167
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_116: 1003702475
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_163: 1673344780
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_187: -47880749
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_10: -1973967734
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_128: 1937675581
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_170: 117853886
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_60: 2146375704
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_136: 1731289024
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_119: 1178578659
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_112: 774767601
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_131: 870745066
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_59: -126494068
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_144: 1108855419
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_46: 2041460665
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_134: 489609807
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_189: -1325726983
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_77: 1822581625
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_28: 1322691997
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_86: -1677823116
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_122: 731290098
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_43: -1254395265
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_84: 1844881664
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_161: -1271513294
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_108: -1470976562
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_125: -1556541304
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_4: 968210672
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_118: -51069444
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_66: 1631706702
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_103: -115871614
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_160: 175239569
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_57: 2031557228
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_179: 707095366
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_158: 1244256868
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_115: -591649656
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_91: -1963871751
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_143: 3121870
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_182: -392373874
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_22: -1283379683
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_15: -909290915
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_124: -1884808319
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_90: 1739919205
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_142: 1781979683
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_41: -56820392
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_117: -223814
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_88: 644136896
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_20: -536596122
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_150: -991093368
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_174: 1152904401
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_188: -1030979613
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_87: -1135151703
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_64: 1859374079
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_51: -1805241705
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_146: 1568328540
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_54: -1579223662
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_151: -1252933164
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_26: 1903615712
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_32: 1007583795
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_126: -1288195617
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_92: -1100412030
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_156: -1884582548
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_49: 665126257
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_104: 1670249590
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_76: -1590170915
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_166: 2073420952
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_139: 348984933
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_58: 172509313
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_38: -609103489
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_164: 1778833822
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_133: -1341764714
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_178: 476370777
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_12: 68415799
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_9: -1005258877
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
