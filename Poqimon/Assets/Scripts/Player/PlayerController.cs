@@ -31,17 +31,34 @@ public class PlayerController : MonoBehaviour
             //This implement the Tile Movement style: 
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
+
+            //To block diagonal movement
+            if(input.x != 0) {input.y = 0;}
+
             if (input != Vector2.zero)
             {
                 var targetPosition = transform.position;
                 targetPosition.x += input.x;
                 targetPosition.y += input.y;
 
-                StartCoroutine(Move(targetPosition));
+                if(IsWalkable(targetPosition)){
+                    StartCoroutine(Move(targetPosition));
+                }
+                
             }
         }
         
     }
+
+    private bool IsWalkable(Vector3 targetPosition)
+    {
+        if (Physics2D.OverlapCircle(targetPosition, 0.2f, solidObjectLayer | interactableLayer) != null)
+        {
+            return false;
+        }
+        return true;
+    } 
+
 
     IEnumerator Move(Vector3 targetPosition)
     {
