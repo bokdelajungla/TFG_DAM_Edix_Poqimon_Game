@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -4166,15 +4166,15 @@ TextureImporter:
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_27: 1793168782
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_109: -2120368157
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_167: 819993194
-      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_42: 1501206024
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_135: -48965333
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_186: -1222148802
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_42: 1501206024
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_36: -1313875234
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_80: 1423445689
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_172: -238545517
-      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_3: 1433408113
-      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_129: 943644049
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_153: -2090274021
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_129: 943644049
+      353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_3: 1433408113
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_53: 340581866
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_95: -41648406
       353-3536860_resource-rom-hacking-resources-archive-pokemon-platinum-player_175: -1703138966

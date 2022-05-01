@@ -26,44 +26,39 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void HandleUpdate()
     {
-        if (!isMoving) {
+        if (!isMoving) 
+        {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
-        if (input.x != 0) {
-            input.y = 0;
-        }
+            //Remove Diagonal Movement
+            if (input.x != 0) { input.y = 0;}
 
-        if (input != Vector2.zero) {
+            if (input != Vector2.zero) {
 
-            _animator.SetFloat("Move X", input.x);
-            _animator.SetFloat("Move Y", input.y);
-            var targetPosition = transform.position;
-            targetPosition.x += input.x;
-            targetPosition.y += input.y;
-            if(isAvailable(targetPosition)) {
-                StartCoroutine(moveTowards(targetPosition));
+                _animator.SetFloat("Move X", input.x);
+                _animator.SetFloat("Move Y", input.y);
+                
+                var targetPosition = transform.position;
+                targetPosition.x += input.x;
+                targetPosition.y += input.y;
+                
+                if(isAvailable(targetPosition)) {
+                    StartCoroutine(moveTowards(targetPosition));
+                }
             }
-            
         }
+
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            Interact();
         }
     }
 
     private void LateUpdate() {
         _animator.SetBool("isMoving", isMoving);
-    }
-
-    IEnumerator moveTowards(Vector3 destination) {
-        isMoving = true;
-        while (Vector3.Distance(transform.position, destination) > Mathf.Epsilon) {
-            transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-
-        transform.position = destination;
-        isMoving = false;
     }
     
     private bool isAvailable(Vector3 target) {
@@ -72,5 +67,29 @@ public class PlayerController : MonoBehaviour
         }
 
         return true;
+    }
+
+    void Interact()
+    {
+        var facingDir = new Vector3(_animator.GetFloat("Move X"), _animator.GetFloat("Move Y"));
+        var interactPos = transform.position + facingDir;
+        //Debug.DrawLine(transform.position, interactPos, Color.red, 0.5f);
+        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer); 
+        if (collider != null)
+        {
+            Debug.Log("Collider con object");
+            collider.GetComponent<Interactable>()?.Interact();
+        }
+    }
+
+        IEnumerator moveTowards(Vector3 destination) {
+        isMoving = true;
+        while (Vector3.Distance(transform.position, destination) > Mathf.Epsilon) {
+            transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        transform.position = destination;
+        isMoving = false;
     }
 }
