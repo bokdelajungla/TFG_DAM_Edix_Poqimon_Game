@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Poqimon {
-
+    
     private PoqimonBaseObject poqimonBase;
-
+    // Cambiado por Adrian para ser accesible desde BattleHUD
+    public PoqimonBaseObject PoqimonBase => poqimonBase;
+    
     private int poqimonLevel;
     public int PoqimonLevel => poqimonLevel;
     
@@ -23,7 +25,7 @@ public class Poqimon {
     public Poqimon (PoqimonBaseObject poqimonBase, int poqimonLevel){
         this.poqimonBase = poqimonBase;
         this.poqimonLevel = poqimonLevel;
-        this.currentHp = poqimonBase.MaxHP;
+        this.currentHp = MaxHP;
         this.moves = new List<Move>();
 
         foreach (var learnableMove in poqimonBase.LearnableMoves)
