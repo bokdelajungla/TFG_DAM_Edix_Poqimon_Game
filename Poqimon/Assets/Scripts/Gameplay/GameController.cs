@@ -6,13 +6,18 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
-    //TODO: [SerializeField] BattleSystem battleSystem;
+    [SerializeField] BattleSystem battleSystem;
+
+    [SerializeField] Camera worldCamera;
 
     GameState state;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerController.OnEncountered += StartBattle;
+        battleSystem.OnBattleOver += EndBattle;
+
         DialogController.Instance.OnShowDialog += () => 
         {
             state = GameState.Dialog;
@@ -32,12 +37,27 @@ public class GameController : MonoBehaviour
         }
         else if (state == GameState.Battle)
         {
-            //TODO: battleSystem.HandleUpdate();
+            battleSystem.HandleUpdate();
         }
         else if (state == GameState.Dialog)
         {
             DialogController.Instance.HandleUpdate();
         }
+    }
+
+    private void StartBattle()
+    {
+        state = GameState.Battle;
+        battleSystem.gameObject.SetActive(true);
+        worldCamera.gameObject.SetActive(false);
+
+        battleSystem.StartBattle();
+    }
+    private void EndBattle(bool playerWon)
+    {
+        state = GameState.FreeRoam;
+        battleSystem.gameObject.SetActive(false);
+        worldCamera.gameObject.SetActive(true);
     }
 }
 

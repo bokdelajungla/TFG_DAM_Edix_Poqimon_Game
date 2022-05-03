@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask interactableLayer;
     public LayerMask longGrassLayer;
 
-    //public event Action OnEncountered;
+    public event Action OnEncountered;
 
     private bool isMoving;
     private Vector2 input;
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        
+
         animator.SetBool("isMoving", isMoving);
 
         if(Input.GetKeyDown(KeyCode.Z))
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    void Interact()
+    private void Interact()
     {
         var facingDir = new Vector3(animator.GetFloat("Move X"), animator.GetFloat("Move Y"));
         var interactPos = transform.position + facingDir;
@@ -75,12 +76,11 @@ public class PlayerController : MonoBehaviour
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer); 
         if (collider != null)
         {
-            Debug.Log("Collider con object");
             collider.GetComponent<Interactable>()?.Interact();
         }
     }
 
-        IEnumerator moveTowards(Vector3 destination) {
+    IEnumerator moveTowards(Vector3 destination) {
         isMoving = true;
         while (Vector3.Distance(transform.position, destination) > Mathf.Epsilon) {
             transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
@@ -89,5 +89,19 @@ public class PlayerController : MonoBehaviour
 
         transform.position = destination;
         isMoving = false;
+        CheckForEncounters();
+    }
+
+    private void CheckForEncounters()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, longGrassLayer) != null)
+        {
+            if (UnityEngine.Random.Range(1,101) <= 10)
+            {
+                isMoving = false;
+                animator.SetBool("isMoving", isMoving);
+                OnEncountered();
+            }
+        }
     }
 }

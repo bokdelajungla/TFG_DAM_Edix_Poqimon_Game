@@ -11,12 +11,32 @@ public class BattleUnit : MonoBehaviour
     
     public Poqimon Poquimon { get; set; }
 
-    public void setUp()
+    Image image;
+    Vector3 originalPosition;
+    Color originalColor;
+
+    private void Awake()
+    {
+        image = GetComponent<Image>();
+        originalPosition = image.transform.localPosition;
+        originalColor = image.color;
+    }
+
+    public void SetUp()
     {
         Poquimon = new Poqimon(_base, lvl);
+        
         if (isPLayer)
         {
-            GetComponent<Image>().sprite = Poquimon.PoqimonBase.PoqimonBackSprite;
+            image.sprite = Poquimon.PoqimonBase.PoqimonBackSprite;
         }
+        else 
+        {
+
+        }
+        
+        image.color = originalColor;
+        //TODO: PlayEnterAnimation();
+
     }
 }
