@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private Vector2 input;
 
-    private Animator _animator;
+    private Animator animator;
 
     // Start is called before the first frame update
     private void Awake() {
-        _animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     void Start()
     {
@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero) {
 
-                _animator.SetFloat("Move X", input.x);
-                _animator.SetFloat("Move Y", input.y);
+                animator.SetFloat("Move X", input.x);
+                animator.SetFloat("Move Y", input.y);
                 
                 var targetPosition = transform.position;
                 targetPosition.x += input.x;
@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        
+        animator.SetBool("isMoving", isMoving);
 
         if(Input.GetKeyDown(KeyCode.Z))
         {
@@ -57,10 +59,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void LateUpdate() {
-        _animator.SetBool("isMoving", isMoving);
-    }
-    
     private bool isAvailable(Vector3 target) {
         if (Physics2D.OverlapCircle(target, 0.15f, solidObjectsLayer | interactableLayer)!= null) {
             return false;
@@ -71,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void Interact()
     {
-        var facingDir = new Vector3(_animator.GetFloat("Move X"), _animator.GetFloat("Move Y"));
+        var facingDir = new Vector3(animator.GetFloat("Move X"), animator.GetFloat("Move Y"));
         var interactPos = transform.position + facingDir;
         //Debug.DrawLine(transform.position, interactPos, Color.red, 0.5f);
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer); 
