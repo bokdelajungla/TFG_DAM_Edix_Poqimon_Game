@@ -7,7 +7,11 @@ public class Move
     private MoveBaseObject moveBase;
     public MoveBaseObject MoveBase => moveBase;
     private int movePP;
-    public int MovePP => movePP;
+    public int MovePP 
+    {
+        get => movePP; 
+        set => movePP = value;
+    }
 
     public Move(MoveBaseObject moveBase)
     {

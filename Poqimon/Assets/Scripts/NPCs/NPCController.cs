@@ -12,12 +12,6 @@ public class NPCController : MonoBehaviour, Interactable
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Interact()
     {
         StartCoroutine(DialogController.Instance.ShowDialog(npcDialog));

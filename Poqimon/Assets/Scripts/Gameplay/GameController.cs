@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] PlayerController playerController;
-    [SerializeField] BattleSystem battleSystem;
+    public PlayerController playerController;
+    public BattleSystemController battleSystemController;
 
-    [SerializeField] Camera worldCamera;
+    public Camera worldCamera;
 
     GameState state;
 
@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         playerController.OnEncountered += StartBattle;
-        battleSystem.OnBattleOver += EndBattle;
+        battleSystemController.OnBattleOver += EndBattle;
 
         DialogController.Instance.OnShowDialog += () => 
         {
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
         }
         else if (state == GameState.Battle)
         {
-            battleSystem.HandleUpdate();
+            battleSystemController.HandleUpdate();
         }
         else if (state == GameState.Dialog)
         {
@@ -48,15 +48,18 @@ public class GameController : MonoBehaviour
     private void StartBattle()
     {
         state = GameState.Battle;
-        battleSystem.gameObject.SetActive(true);
+        battleSystemController.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
 
-        battleSystem.StartBattle();
+        var playerParty = playerController.GetComponent<PoqimonParty>();
+        var enemyPoqimon = GetComponent<MapArea>().GetRandomWildPoqimon();
+        
+        battleSystemController.StartBattle(playerParty, enemyPoqimon);
     }
     private void EndBattle(bool playerWon)
     {
         state = GameState.FreeRoam;
-        battleSystem.gameObject.SetActive(false);
+        battleSystemController.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
     }
 }

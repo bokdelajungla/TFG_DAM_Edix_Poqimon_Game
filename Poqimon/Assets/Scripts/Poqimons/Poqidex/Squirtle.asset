@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
   m_Name: Squirtle
   m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
-  poqimonId: 7
+  poqimonNumber: 7
   poqimonName: Squirtle
   poqimonDescription: It shelters itself in its shell, then strikes back with spouts
     of water at every opportunity.

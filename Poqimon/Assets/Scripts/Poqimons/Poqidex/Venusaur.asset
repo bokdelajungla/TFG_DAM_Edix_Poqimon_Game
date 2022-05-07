@@ -12,17 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
   m_Name: Venusaur
   m_EditorClassIdentifier: 
-  poqimonNumber: 0
-  poqimonName: 
-  poqimonDescription: 
-  poqimonFrontSprite: {fileID: 0}
-  poqimonBackSprite: {fileID: 0}
-  poqimonType1: 0
-  poqimonType2: 0
-  maxHP: 0
-  attack: 0
-  defense: 0
-  spAttack: 0
-  spDefense: 0
-  speed: 0
-  learnableMoves: []
+  poqimonNumber: 3
+  poqimonName: Venosaur
+  poqimonDescription: There is a large flower on Venusaur's back. The flower is said
+    to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's
+    aroma soothes the emotions of people.
+  poqimonFrontSprite: {fileID: 940538076, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: 1735625537, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonType1: 11
+  poqimonType2: 3
+  maxHP: 80
+  attack: 82
+  defense: 83
+  spAttack: 100
+  spDefense: 100
+  speed: 80
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 00d870c8d68a87749b509820d0311b0d, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: ab2d476fa006d6a47a78b4e8f797fa7e, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 22ee57be981720343a8e436339beb552, type: 2}
+    learnLevel: 1

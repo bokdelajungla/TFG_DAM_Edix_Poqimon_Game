@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] PoqimonBaseObject _base;
-    [SerializeField] int lvl;
     [SerializeField] bool isPLayer;
     
     public Poqimon Poquimon { get; set; }
@@ -22,9 +20,9 @@ public class BattleUnit : MonoBehaviour
         originalColor = image.color;
     }
 
-    public void SetUp()
+    public void SetUp(Poqimon poqimon)
     {
-        Poquimon = new Poqimon(_base, lvl);
+        Poquimon = poqimon;
         
         if (isPLayer)
         {
@@ -32,7 +30,7 @@ public class BattleUnit : MonoBehaviour
         }
         else 
         {
-
+            image.sprite = Poquimon.PoqimonBase.PoqimonFrontSprite;
         }
         
         image.color = originalColor;

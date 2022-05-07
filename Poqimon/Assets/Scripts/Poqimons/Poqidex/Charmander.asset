@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
   m_Name: Charmander
   m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
-  poqimonId: 4
+  poqimonNumber: 4
   poqimonName: Charmander
   poqimonDescription: The fire on the tip of its tail is a measure of its life. If
     healthy, its tail burns intensely.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
   m_Name: Bulbasir
   m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
-  poqimonNumber: 0
+  poqimonNumber: 1
   poqimonName: Bulbasir
   poqimonDescription: Bulbasaur can be seen napping in bright sunlight. There is
     a seed on its back. By soaking up the sun's rays, the seed grows progressively

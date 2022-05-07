@@ -15,11 +15,12 @@ public class BattleDialog : MonoBehaviour
     [SerializeField] private GameObject moveSelector;
     [SerializeField] private GameObject moveDetails;
 
-    [FormerlySerializedAs("actionTxt")] [SerializeField] List<Text> actionsTxts;
-    [FormerlySerializedAs("movesTxt")] [SerializeField] List<Text> movesTxts;
+    [SerializeField] List<Text> actionsTxts;
+    [SerializeField] List<Text> movesTxts;
     
     [SerializeField] Text ppTxt;
-    [SerializeField] Text moveDetailTxt;
+    [SerializeField] Text moveTypeTxt;
+    [SerializeField] Text moveCategoryTxt;
 
     public void setTxt(string txt)
     {
@@ -53,7 +54,7 @@ public class BattleDialog : MonoBehaviour
 
     public void UpdateActionSelection(int selectedAction)
     {
-        for (int i = 0; i < actionsTxts.Count; ++i)
+        for (int i = 0; i < actionsTxts.Count; i++)
         {
             if (i == selectedAction)
             {
@@ -62,6 +63,21 @@ public class BattleDialog : MonoBehaviour
             else
             {
                 actionsTxts[i].color = Color.black;
+            }
+        }
+    }
+
+    public void UpdateMoveSelection(int selectedMove)
+    {
+        for (int i = 0; i < movesTxts.Count; i++)
+        {
+            if (i == selectedMove)
+            {
+                movesTxts[i].color = highlightedColor;
+            }
+            else
+            {
+                movesTxts[i].color = Color.black;
             }
         }
     }

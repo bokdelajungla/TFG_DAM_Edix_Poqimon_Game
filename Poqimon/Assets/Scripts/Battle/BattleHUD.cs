@@ -11,7 +11,7 @@ public class BattleHUD : MonoBehaviour
 
     public void SetData(Poqimon poquimon)
     {
-        nameTxt.text = poquimon.PoqimonBase.name;
+        nameTxt.text = poquimon.PoqimonBase.PoqimonName;
         lvlTxt.text = "lvl " + poquimon.PoqimonLevel;
         hpBar.SetHP((float) poquimon.CurrentHp / poquimon.MaxHP);
         hpBar.setHPText(poquimon.CurrentHp + " / " + poquimon.MaxHP);

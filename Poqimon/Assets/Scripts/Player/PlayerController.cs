@@ -21,12 +21,14 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         animator = GetComponent<Animator>();
     }
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame so we use HandleUpdate that is called from
+    //GameController from its Update function
     public void HandleUpdate()
     {
         if (!isMoving) 
