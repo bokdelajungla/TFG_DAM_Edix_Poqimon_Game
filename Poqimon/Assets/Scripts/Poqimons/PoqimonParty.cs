@@ -29,4 +29,5 @@ public class PoqimonParty : MonoBehaviour
         //Where + lambda(x is each of the element of the list) + First
         return party.Where(x => x.CurrentHp > 0).FirstOrDefault();
     }
+
 }

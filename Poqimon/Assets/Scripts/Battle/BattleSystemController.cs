@@ -12,6 +12,7 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] BattleHUD playerHUD;
     [SerializeField] BattleHUD enemyHUD;
     [SerializeField] BattleDialog dialog;
+    [SerializeField] PartyScreenController partyScreenController;
 
     //Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver; 
@@ -38,6 +39,9 @@ public class BattleSystemController : MonoBehaviour
         enemyUnit.SetUp(enemyPoqimon);
         playerHUD.SetData(playerUnit.Poquimon);
         enemyHUD.SetData(enemyUnit.Poquimon);
+
+        partyScreenController.Init();
+
         yield return dialog.TypeTxt($"A wild {enemyUnit.Poquimon.PoqimonBase.name} just appeared!");
         yield return new WaitForSeconds(1f);
 
@@ -54,7 +58,8 @@ public class BattleSystemController : MonoBehaviour
 
     void OpenPartyScreen()
     {
-
+        partyScreenController.SetPartyData(playerParty.Party);
+        partyScreenController.gameObject.SetActive(true);
     }
 
     void PlayerMove()
