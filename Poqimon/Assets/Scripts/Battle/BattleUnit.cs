@@ -7,7 +7,7 @@ public class BattleUnit : MonoBehaviour
 {
     [SerializeField] bool isPLayer;
     
-    public Poqimon Poquimon { get; set; }
+    public Poqimon Poqimon { get; set; }
 
     Image image;
     Vector3 originalPosition;
@@ -22,15 +22,15 @@ public class BattleUnit : MonoBehaviour
 
     public void SetUp(Poqimon poqimon)
     {
-        Poquimon = poqimon;
+        Poqimon = poqimon;
         
         if (isPLayer)
         {
-            image.sprite = Poquimon.PoqimonBase.PoqimonBackSprite;
+            image.sprite = Poqimon.PoqimonBase.PoqimonBackSprite;
         }
         else 
         {
-            image.sprite = Poquimon.PoqimonBase.PoqimonFrontSprite;
+            image.sprite = Poqimon.PoqimonBase.PoqimonFrontSprite;
         }
         
         image.color = originalColor;

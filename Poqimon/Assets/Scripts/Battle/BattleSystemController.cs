@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy }
+public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy, PartyScreen}
 
 public class BattleSystemController : MonoBehaviour
 {
@@ -20,10 +20,12 @@ public class BattleSystemController : MonoBehaviour
     BattleState state;
     int currentAction;
     int currentMove;
+    int currentMember;
 
     PoqimonParty playerParty;
     Poqimon enemyPoqimon;
     
+
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {   
         this.playerParty = playerParty;
@@ -37,12 +39,12 @@ public class BattleSystemController : MonoBehaviour
         state = BattleState.Start;
         playerUnit.SetUp(playerParty.GetHealthyPoqimon());
         enemyUnit.SetUp(enemyPoqimon);
-        playerHUD.SetData(playerUnit.Poquimon);
-        enemyHUD.SetData(enemyUnit.Poquimon);
+        playerHUD.SetData(playerUnit.Poqimon);
+        enemyHUD.SetData(enemyUnit.Poqimon);
 
         partyScreenController.Init();
 
-        yield return dialog.TypeTxt($"A wild {enemyUnit.Poquimon.PoqimonBase.name} just appeared!");
+        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.name} just appeared!");
         yield return new WaitForSeconds(1f);
 
         PlayerAction();
@@ -58,6 +60,7 @@ public class BattleSystemController : MonoBehaviour
 
     void OpenPartyScreen()
     {
+        state = BattleState.PartyScreen;
         partyScreenController.SetPartyData(playerParty.Party);
         partyScreenController.gameObject.SetActive(true);
     }
@@ -81,6 +84,10 @@ public class BattleSystemController : MonoBehaviour
         else if (state == BattleState.PlayerMove)
         {
             HandleMoveSelection();
+        }
+        else if (state == BattleState.PartyScreen)
+        {
+            HandlePartyScreenSelection();
         }
     }
 
@@ -132,7 +139,7 @@ public class BattleSystemController : MonoBehaviour
             currentMove += 2;
         else if(Input.GetKeyDown(KeyCode.UpArrow))
             currentMove -= 2;
-        currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poquimon.Moves.Count - 1);
+        currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poqimon.Moves.Count - 1);
         
         dialog.UpdateMoveSelection(currentMove);
 
@@ -142,7 +149,7 @@ public class BattleSystemController : MonoBehaviour
             dialog.EnableDialogTxt(true);
             StartCoroutine(PerformPlayerMove());
         }
-        else if (Input.GetKeyDown(KeyCode.X) && state == BattleState.PlayerMove)
+        else if (Input.GetKeyDown(KeyCode.X))
         {
             dialog.EnableMoveSelector(false);
             dialog.EnableDialogTxt(true);
@@ -151,14 +158,71 @@ public class BattleSystemController : MonoBehaviour
  
     }
 
+    void HandlePartyScreenSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            currentMember++;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            currentMember--;
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+            currentMember++;
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
+            currentMember--;
+        currentMember = Mathf.Clamp(currentMember, 0, playerParty.Party.Count - 1);
+        
+        partyScreenController.UpdatePartySelection(currentMember);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            var selectedMember = playerParty.Party[currentMember];
+            if (selectedMember.CurrentHp <= 0){
+                partyScreenController.SetMessageText("Poqimon is fainted and cannot fight!");
+                return;
+            }
+            if (selectedMember == playerUnit.Poqimon)
+            {
+                partyScreenController.SetMessageText(selectedMember.PoqimonBase.PoqimonName + " is already fighting!");
+                return;
+            }
+            partyScreenController.gameObject.SetActive(false);
+            state = BattleState.Busy;
+            StartCoroutine(SwitchPoqimon(selectedMember));
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            partyScreenController.gameObject.SetActive(false);
+            dialog.EnableDialogTxt(true);
+            PlayerAction();
+        }
+    }
+    IEnumerator SwitchPoqimon(Poqimon switchPoqimon)
+    {
+        if(playerUnit.Poqimon.CurrentHp > 0)
+        {
+            yield return dialog.TypeTxt($"Come back {playerUnit.Poqimon.PoqimonBase.PoqimonName}!");
+            //TODO: playerUnit.PlaySwitchAnimation();
+            yield return new WaitForSeconds(2f);
+        }
+        
+        playerUnit.SetUp(switchPoqimon);
+        playerHUD.SetData(switchPoqimon);
+
+        //TODO: dialog.SetMoveNames(switchPoqimon.Moves);
+
+        yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}");
+        
+        //TODO: StartCoroutine(EnemyMove());
+        
+    }
+
 
     IEnumerator PerformPlayerMove()
     {
         state = BattleState.Busy;
 
-        var move = playerUnit.Poquimon.Moves[currentMove];
+        var move = playerUnit.Poqimon.Moves[currentMove];
         move.MovePP--;
-        yield return dialog.TypeTxt($"{playerUnit.Poquimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
+        yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
 
         /*TODO: Attack turns
         playerUnit.PlayAttackAnimation();
@@ -208,22 +272,15 @@ public class BattleSystemController : MonoBehaviour
         
         if (damageDetails.Fainted)
         {
-            yield return dialog.TypeTxt($"{enemyUnit.Poquimon.PoqimonBase.PoqimonName} Fainted!");
-            enemyUnit.PlayFaintedAnimation();
+            yield return dialog.TypeTxt($"{playerUnit.Poquimon.PoqimonBase.PoqimonName} Fainted!");
+            playerUnit.PlayFaintedAnimation();
             yield return new WaitForSeconds(2f);
             
             //Check if there are more poqimons in the party
             var nextPoqimon = playerParty.GetHealthyPoqimon();
-            if(  nextPoqimon != null)
+            if (nextPoqimon != null)
             {
-                playerUnit.SetUp(nextPoqimon);
-                playerHUD.SetData(nextPoqimon);
-
-                dialog.SetMoveNames(nextPoqimon.Moves);
-                yield return dialog.TypeTxt($"Go {nextPoqimon.PoqimonBase.PoqimonName}!");
-                yield return new WaitForSeconds(1f);
-
-                PlayerAction();   
+                OpenPartyScreen();
             }
             else
             {
@@ -234,7 +291,7 @@ public class BattleSystemController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(EnemyMove());
+            PlayerAction();
         }
     }
     */

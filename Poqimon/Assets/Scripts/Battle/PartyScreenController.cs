@@ -8,6 +8,7 @@ public class PartyScreenController : MonoBehaviour
     [SerializeField] Text messageTxt;
 
     PartyMemberController[] memberSlots;
+    List<Poqimon> partyPoqimons;
 
     public void Init()
     {
@@ -16,6 +17,8 @@ public class PartyScreenController : MonoBehaviour
 
     public void SetPartyData(List<Poqimon> partyPoqimons)
     {
+        this.partyPoqimons = partyPoqimons;
+
         for (int i = 0; i<memberSlots.Length; i++)
         {
             if (i < partyPoqimons.Count)
@@ -29,5 +32,21 @@ public class PartyScreenController : MonoBehaviour
         }
 
         messageTxt.text = "Choose a Poqimon";
+    }
+
+    public void UpdatePartySelection(int selectedMember)
+    {
+        for (int i = 0; i < partyPoqimons.Count; i++)
+        {
+            if (i == selectedMember)
+                memberSlots[i].SetSelected(true);
+            else
+                memberSlots[i].SetSelected(false);
+        }
+    }
+
+    public void SetMessageText(string message)
+    {
+        messageTxt.text = message;
     }
 }
