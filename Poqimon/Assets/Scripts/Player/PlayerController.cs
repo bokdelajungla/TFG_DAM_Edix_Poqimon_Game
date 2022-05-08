@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ISavable
 {
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
@@ -103,5 +103,17 @@ public class PlayerController : MonoBehaviour
                 OnEncountered();
             }
         }
+    }
+
+    public object CaptureState()
+    {
+        float[] position = new float[] { transform.position.x, transform.position.y };
+        return position;
+    }
+
+    public void RestoreState(object state)
+    {
+        var position = (float[]) state;
+        transform.position = new Vector2(position[0], position[1]);
     }
 }
