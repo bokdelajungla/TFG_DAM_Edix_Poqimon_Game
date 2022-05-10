@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField] Camera worldCamera;
 
+    [SerializeField] InventoryUI inventoryUI;
+
     MenuController menuController;
 
     GameState state;
@@ -33,13 +35,7 @@ public class GameController : MonoBehaviour
             state = GameState.FreeRoam;
         };
 
-        menuController.onBack += () => {
-            state = GameState.FreeRoam;
-        };
-
         menuController.onMenuSelected += onMenuSelected;
-
-
     }
 
     private void Awake() {
@@ -70,6 +66,15 @@ public class GameController : MonoBehaviour
          {
              menuController.HandleUpdate();
         }
+        else if (state == GameState.Bag) 
+        { 
+            Action onBack = () => {
+                inventoryUI.gameObject.SetActive(false);
+                state = GameState.FreeRoam;
+            };
+
+            inventoryUI.HandleUpdate(onBack);
+        }
     }
 
     private void StartBattle()
@@ -93,18 +98,22 @@ public class GameController : MonoBehaviour
         }
         else if (selectedItem == 1) {
             // Bag
+            inventoryUI.gameObject.SetActive(true);
+            state = GameState.Bag;
         }
         else if (selectedItem == 2) {
             // Save
              SavingSystem.i.Save("saveSlot1");
+              state = GameState.FreeRoam;
         }
         else if (selectedItem == 3) {
             // Load
              SavingSystem.i.Load("saveSlot1");
+              state = GameState.FreeRoam;
         }
 
-        state = GameState.FreeRoam;
+       
     }
 }
 
-public enum GameState { FreeRoam, Battle, Dialog, Menu }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, Bag }
