@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615063fbb61705f4bad9d4e5bcaacc43, type: 3}
   m_Name: Maxpotion
   m_EditorClassIdentifier: 
-  name: Superpotion
-  description: Restore health of a Poqimon by 50 points
-  icon: {fileID: 325157006, guid: fad7366bb3972a64b85914f3621bcaed, type: 3}
-  hpAmout: 50
-  restoreMaxHP: 0
+  name: Maxpotion
+  description: Restore health of a Poqimon fully
+  icon: {fileID: 179247247, guid: fad7366bb3972a64b85914f3621bcaed, type: 3}
+  hpAmout: 0
+  restoreMaxHP: 1
   pAmout: 0
   restoreMaxPP: 0
   recoverAllStatus: 0
