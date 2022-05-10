@@ -10,6 +10,10 @@ public class GameController : MonoBehaviour
 
     public Camera worldCamera;
 
+    [SerializeField] InventoryUI inventoryUI;
+
+    MenuController menuController;
+
     GameState state;
 
     // Start is called before the first frame update
@@ -26,6 +30,16 @@ public class GameController : MonoBehaviour
         {   
             if (state == GameState.Dialog) {state = GameState.FreeRoam;}
         };
+
+        menuController.onBack += () => {
+            state = GameState.FreeRoam;
+        };
+
+        menuController.onMenuSelected += onMenuSelected;
+    }
+
+    private void Awake() {
+        menuController = GetComponent<MenuController>();
     }
 
     // Update is called once per frame
@@ -34,6 +48,11 @@ public class GameController : MonoBehaviour
         if (state == GameState.FreeRoam)
         {
             playerController.HandleUpdate();
+
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                menuController.openMenu();
+                state = GameState.Menu;
+            }
         }
         else if (state == GameState.Battle)
         {
@@ -42,6 +61,19 @@ public class GameController : MonoBehaviour
         else if (state == GameState.Dialog)
         {
             DialogController.Instance.HandleUpdate();
+        }
+        else if (state == GameState.Menu)
+         {
+             menuController.HandleUpdate();
+        }
+        else if (state == GameState.Bag) 
+        { 
+            Action onBack = () => {
+                inventoryUI.gameObject.SetActive(false);
+                state = GameState.FreeRoam;
+            };
+
+            inventoryUI.HandleUpdate(onBack);
         }
     }
 
@@ -62,6 +94,29 @@ public class GameController : MonoBehaviour
         battleSystemController.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
     }
+
+    void onMenuSelected(int selectedItem) {
+        if (selectedItem == 0) {
+            //Pokemon
+        }
+        else if (selectedItem == 1) {
+            // Bag
+            inventoryUI.gameObject.SetActive(true);
+            state = GameState.Bag;
+        }
+        else if (selectedItem == 2) {
+            // Save
+             SavingSystem.i.Save("saveSlot1");
+              state = GameState.FreeRoam;
+        }
+        else if (selectedItem == 3) {
+            // Load
+             SavingSystem.i.Load("saveSlot1");
+              state = GameState.FreeRoam;
+        }
+
+       
+    }
 }
 
-public enum GameState { FreeRoam, Battle, Dialog }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, Bag }
