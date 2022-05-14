@@ -22,9 +22,9 @@ public class PartyMemberController : MonoBehaviour
         this.poqimon = poqimon;
         nameTxt.text = poqimon.PoqimonBase.PoqimonName;
         lvlTxt.text = poqimon.PoqimonLevel.ToString();
-        hpBar.SetHP((float) poqimon.CurrentHp / poqimon.MaxHP);
+        hpBar.SetHP((float) poqimon.CurrentHp / poqimon.MaxHp);
         hpBar.setHPText(poqimon.CurrentHp.ToString());
-        hpBar.setMaxHpText(poqimon.MaxHP.ToString());
+        hpBar.setMaxHpText(poqimon.MaxHp.ToString());
     }
 
     public void SetSelected(bool selected)

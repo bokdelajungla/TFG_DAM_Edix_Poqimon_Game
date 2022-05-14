@@ -43,6 +43,7 @@ public class PoqimonBaseObject : ScriptableObject
     public List<LearnableMove> LearnableMoves => learnableMoves;
 }
 
+// Type of the Poqimon
 public enum PoqimonType
 {
     Normal,
@@ -66,6 +67,17 @@ public enum PoqimonType
     None
 }
 
+// poqimon stats 
+public enum Stat
+{
+    Atk,
+    Def,
+    SpAtk,
+    SpDef,
+    Speed
+}
+
+// Effectivenes of the types
 public class TypeChart
 {
     static float[][] chart =
