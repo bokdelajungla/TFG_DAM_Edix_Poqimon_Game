@@ -47,7 +47,6 @@ public class BattleSystemController : MonoBehaviour
         partyScreenController.Init();
 
         yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.name} just appeared!");
-        yield return new WaitForSeconds(1f);
 
         PlayerAction();
     }
@@ -248,7 +247,6 @@ public class BattleSystemController : MonoBehaviour
 
         /* TODO: Attack turns
         playerUnit.PlayAttackAnimation();
-        yield return new WaitForSeconds(1f);
 
         enemyUnit.PlayHitAnimation();
         var damageDetails = enemyUnit.Poquimon.TakeDamage(move, playerUnit.Poquimon);
@@ -282,7 +280,7 @@ public class BattleSystemController : MonoBehaviour
         move.MovePP--;
         yield return dialog.TypeTxt($"{playerUnit.Poquimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
 
-        /*PLACEHOLDER CODE (copied from Player)
+        // PLACEHOLDER CODE (copied from Player)
         playerUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
 
@@ -317,4 +315,20 @@ public class BattleSystemController : MonoBehaviour
         }
     }
     */
+
+    IEnumerator ShowDamageDetails(DamageDetails damageDetails)
+    {
+        if (damageDetails.Critical > 1f)
+        {
+            yield return dialog.TypeTxt("A critical hit!");
+        }
+        if (damageDetails.TypeEffectiveness > 1f)
+        {
+            yield return dialog.TypeTxt("It's very effective");
+        }
+        else if (damageDetails.TypeEffectiveness < 1f)
+        {
+            yield return dialog.TypeTxt("It's not effective");
+        }
+    }
 }

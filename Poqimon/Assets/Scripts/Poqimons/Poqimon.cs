@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 [Serializable]
 public class Poqimon 
@@ -73,12 +74,29 @@ public class Poqimon
     ///<param name="move"> The attacking Poqimon move </param>
     ///<param name="attacker"> The attacking Poqimon object </param>
     ///<returns> true if Poqimon fainted because of the attack, false otherwise </returns> 
-    public bool TakeDamage(Move move, Poqimon attacker)
+    public DamageDetails TakeDamage(Move move, Poqimon attacker)
     {
+        //Critical Hit
+        float critical = 1f;
+        if (UnityEngine.Random.Range(0f, 1f) * 100f <= 6.25f)
+        {
+            critical = 2f;
+        }
+        //Move Effectiveness
+        float type = TypeChart.GetEffectiveness(move.MoveBase.MoveType, this.PoqimonBase.PoqimonType1) *
+                     TypeChart.GetEffectiveness(move.MoveBase.MoveType, this.PoqimonBase.PoqimonType2);
+
+        var damageDetails = new DamageDetails()
+        {
+            TypeEffectiveness = type,
+            Critical = critical,
+            Fainted = false
+        };
+        
         //Damage Value
         float d = 0;
         //Random Modifier
-        float modifiers = UnityEngine.Random.Range(0.85f, 1f);
+        float modifiers = UnityEngine.Random.Range(0.85f, 1f) * type * critical;
         //Level dependency
         float a = (2 * attacker.PoqimonLevel + 10)/250f;
         //Damage Calculation
@@ -103,8 +121,15 @@ public class Poqimon
         if (CurrentHp <= 0)
         {
             CurrentHp = 0;
-            return true;
+            damageDetails.Fainted = true;
         }
-        return false;
+        return damageDetails;
     }
+}
+
+public class DamageDetails
+{
+    public bool Fainted { get; set; }
+    public float Critical { get; set; }
+    public float TypeEffectiveness { get; set; }
 }

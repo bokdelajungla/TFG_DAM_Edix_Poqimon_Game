@@ -34,6 +34,7 @@ public class BattleDialog : MonoBehaviour
             dialogTxt.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);
         }
+        yield return new WaitForSeconds(1f);
     }
 
     public void EnableDialogTxt(bool enabled)
