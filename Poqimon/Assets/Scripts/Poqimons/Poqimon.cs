@@ -83,12 +83,13 @@ public class Poqimon
             critical = 2f;
         }
         //Move Effectiveness
+        /* TODO CORREGIR
         float type = TypeChart.GetEffectiveness(move.MoveBase.MoveType, this.PoqimonBase.PoqimonType1) *
                      TypeChart.GetEffectiveness(move.MoveBase.MoveType, this.PoqimonBase.PoqimonType2);
-
+        */
         var damageDetails = new DamageDetails()
         {
-            TypeEffectiveness = type,
+            TypeEffectiveness = 0f, // TODO CORREGIR = type,
             Critical = critical,
             Fainted = false
         };
@@ -96,7 +97,7 @@ public class Poqimon
         //Damage Value
         float d = 0;
         //Random Modifier
-        float modifiers = UnityEngine.Random.Range(0.85f, 1f) * type * critical;
+        float modifiers = UnityEngine.Random.Range(0.85f, 1f); // TODO CORREGIR * type * critical;
         //Level dependency
         float a = (2 * attacker.PoqimonLevel + 10)/250f;
         //Damage Calculation

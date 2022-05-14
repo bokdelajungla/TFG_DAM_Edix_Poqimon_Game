@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
@@ -24,17 +25,44 @@ public class BattleUnit : MonoBehaviour
     {
         Poqimon = poqimon;
         
-        if (isPLayer)
-        {
-            image.sprite = Poqimon.PoqimonBase.PoqimonBackSprite;
-        }
-        else 
-        {
-            image.sprite = Poqimon.PoqimonBase.PoqimonFrontSprite;
-        }
+        image.sprite = (isPLayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : image.sprite = Poqimon.PoqimonBase.PoqimonFrontSprite;
+
+        PlayEnterAnimation();
         
         image.color = originalColor;
-        //TODO: PlayEnterAnimation();
+    }
+    
+    public void PlayEnterAnimation()
+    {
+        image.transform.localPosition = (isPLayer) ? new Vector3(-550f, originalPosition.y) :  new Vector3(550f, originalPosition.y);
+        image.transform.DOLocalMoveX(originalPosition.x, 1f);
+    }
 
+    public void PlayAtkAnimation()
+    {
+        var sequence = DOTween.Sequence();
+        if (isPLayer)
+        {
+            sequence.Append(image.transform.DOLocalMoveX(originalPosition.x + 50f, 0.2f));
+        }
+        else
+        {
+            sequence.Append(image.transform.DOLocalMoveX(originalPosition.x - 50f, 0.2f));
+        }
+        sequence.Append(image.transform.DOLocalMoveX(originalPosition.x, 0.2f));
+    }
+
+    public void PlayHitAnimation()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Append(image.DOColor(Color.gray, 0.1f));
+        sequence.Append(image.DOColor(originalColor, 0.1f));
+    }
+
+    public void PlayFaintedAnimation()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Append(image.transform.DOLocalMoveY(originalPosition.y - 150f, 0.5f));
+        sequence.Join(image.DOFade(0f, 0.5f));
     }
 }

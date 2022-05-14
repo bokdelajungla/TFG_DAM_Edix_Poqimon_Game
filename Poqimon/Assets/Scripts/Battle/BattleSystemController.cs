@@ -25,7 +25,6 @@ public class BattleSystemController : MonoBehaviour
     PoqimonParty playerParty;
     Poqimon enemyPoqimon;
     
-
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {   
         this.playerParty = playerParty;
@@ -75,6 +74,7 @@ public class BattleSystemController : MonoBehaviour
         dialog.EnableMoveSelector(true);
         
     }
+    
     public void HandleUpdate()
     {
         if (state == BattleState.PlayerAction)
@@ -133,33 +133,20 @@ public class BattleSystemController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (currentMove < playerUnit.Poqimon.Moves.Count - 1)
-            {
-                ++currentMove;
-            }
+            ++currentMove;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
-            if (currentMove > 0)
-            {
-                --currentMove;
-            }
+            --currentMove;
         } 
         else if (Input.GetKeyDown(KeyCode.DownArrow)) 
         {
-            if (currentMove < playerUnit.Poqimon.Moves.Count - 2)
-            {
-                currentMove += 2;
-            }
+            currentMove += 2;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (currentMove > 1)
-            {
-                currentMove -= 2;
-            }
+            currentMove -= 2;
         }
-        currentMove -= 2;
         currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poqimon.Moves.Count - 1);
         
         dialog.UpdateMoveSelection(currentMove, playerUnit.Poqimon.Moves[currentMove]);
@@ -216,6 +203,7 @@ public class BattleSystemController : MonoBehaviour
             PlayerAction();
         }
     }
+    
     IEnumerator SwitchPoqimon(Poqimon switchPoqimon)
     {
         if(playerUnit.Poqimon.CurrentHp > 0)
@@ -235,8 +223,7 @@ public class BattleSystemController : MonoBehaviour
         //TODO: StartCoroutine(EnemyMove());
         
     }
-
-
+    
     IEnumerator PerformPlayerMove()
     {
         state = BattleState.Busy;
@@ -244,19 +231,19 @@ public class BattleSystemController : MonoBehaviour
         var move = playerUnit.Poqimon.Moves[currentMove];
         move.MovePP--;
         yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
-
-        /* TODO: Attack turns
-        playerUnit.PlayAttackAnimation();
+        
+        playerUnit.PlayAtkAnimation();
+        yield return new WaitForSeconds(0.5f);
 
         enemyUnit.PlayHitAnimation();
-        var damageDetails = enemyUnit.Poquimon.TakeDamage(move, playerUnit.Poquimon);
+        var damageDetails = enemyUnit.Poqimon.TakeDamage(move, playerUnit.Poqimon);
         
         yield return enemyHUD.UpdateHP();
         yield return ShowDamageDetails(damageDetails);
         
         if (damageDetails.Fainted)
         {
-            yield return dialog.TypeTxt($"{enemyUnit.Poquimon.PoqimonBase.PoqimonName} Fainted!");
+            yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
             enemyUnit.PlayFaintedAnimation();
 
             //Combat ended, player Wins!
@@ -267,32 +254,30 @@ public class BattleSystemController : MonoBehaviour
         {
             StartCoroutine(EnemyMove());
         }
-        */
     }
-
-    /*TODO: Implement enemy attack logic
+    
     IEnumerator EnemyMove()
     {
-        
         state = BattleState.EnemyMove;
-
-        var move = enemyUnit.Poquimon.GetRandomMove();
+            
+        // TODO CAMBIAR POR var move = enemyUnit.Poqimon.GetRandomMove();
+        var move = enemyUnit.Poqimon.Moves[0];
         move.MovePP--;
-        yield return dialog.TypeTxt($"{playerUnit.Poquimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
+        yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
 
         // PLACEHOLDER CODE (copied from Player)
-        playerUnit.PlayAttackAnimation();
-        yield return new WaitForSeconds(1f);
+        enemyUnit.PlayAtkAnimation();
+        yield return new WaitForSeconds(0.5f);
 
-        enemyUnit.PlayHitAnimation();
-        var damageDetails = enemyUnit.Poquimon.TakeDamage(move, playerUnit.Poquimon);
+        playerUnit.PlayHitAnimation();
+        var damageDetails = playerUnit.Poqimon.TakeDamage(move, enemyUnit.Poqimon);
         
-        yield return enemyHUD.UpdateHP();
+        yield return playerHUD.UpdateHP();
         yield return ShowDamageDetails(damageDetails);
         
         if (damageDetails.Fainted)
         {
-            yield return dialog.TypeTxt($"{playerUnit.Poquimon.PoqimonBase.PoqimonName} Fainted!");
+            yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
             playerUnit.PlayFaintedAnimation();
             yield return new WaitForSeconds(2f);
             
@@ -314,7 +299,6 @@ public class BattleSystemController : MonoBehaviour
             PlayerAction();
         }
     }
-    */
 
     IEnumerator ShowDamageDetails(DamageDetails damageDetails)
     {
