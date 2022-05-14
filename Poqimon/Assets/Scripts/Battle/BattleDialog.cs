@@ -56,29 +56,26 @@ public class BattleDialog : MonoBehaviour
     {
         for (int i = 0; i < actionsTxts.Count; i++)
         {
-            if (i == selectedAction)
-            {
-                actionsTxts[i].color = highlightedColor;
-            }
-            else
-            {
-                actionsTxts[i].color = Color.black;
-            }
+            actionsTxts[i].color = (i == selectedAction) ? highlightedColor : Color.black;
         }
     }
 
-    public void UpdateMoveSelection(int selectedMove)
+    public void UpdateMoveSelection(int selectedMove, Move move)
     {
         for (int i = 0; i < movesTxts.Count; i++)
         {
-            if (i == selectedMove)
-            {
-                movesTxts[i].color = highlightedColor;
-            }
-            else
-            {
-                movesTxts[i].color = Color.black;
-            }
+            movesTxts[i].color = (i == selectedMove) ? highlightedColor : Color.white;
+        }
+
+        ppTxt.text = $"PP {move.MovePP}/{move.MoveBase.MovePP}";
+        moveTypeTxt.text = move.MoveBase.MoveType.ToString();
+    }
+
+    public void SetMoveNames(List<Move> moves)
+    {
+        for (int i = 0; i < movesTxts.Count; i++)
+        {
+            movesTxts[i].text = (i < moves.Count) ? moves[i].MoveBase.MoveName : movesTxts[i].text = "--";
         }
     }
 }

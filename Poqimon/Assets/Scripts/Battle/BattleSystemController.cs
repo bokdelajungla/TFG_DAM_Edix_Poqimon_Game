@@ -42,6 +42,8 @@ public class BattleSystemController : MonoBehaviour
         playerHUD.SetData(playerUnit.Poqimon);
         enemyHUD.SetData(enemyUnit.Poqimon);
 
+        dialog.SetMoveNames(playerUnit.Poqimon.Moves);
+        
         partyScreenController.Init();
 
         yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.name} just appeared!");
@@ -74,7 +76,6 @@ public class BattleSystemController : MonoBehaviour
         dialog.EnableMoveSelector(true);
         
     }
-
     public void HandleUpdate()
     {
         if (state == BattleState.PlayerAction)
@@ -132,16 +133,37 @@ public class BattleSystemController : MonoBehaviour
     void HandleMoveSelection()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
-            currentMove++;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            currentMove--;
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            currentMove += 2;
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
-            currentMove -= 2;
+        {
+            if (currentMove < playerUnit.Poqimon.Moves.Count - 1)
+            {
+                ++currentMove;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) 
+        {
+            if (currentMove > 0)
+            {
+                --currentMove;
+            }
+        } 
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) 
+        {
+            if (currentMove < playerUnit.Poqimon.Moves.Count - 2)
+            {
+                currentMove += 2;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (currentMove > 1)
+            {
+                currentMove -= 2;
+            }
+        }
+        currentMove -= 2;
         currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poqimon.Moves.Count - 1);
         
-        dialog.UpdateMoveSelection(currentMove);
+        dialog.UpdateMoveSelection(currentMove, playerUnit.Poqimon.Moves[currentMove]);
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -224,7 +246,7 @@ public class BattleSystemController : MonoBehaviour
         move.MovePP--;
         yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
 
-        /*TODO: Attack turns
+        /* TODO: Attack turns
         playerUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
 
