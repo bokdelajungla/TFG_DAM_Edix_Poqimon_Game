@@ -16,13 +16,13 @@ public class BattleHUD : MonoBehaviour
         _poqimon = poqimon;
         nameTxt.text = _poqimon.PoqimonBase.PoqimonName;
         lvlTxt.text = "lvl " + _poqimon.PoqimonLevel;
-        hpBar.SetHP((float) _poqimon.CurrentHp / _poqimon.MaxHP);
-        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHP);
+        hpBar.SetHP((float) _poqimon.CurrentHp / _poqimon.MaxHp);
+        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
     }
 
     public IEnumerator UpdateHP()
     {
-        yield return hpBar.SetHpSmooth((float) _poqimon.CurrentHp / _poqimon.MaxHP);
-        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHP);
+        yield return hpBar.SetHpSmooth((float) _poqimon.CurrentHp / _poqimon.MaxHp);
+        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
     }
 }
