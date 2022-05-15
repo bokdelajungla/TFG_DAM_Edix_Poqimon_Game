@@ -13,6 +13,19 @@ public class Inventory : MonoBehaviour
         return FindObjectOfType<PlayerController>().GetComponent<Inventory>();
     }
 
+    public void addItem(ItemBase item, int count =1) {
+        Debug.Log(item);
+        Debug.Log(slots.Count);
+       slots.Add(new ItemSlot()
+       {
+        Item = item,
+        Count = count
+       });
+       Debug.Log(slots.Count);
+    }
+
+
+
 }
 
 [Serializable]
@@ -20,6 +33,15 @@ public class ItemSlot {
     [SerializeField] ItemBase item;
     [SerializeField] int count;
 
-    public ItemBase Item => item;
-    public int Count => count;
+    public ItemBase Item {
+        get => item;
+        set => item = value;
+    }
+
+    public int Count {
+        get => count;
+        set => count = value;
+    }
+
+
 }
