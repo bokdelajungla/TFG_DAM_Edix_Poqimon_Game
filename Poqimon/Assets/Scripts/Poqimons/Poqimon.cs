@@ -24,7 +24,8 @@ public class Poqimon
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     
-    // Status Changes
+    // Status & Status Changes
+    public Condition Status { get; set; }
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
     // HP
@@ -164,15 +165,18 @@ public class Poqimon
         d = a * move.MoveBase.MovePower * ((float)atk/ def) + 2;
         int damage = Mathf.FloorToInt(d + modifiers);
 
-        CurrentHp -= damage;
-        if (CurrentHp <= 0)
-        {
-            CurrentHp = 0;
-            damageDetails.Fainted = true;
-        }
+        UpdateHP(damage);
+        
         return damageDetails;
     }
 
+    public void SetStatus(ConditionID conditionID)
+    {
+        Status = ConditionsDB.Conditions[conditionID];
+        StatusChanges.Enqueue($"{PoqimonBase.PoqimonName} {Status.StartMsg}");
+    }
+
+    // get a random move (IA enemey)
     public Move GetRndMove()
     {
         int r = UnityEngine.Random.Range(0, Moves.Count);
@@ -182,6 +186,19 @@ public class Poqimon
     public void OnBattleOver()
     {
         ResetStatBoost();
+    }
+    
+    public void OnAfterTurn()
+    {
+        // (coditional call) We'll only call it if is not null
+        Status?.OnAfterTurn?.Invoke(this);
+    }
+    
+    // Update the HP taking damage
+    public void UpdateHP(int damage)
+    {
+        CurrentHp = Mathf.Clamp(CurrentHp - damage, 0, MaxHp);
+        HpChanged = true;
     }
 
     public bool CheckForLevelUp()
