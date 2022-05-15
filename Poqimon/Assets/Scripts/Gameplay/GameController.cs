@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
         menuController.onBack += () => {
             state = GameState.FreeRoam;
         };
-        menuController.onMenuSelected += onMenuSelected;
+        menuController.onMenuSelected += OnMenuSelected;
 
         //Subscribe to EvolutinController Events
         EvolutionController.i.OnEvolutionStart += () => state = GameState.Evolution;
@@ -138,7 +138,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    void onMenuSelected(int selectedItem) {
+    void OnMenuSelected(int selectedItem) {
         if (selectedItem == 0) {
             //Pokemon
         }

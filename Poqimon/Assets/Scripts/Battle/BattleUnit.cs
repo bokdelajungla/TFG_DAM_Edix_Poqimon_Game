@@ -29,7 +29,7 @@ public class BattleUnit : MonoBehaviour
     {
         Poqimon = poqimon;
         
-        image.sprite = (isPLayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : image.sprite = Poqimon.PoqimonBase.PoqimonFrontSprite;
+        image.sprite = (isPLayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : Poqimon.PoqimonBase.PoqimonFrontSprite;
 
         hud.SetData(poqimon);
         

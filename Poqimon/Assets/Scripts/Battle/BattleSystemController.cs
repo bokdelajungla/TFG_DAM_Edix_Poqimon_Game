@@ -60,14 +60,17 @@ public class BattleSystemController : MonoBehaviour
     private IEnumerator SetupBattle()
     {
         state = BattleState.Start;
+        Debug.Log(playerParty.GetHealthyPoqimon().PoqimonBase.PoqimonName);
+        Debug.Log(enemyPoqimon.PoqimonBase.PoqimonName);
+
         playerUnit.SetUp(playerParty.GetHealthyPoqimon());
         enemyUnit.SetUp(enemyPoqimon);
-
+        
         dialog.SetMoveNames(playerUnit.Poqimon.Moves);
         
         partyScreenController.Init();
 
-        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.name} just appeared!");
+        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.PoqimonName} just appeared!");
 
         ChooseFirstTurn();
     }
@@ -320,7 +323,7 @@ public class BattleSystemController : MonoBehaviour
         dialog.SetMoveNames(switchPoqimon.Moves);
         yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}");
         
-        //TODO: StartCoroutine(EnemyMove());
+        StartCoroutine(EnemyMove());
         
     }
 
