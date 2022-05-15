@@ -26,6 +26,7 @@ public class Poqimon
     
     // Status & Status Changes
     public Condition Status { get; set; }
+    public int StatusTime { get; set; }
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
     // HP
@@ -173,7 +174,13 @@ public class Poqimon
     public void SetStatus(ConditionID conditionID)
     {
         Status = ConditionsDB.Conditions[conditionID];
+        Status?.OnStart?.Invoke(this);
         StatusChanges.Enqueue($"{PoqimonBase.PoqimonName} {Status.StartMsg}");
+    }
+
+    public void CureStatus()
+    {
+        Status = null;
     }
 
     // get a random move (IA enemey)
@@ -183,11 +190,23 @@ public class Poqimon
         return Moves[r];
     }
 
+    // Reset the Stats if the battle is over
     public void OnBattleOver()
     {
         ResetStatBoost();
     }
+
+    // Event before move (used if it's paralyzed, sleeping, ...)
+    public bool OnBeforeMove()
+    {
+        if (Status?.OnBeforeMove != null)
+        {
+            return Status.OnBeforeMove(this);
+        }
+        return true;
+    }
     
+    // Event after the turn (used if it's poisoned, burned, ...)
     public void OnAfterTurn()
     {
         // (coditional call) We'll only call it if is not null
