@@ -107,11 +107,11 @@ public class Poqimon
 
             if (boost > 0)
             {
-                StatusChanges.Enqueue($"{PoqimonBase.name}'s {stat} rose!");
+                StatusChanges.Enqueue($"{PoqimonBase.PoqimonName}'s {stat} rose!");
             }
             else 
             {
-                StatusChanges.Enqueue($"{PoqimonBase.name}'s {stat} fell!");
+                StatusChanges.Enqueue($"{PoqimonBase.PoqimonName}'s {stat} fell!");
             }
         }
     }
@@ -139,14 +139,14 @@ public class Poqimon
         {
             critical = 2f;
         }
+
         //Move Effectiveness
-        /* TODO CORREGIR
         float type = TypeChart.GetEffectiveness(move.MoveBase.MoveType, this.PoqimonBase.PoqimonType1) *
                      TypeChart.GetEffectiveness(move.MoveBase.MoveType, this.PoqimonBase.PoqimonType2);
-        */
+
         var damageDetails = new DamageDetails()
         {
-            TypeEffectiveness = 0f, // TODO CORREGIR = type,
+            TypeEffectiveness = type,
             Critical = critical,
             Fainted = false
         };
@@ -154,10 +154,10 @@ public class Poqimon
         //Damage Value
         float d = 0;
         //Random Modifier (plus critical and aeffectiveness)
-        float modifiers = UnityEngine.Random.Range(0.85f, 1f) * critical; // TODO CORREGIR * type;
+        float modifiers = UnityEngine.Random.Range(0.85f, 1f) * critical * type;
         //Level dependency
         float a = (2 * attacker.PoqimonLevel + 10)/250f;
-        //Damage Calculationç
+        //Damage Calculation
         float atk = (move.MoveBase.MoveCategory == CategoryType.Special) ? attacker.SpAttack : attacker.Attack;
         float def = (move.MoveBase.MoveCategory == CategoryType.Special) ? this.SpDefense : this.Defense;
         d = a * move.MoveBase.MovePower * ((float)atk/ def) + 2;
