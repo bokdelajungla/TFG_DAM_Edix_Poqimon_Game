@@ -17,7 +17,10 @@ MonoBehaviour:
     Sp. Atk stat. '
   moveType: 1
   moveCategory: 2
-  movePower: 0
-  moveAccuracy: 0
+  movePower: 55
+  target: 0
+  effects:
+    boosts: []
+  moveAccuracy: 95
   movePP: 20
   priority: 0

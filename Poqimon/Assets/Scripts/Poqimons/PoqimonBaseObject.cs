@@ -74,6 +74,7 @@ public class PoqimonBaseObject : ScriptableObject
 
 }
 
+// Type of the Poqimon
 public enum PoqimonType
 {
     None,
@@ -97,7 +98,8 @@ public enum PoqimonType
     Fairy
 }
 
-public enum Stat 
+//Poqimon Stats 
+public enum Stat
 {
     Attack,
     Defense,
@@ -106,9 +108,10 @@ public enum Stat
     Speed
 }
 
+// Effectivenes of the types
 public class TypeChart
 {
-    float[][] chart =
+    static float[][] chart =
     {
                              //Defending type       
     //AttkType               Normal,Fight,Flyng,Poisn, Grnd, Rock,  Bug,Ghost,Steel, Fire,Water,Grass,Elctr,Psych,  Ice,Dragn, Dark,Fairy//  
@@ -131,6 +134,20 @@ public class TypeChart
     /*Dark*/     new float[] {    1, 0.5f,    1,    1,    1,    1,    1,    2,    1,    1,    1,    1,    1,    2,    1,    1, 0.5f, 0.5f},
     /*Fairy*/    new float[] {    1,    2,    1, 0.5f,    1,    1,    1,    1, 0.5f, 0.5f,    1,    1,    1,    1,    1,    2,    2,    1}
     };
+
+    public static float GetEffectiveness(PoqimonType atkType, PoqimonType defType)
+    {
+        if (atkType == PoqimonType.None || defType == PoqimonType.None)
+        {
+            return 1;
+        }
+
+        int row = (int) atkType - 1;
+        int col = (int) defType - 1;
+
+        return chart[row][col];
+    }
+    
 }
 
 [Serializable]

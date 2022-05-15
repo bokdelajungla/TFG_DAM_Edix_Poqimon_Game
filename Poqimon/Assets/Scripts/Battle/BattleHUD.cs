@@ -9,13 +9,20 @@ public class BattleHUD : MonoBehaviour
     [SerializeField] Text lvlTxt;
     [SerializeField] HPBar hpBar;
 
-    Poqimon poqimon;
+    private Poqimon _poqimon;
 
     public void SetData(Poqimon poqimon)
     {
-        nameTxt.text = poqimon.PoqimonBase.PoqimonName;
-        lvlTxt.text = "lvl " + poqimon.PoqimonLevel;
-        hpBar.SetHP((float) poqimon.CurrentHp / poqimon.MaxHP);
-        hpBar.setHPText(poqimon.CurrentHp + " / " + poqimon.MaxHP);
+        _poqimon = poqimon;
+        nameTxt.text = _poqimon.PoqimonBase.PoqimonName;
+        lvlTxt.text = "lvl " + _poqimon.PoqimonLevel;
+        hpBar.SetHP((float) _poqimon.CurrentHp / _poqimon.MaxHp);
+        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
+    }
+
+    public IEnumerator UpdateHP()
+    {
+        yield return hpBar.SetHpSmooth((float) _poqimon.CurrentHp / _poqimon.MaxHp);
+        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
     }
 }
