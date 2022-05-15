@@ -39,6 +39,7 @@ public class HPBar : MonoBehaviour
 
         while (currentHP - newHP > Mathf.Epsilon)
         {
+            SetHpColor(currentHP);
             currentHP -= changeAmt * Time.deltaTime;
             health.transform.localScale = new Vector3(currentHP, 1f);
             yield return null;

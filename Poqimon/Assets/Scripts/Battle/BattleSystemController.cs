@@ -408,18 +408,18 @@ public class BattleSystemController : MonoBehaviour
         }
         if (damageDetails.TypeEffectiveness > 1f)
         {
-            yield return dialog.TypeTxt("It's very effective");
+            yield return dialog.TypeTxt("It's very effective!");
         }
         else if (damageDetails.TypeEffectiveness < 1f)
         {
-            yield return dialog.TypeTxt("It's not effective");
+            yield return dialog.TypeTxt("It's not very effective...");
         }
     }
 
     IEnumerator TryToRun()
     {
         state = BattleState.Busy;
-        if ( /*isTrainerBattle*/false)
+        if ( isTrainerBattle)
         {
             yield return dialog.TypeTxt($"You can't run from a trainer battle!");
             state = BattleState.PlayerAction;
