@@ -6,7 +6,11 @@ using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] bool isPLayer;
+    [SerializeField] private bool isPLayer;
+    public bool IsPlayer => isPLayer;
+
+    [SerializeField] private BattleHUD hud;
+    public BattleHUD Hud => hud;
     
     public Poqimon Poqimon { get; set; }
 
@@ -27,9 +31,10 @@ public class BattleUnit : MonoBehaviour
         
         image.sprite = (isPLayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : image.sprite = Poqimon.PoqimonBase.PoqimonFrontSprite;
 
-        PlayEnterAnimation();
+        hud.SetData(poqimon);
         
         image.color = originalColor;
+        PlayEnterAnimation();
     }
     
     public void PlayEnterAnimation()
