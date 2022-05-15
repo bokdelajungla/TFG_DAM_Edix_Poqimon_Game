@@ -29,6 +29,7 @@ public class Poqimon
 
     // HP
     public int CurrentHp { get; set; }
+    public bool HpChanged { get; set; }
     
     //Initializer
     public void Init()
