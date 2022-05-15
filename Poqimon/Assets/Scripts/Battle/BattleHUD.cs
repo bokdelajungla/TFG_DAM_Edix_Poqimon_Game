@@ -22,7 +22,12 @@ public class BattleHUD : MonoBehaviour
 
     public IEnumerator UpdateHP()
     {
-        yield return hpBar.SetHpSmooth((float) _poqimon.CurrentHp / _poqimon.MaxHp);
-        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
+        if (_poqimon.HpChanged)
+        {
+            yield return hpBar.SetHpSmooth((float) _poqimon.CurrentHp / _poqimon.MaxHp);
+            // TODO SetTxtSmooth - funcion propia
+            hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
+            _poqimon.HpChanged = false;
+        }
     }
 }

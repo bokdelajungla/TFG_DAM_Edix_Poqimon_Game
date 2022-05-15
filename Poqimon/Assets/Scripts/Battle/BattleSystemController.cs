@@ -64,7 +64,7 @@ public class BattleSystemController : MonoBehaviour
     {
         state = BattleState.BattleOver;
         // Reset All the Stats of every Poqimmon at the Party when the battle is over
-        playerParty.Party.ForEach(poq => poq.onBattleOver());
+        playerParty.Party.ForEach(poq => poq.OnBattleOver());
         OnBattleOver(won);
     }
     
@@ -247,6 +247,7 @@ public class BattleSystemController : MonoBehaviour
     IEnumerator RunMoveEffects(Move move, Poqimon source, Poqimon target)
     {
         var effects = move.MoveBase.Effects;
+        // Boosts stats
         if (move.MoveBase.Effects.Boosts != null)
         {
             if (move.MoveBase.Target == MoveTarget.Player)
@@ -258,12 +259,14 @@ public class BattleSystemController : MonoBehaviour
                 target.ApplyBoosts(effects.Boosts);
             }
         }
-
+        
+        // Status condition
         if (effects.Status != ConditionID.none)
         {
-            
+            target.SetStatus(effects.Status);
         }
         
+        // Show changes
         yield return ShowStatusChanges(source);
         yield return ShowStatusChanges(target);
     }
@@ -337,17 +340,19 @@ public class BattleSystemController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         targetUnit.PlayHitAnimation();
 
+        // Status movement
         if (move.MoveBase.MoveCategory == CategoryType.Status)
         {
             yield return RunMoveEffects(move, sourceUnit.Poqimon, targetUnit.Poqimon);
         }
+        // Special or Physical movement
         else
         {
             var damageDetails = targetUnit.Poqimon.TakeDamage(move, sourceUnit.Poqimon);
             yield return targetUnit.Hud.UpdateHP();
             yield return ShowDamageDetails(damageDetails);
         }
-        
+        // Enemy Dies
         if (targetUnit.Poqimon.CurrentHp <= 0)
         {
             yield return dialog.TypeTxt($"{targetUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
@@ -355,6 +360,19 @@ public class BattleSystemController : MonoBehaviour
             
             yield return new WaitForSeconds(2f);
             CheckForBattleOver(targetUnit);
+        }
+        
+        // Some statuses (burn, poison hurt the poqimon after the turn)
+        sourceUnit.Poqimon.OnAfterTurn();
+        yield return ShowStatusChanges(sourceUnit.Poqimon);
+        yield return sourceUnit.Hud.UpdateHP();
+        if (sourceUnit.Poqimon.CurrentHp <= 0)
+        {
+            yield return dialog.TypeTxt($"{sourceUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
+            sourceUnit.PlayFaintedAnimation();
+            
+            yield return new WaitForSeconds(2f);
+            CheckForBattleOver(sourceUnit);
         }
     }
 
