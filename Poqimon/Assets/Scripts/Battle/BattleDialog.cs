@@ -70,6 +70,7 @@ public class BattleDialog : MonoBehaviour
 
         ppTxt.text = $"PP {move.MovePP}/{move.MoveBase.MovePP}";
         moveTypeTxt.text = move.MoveBase.MoveType.ToString();
+        moveCategoryTxt.text = move.MoveBase.MoveCategory.ToString();
     }
 
     public void SetMoveNames(List<Move> moves)

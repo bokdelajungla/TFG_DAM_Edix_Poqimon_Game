@@ -60,8 +60,6 @@ public class BattleSystemController : MonoBehaviour
     private IEnumerator SetupBattle()
     {
         state = BattleState.Start;
-        Debug.Log(playerParty.GetHealthyPoqimon().PoqimonBase.PoqimonName);
-        Debug.Log(enemyPoqimon.PoqimonBase.PoqimonName);
 
         playerUnit.SetUp(playerParty.GetHealthyPoqimon());
         enemyUnit.SetUp(enemyPoqimon);
@@ -321,7 +319,7 @@ public class BattleSystemController : MonoBehaviour
         
         playerUnit.SetUp(switchPoqimon);
         dialog.SetMoveNames(switchPoqimon.Moves);
-        yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}");
+        yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}!");
         
         StartCoroutine(EnemyMove());
         
