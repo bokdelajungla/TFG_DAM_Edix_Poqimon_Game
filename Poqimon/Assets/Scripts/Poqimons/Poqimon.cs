@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 [Serializable]
 public class Poqimon 
@@ -8,17 +9,25 @@ public class Poqimon
     [SerializeField] PoqimonBaseObject poqimonBase;
     [SerializeField] int poqimonLevel;
 
+    // Base characterictis
     public PoqimonBaseObject PoqimonBase => poqimonBase;
 
+    // Lvl
     public int PoqimonLevel => poqimonLevel;
     
+    // Movements
     public List<Move> moves;
     public List<Move> Moves => moves;
     
+    // Stats & Stat Boosts
     public Dictionary<Stat, int> Stats { get; private set; }
     
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     
+    // Status Changes
+    public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
+
+    // HP
     private int _currentHp;
     public int CurrentHp 
     {
@@ -43,38 +52,42 @@ public class Poqimon
                 break;
             }
         }
-        
         CalcStats();
         CurrentHp = MaxHp;
-
-        StatBoosts = new Dictionary<Stat, int>()
-        {
-            { Stat.Atk , 0 },
-            { Stat.Def , 0 },
-            { Stat.SpAtk , 0 },
-            { Stat.SpDef , 0 },
-            { Stat.Speed , 0 }
-        };
+        ResetStatBoost();
     }
 
     // calculate the stats of the poqimon
-    void CalcStats()
+    private void CalcStats()
     {
         Stats = new Dictionary<Stat, int>();
-        Stats.Add(Stat.Atk, Mathf.FloorToInt((poqimonBase.Attack*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.Def, Mathf.FloorToInt((poqimonBase.Defense*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.SpAtk, Mathf.FloorToInt((poqimonBase.SpAttack*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.SpDef, Mathf.FloorToInt((poqimonBase.SpDefense*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.Attack, Mathf.FloorToInt((poqimonBase.Attack*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.Defense, Mathf.FloorToInt((poqimonBase.Defense*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((poqimonBase.SpAttack*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((poqimonBase.SpDefense*poqimonLevel) / 100f) + 5);
         Stats.Add(Stat.Speed, Mathf.FloorToInt((poqimonBase.Speed*poqimonLevel) / 100f) + 5);
         
         MaxHp = Mathf.FloorToInt((poqimonBase.MaxHP*poqimonLevel) / 100f) + 10;
     }
 
-    int GetStat(Stat stat)
+    // Reset (to 0) all the stats
+    private void ResetStatBoost()
+    {
+        StatBoosts = new Dictionary<Stat, int>()
+        {
+            { Stat.Attack , 0 },
+            { Stat.Defense , 0 },
+            { Stat.SpAttack , 0 },
+            { Stat.SpDefense , 0 },
+            { Stat.Speed , 0 }
+        };
+    }
+
+    // Getter stats
+    private int GetStat(Stat stat)
     {
         int statValue = Stats[stat];
         
-        // Apply boost to the stat
         int boost = StatBoosts[stat];
         var boostValues = new float[] {1f, 1.5f, 2f, 2.5f, 3f, 3.5f, 4f};
 
@@ -83,6 +96,7 @@ public class Poqimon
         return statValue;
     }
 
+    // Apply boosts to the stats
     public void ApplyBoosts(List<StatBoost> statBoosts)
     {
         foreach (var statBoost in  statBoosts)
@@ -90,17 +104,25 @@ public class Poqimon
             var stat = statBoost.stat;
             var boost = statBoost.boost;
 
+            // at mox +- 6 of increasse or decreasse the stat 
             StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
-            
-            Debug.Log($"{stat} has been boosted to {StatBoosts[stat]}");
+
+            if (boost > 0)
+            {
+                StatusChanges.Enqueue($"{PoqimonBase.name}'s {stat} rose!");
+            }
+            else 
+            {
+                StatusChanges.Enqueue($"{PoqimonBase.name}'s {stat} fell!");
+            }
         }
     }
     
     //Stats Formulas (from Bulbapedia)
-    public int Attack => GetStat(Stat.Atk);
-    public int Defense => GetStat(Stat.Def);
-    public int SpAttack => GetStat(Stat.SpAtk);
-    public int SpDefense => GetStat(Stat.SpDef);
+    public int Attack => GetStat(Stat.Attack);
+    public int Defense => GetStat(Stat.Defense);
+    public int SpAttack => GetStat(Stat.SpAttack);
+    public int SpDefense => GetStat(Stat.SpDefense);
     public int Speed => GetStat(Stat.Speed);
     
     public int MaxHp { get; private set; }
@@ -150,6 +172,17 @@ public class Poqimon
             damageDetails.Fainted = true;
         }
         return damageDetails;
+    }
+
+    public Move GetRndMove()
+    {
+        int r = UnityEngine.Random.Range(0, Moves.Count);
+        return Moves[r];
+    }
+
+    public void onBattleOver()
+    {
+        ResetStatBoost();
     }
 }
 

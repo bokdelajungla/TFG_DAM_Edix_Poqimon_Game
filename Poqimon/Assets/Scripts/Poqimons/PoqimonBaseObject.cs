@@ -70,10 +70,10 @@ public enum PoqimonType
 // poqimon stats 
 public enum Stat
 {
-    Atk,
-    Def,
-    SpAtk,
-    SpDef,
+    Attack,
+    Defense,
+    SpAttack,
+    SpDefense,
     Speed
 }
 
