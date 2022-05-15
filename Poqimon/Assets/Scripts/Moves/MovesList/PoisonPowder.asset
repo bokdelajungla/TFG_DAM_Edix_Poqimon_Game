@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: 
   moveDescription: 
-  moveType: 3
+  moveType: 4
   moveCategory: 2
   movePower: 0
   target: 0
@@ -23,3 +23,4 @@ MonoBehaviour:
     status: 1
   moveAccuracy: 75
   movePP: 35
+  priority: 0
