@@ -6,34 +6,27 @@ using Random = System.Random;
 [Serializable]
 public class Poqimon 
 {
-    [SerializeField] PoqimonBaseObject poqimonBase;
-    [SerializeField] int poqimonLevel;
-
     // Base characterictis
+    [SerializeField] PoqimonBaseObject poqimonBase;
     public PoqimonBaseObject PoqimonBase => poqimonBase;
-
-    // Lvl
-    public int PoqimonLevel => poqimonLevel;
     
+    // Lvl
+    [SerializeField] int poqimonLevel;
+    public int PoqimonLevel => poqimonLevel;
+
     // Movements
     public List<Move> moves;
     public List<Move> Moves => moves;
     
     // Stats & Stat Boosts
     public Dictionary<Stat, int> Stats { get; private set; }
-    
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     
     // Status Changes
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
     // HP
-    private int _currentHp;
-    public int CurrentHp 
-    {
-        get => _currentHp;
-        set => _currentHp = value;
-    }
+    public int CurrentHp { get; set; }
     
     //Initializer
     public void Init(){
