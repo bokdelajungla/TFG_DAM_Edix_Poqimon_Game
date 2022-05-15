@@ -12,7 +12,7 @@ public class PartyScreenController : MonoBehaviour
 
     public void Init()
     {
-        memberSlots = GetComponentsInChildren<PartyMemberController>();
+        memberSlots = GetComponentsInChildren<PartyMemberController>(true);
     }
 
     public void SetPartyData(List<Poqimon> partyPoqimons)
@@ -23,6 +23,7 @@ public class PartyScreenController : MonoBehaviour
         {
             if (i < partyPoqimons.Count)
             {
+                memberSlots[i].gameObject.SetActive(true);
                 memberSlots[i].SetData(partyPoqimons[i]);
             }
             else

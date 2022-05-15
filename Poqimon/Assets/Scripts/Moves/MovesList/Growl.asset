@@ -15,7 +15,7 @@ MonoBehaviour:
   moveName: Growl
   moveDescription: The user growls in an endearing way, making the foe less wary.
     The target's Attack stat is lowered.
-  moveType: 0
+  moveType: 1
   moveCategory: 2
   movePower: 0
   target: 0
@@ -25,3 +25,4 @@ MonoBehaviour:
       boost: -1
   moveAccuracy: 100
   movePP: 40
+  priority: 0

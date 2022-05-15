@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
@@ -10,44 +11,44 @@ public class Poqimon
     [SerializeField] PoqimonBaseObject poqimonBase;
     public PoqimonBaseObject PoqimonBase => poqimonBase;
     
+    public int Exp {get; set;}
+
     // Lvl
     [SerializeField] int poqimonLevel;
     public int PoqimonLevel => poqimonLevel;
 
     // Movements
-    public List<Move> moves;
-    public List<Move> Moves => moves;
+    public List<Move> Moves {get; set;}
     
     // Stats & Stat Boosts
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     
-    // Status & Status Changes
-    public Condition Status { get; set; }
+    // Status Changes
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
     // HP
     public int CurrentHp { get; set; }
     
-    public bool HpChanged { get; set; }
-    
     //Initializer
-    public void Init(){
-        
-        // Generate Moves
-        this.moves = new List<Move>();
+    public void Init()
+    {
+        //Generate Moves
+        Moves = new List<Move>();
+
         foreach (var learnableMove in poqimonBase.LearnableMoves)
         {
             if(learnableMove.LearnLevel <= poqimonLevel)
             {
-                moves.Add(new Move(learnableMove.MoveBase));
+                Moves.Add(new Move(learnableMove.MoveBase));
             }
-            if(moves.Count >= 4)
+            if(Moves.Count >= 4)
             {
                 //TODO: Learning logic (only 4 slots)
                 break;
             }
         }
+
         CalcStats();
         CurrentHp = MaxHp;
         ResetStatBoost();
@@ -56,6 +57,7 @@ public class Poqimon
     // calculate the stats of the poqimon
     private void CalcStats()
     {
+        //Stats Formulas (from Bulbapedia)
         Stats = new Dictionary<Stat, int>();
         Stats.Add(Stat.Attack, Mathf.FloorToInt((poqimonBase.Attack*poqimonLevel) / 100f) + 5);
         Stats.Add(Stat.Defense, Mathf.FloorToInt((poqimonBase.Defense*poqimonLevel) / 100f) + 5);
@@ -161,18 +163,15 @@ public class Poqimon
         d = a * move.MoveBase.MovePower * ((float)atk/ def) + 2;
         int damage = Mathf.FloorToInt(d + modifiers);
 
-        UpdateHP(damage);
-        
+        CurrentHp -= damage;
+        if (CurrentHp <= 0)
+        {
+            CurrentHp = 0;
+            damageDetails.Fainted = true;
+        }
         return damageDetails;
     }
 
-    public void SetStatus(ConditionID conditionID)
-    {
-        Status = ConditionsDB.Conditions[conditionID];
-        StatusChanges.Enqueue($"{PoqimonBase.PoqimonName} {Status.StartMsg}");
-    }
-
-    // get a random move (IA enemey)
     public Move GetRndMove()
     {
         int r = UnityEngine.Random.Range(0, Moves.Count);
@@ -184,17 +183,32 @@ public class Poqimon
         ResetStatBoost();
     }
 
-    public void OnAfterTurn()
+    public bool CheckForLevelUp()
     {
-        // (coditional call) We'll only call it if is not null
-        Status?.OnAfterTurn?.Invoke(this);
+        if (Exp > PoqimonBase.GetExperienceForLvl(poqimonLevel + 1))
+        {
+            ++poqimonLevel;
+            CalcStats();
+            return true;
+        }
+        return false;
     }
-    
-    // Update the HP taking damage
-    public void UpdateHP(int damage)
+
+
+    public Evolution CheckForEvolution()
     {
-        CurrentHp = Mathf.Clamp(CurrentHp - damage, 0, MaxHp);
-        HpChanged = true;
+        return PoqimonBase.Evolutions.FirstOrDefault(e => e.LevelRequired <= poqimonLevel);
+    }
+
+    //Evolution Function
+    public void Evolve (Evolution evolution)
+    {   
+        //Set Poqimon Base to the Evolution one
+        poqimonBase = evolution.EvolvesInto;
+        //Recalculate Stat for new poqimon Base
+        CalcStats();
+        //Set currentHP to new MaxHp (Heal up poqimon)
+        CurrentHp = MaxHp;
     }
 }
 
@@ -204,5 +218,3 @@ public class DamageDetails
     public float Critical { get; set; }
     public float TypeEffectiveness { get; set; }
 }
-
-

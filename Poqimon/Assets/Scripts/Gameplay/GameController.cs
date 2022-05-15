@@ -16,12 +16,36 @@ public class GameController : MonoBehaviour
 
     GameState state;
 
+    public static GameController Instance {get; private set;}
+
+    private void Awake() 
+    {
+        Instance = this;
+        menuController = GetComponent<MenuController>();
+        if (SavingSystem.i.IsNewGame == false)
+        {
+            SavingSystem.i.Load("saveSlot1");
+        }
+        state = GameState.FreeRoam;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        //Subscribe to PlayerController Events
         playerController.OnEncountered += StartBattle;
+        playerController.OnTrainerFoV += (Collider2D trainerCollider) => {
+            var trainer = trainerCollider.GetComponentInParent<TrainerController>();
+            if (trainer != null)
+            {
+                state = GameState.Busy;
+                StartCoroutine(trainer.TriggerTrainerBattle(playerController));}
+        };
+
+        //Subscribe to BattleController Events
         battleSystemController.OnBattleOver += EndBattle;
 
+        //Subscribe to DialogController Events
         DialogController.Instance.OnShowDialog += () => 
         {
             state = GameState.Dialog;
@@ -31,15 +55,15 @@ public class GameController : MonoBehaviour
             if (state == GameState.Dialog) {state = GameState.FreeRoam;}
         };
 
+        //Subscribe to MenuController Events
         menuController.onBack += () => {
             state = GameState.FreeRoam;
         };
+        menuController.onMenuSelected += OnMenuSelected;
 
-        menuController.onMenuSelected += onMenuSelected;
-    }
-
-    private void Awake() {
-        menuController = GetComponent<MenuController>();
+        //Subscribe to EvolutinController Events
+        EvolutionController.i.OnEvolutionStart += () => state = GameState.Evolution;
+        EvolutionController.i.OnEvolutionEnd += () => state = GameState.FreeRoam;
     }
 
     // Update is called once per frame
@@ -88,14 +112,33 @@ public class GameController : MonoBehaviour
         
         battleSystemController.StartBattle(playerParty, enemyPoqimon);
     }
-    private void EndBattle(bool playerWon)
+
+    public void StartTrainerBattle(TrainerController trainerController)
     {
+        state = GameState.Battle;
+        battleSystemController.gameObject.SetActive(true);
+        worldCamera.gameObject.SetActive(false);
+
+        var playerParty = playerController.GetComponent<PoqimonParty>();
+        var trainerParty = trainerController.GetComponent<PoqimonParty>();
+        
+        battleSystemController.StartTrainerBattle(playerParty, trainerParty);
+    }
+    
+    private void EndBattle(bool playerWon)
+    {        
+        //Return to FreeRoam state
         state = GameState.FreeRoam;
         battleSystemController.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
+
+        //CheckForEvolutions in party
+        var playerParty = playerController.GetComponent<PoqimonParty>();
+        StartCoroutine(playerParty.CheckForEvolutions());
+
     }
 
-    void onMenuSelected(int selectedItem) {
+    void OnMenuSelected(int selectedItem) {
         if (selectedItem == 0) {
             //Pokemon
         }
@@ -106,17 +149,17 @@ public class GameController : MonoBehaviour
         }
         else if (selectedItem == 2) {
             // Save
-             SavingSystem.i.Save("saveSlot1");
-              state = GameState.FreeRoam;
+            SavingSystem.i.Save("saveSlot1");
+            state = GameState.FreeRoam;
         }
         else if (selectedItem == 3) {
             // Load
-             SavingSystem.i.Load("saveSlot1");
-              state = GameState.FreeRoam;
+            SavingSystem.i.Load("saveSlot1");
+            state = GameState.FreeRoam;
         }
 
        
     }
 }
 
-public enum GameState { FreeRoam, Battle, Dialog, Menu, Bag }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, Bag, Busy, Evolution }

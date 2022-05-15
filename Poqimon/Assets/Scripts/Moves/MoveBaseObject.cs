@@ -24,6 +24,8 @@ public class MoveBaseObject : ScriptableObject
     public int MoveAccuracy => moveAccuracy;
     [SerializeField] private int movePP;
     public int MovePP => movePP;
+    [SerializeField] private int priority;
+    public int Priority => priority;
 }
 
 [System.Serializable]

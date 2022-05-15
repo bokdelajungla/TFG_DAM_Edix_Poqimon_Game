@@ -17,12 +17,7 @@ TagManager:
   - LongGrass
   - Interactable
   - SolidObjects
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TrainerFoVs
   - 
   - 
   - 
@@ -54,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1240443439
+    locked: 0
+  - name: UI
+    uniqueID: 74548263
     locked: 0

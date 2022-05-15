@@ -8,10 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class SavingSystem : MonoBehaviour
 {
+    public bool IsNewGame {get; set;}
+
     public static SavingSystem i { get; private set; }
     private void Awake()
     {
         i = this;
+        i.IsNewGame = true;
     }
 
     Dictionary<string, object> gameState = new Dictionary<string, object>();
@@ -98,7 +101,7 @@ public class SavingSystem : MonoBehaviour
         }
     }
 
-    private string GetPath(string saveFile)
+    public string GetPath(string saveFile)
     {
         return Path.Combine(Application.persistentDataPath, saveFile);
     }

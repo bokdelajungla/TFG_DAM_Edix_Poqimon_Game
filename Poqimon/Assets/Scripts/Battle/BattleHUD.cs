@@ -9,25 +9,20 @@ public class BattleHUD : MonoBehaviour
     [SerializeField] Text lvlTxt;
     [SerializeField] HPBar hpBar;
 
-    private Poqimon _poqimon;
+    private Poqimon poqimon;
 
     public void SetData(Poqimon poqimon)
     {
-        _poqimon = poqimon;
-        nameTxt.text = _poqimon.PoqimonBase.PoqimonName;
-        lvlTxt.text = "lvl " + _poqimon.PoqimonLevel;
-        hpBar.SetHP((float) _poqimon.CurrentHp / _poqimon.MaxHp);
-        hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
+        this.poqimon = poqimon;
+        nameTxt.text = this.poqimon.PoqimonBase.PoqimonName;
+        lvlTxt.text = "lvl " + this.poqimon.PoqimonLevel;
+        hpBar.SetHP((float) this.poqimon.CurrentHp / this.poqimon.MaxHp);
+        hpBar.setHPText(this.poqimon.CurrentHp + " / " + this.poqimon.MaxHp);
     }
 
     public IEnumerator UpdateHP()
     {
-        if (_poqimon.HpChanged)
-        {
-            yield return hpBar.SetHpSmooth((float) _poqimon.CurrentHp / _poqimon.MaxHp);
-            // TODO SetTxtSmooth - funcion propia
-            hpBar.setHPText(_poqimon.CurrentHp + " / " + _poqimon.MaxHp);
-            _poqimon.HpChanged = false;
-        }
+        yield return hpBar.SetHpSmooth((float) poqimon.CurrentHp / poqimon.MaxHp);
+        hpBar.setHPText(poqimon.CurrentHp + " / " + poqimon.MaxHp);
     }
 }

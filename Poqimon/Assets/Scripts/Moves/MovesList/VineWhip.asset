@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Vine Whip
   moveDescription: The foe is struck with slender, whiplike vines to inflict damage.
-  moveType: 11
+  moveType: 12
   moveCategory: 0
   movePower: 45
   moveAccuracy: 100
   movePP: 25
+  priority: 0

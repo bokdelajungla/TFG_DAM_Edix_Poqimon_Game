@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Water Gun
   moveDescription: ' Squirts water to attack the target.'
-  moveType: 10
+  moveType: 11
   moveCategory: 1
   movePower: 40
   moveAccuracy: 100
   movePP: 25
+  priority: 0

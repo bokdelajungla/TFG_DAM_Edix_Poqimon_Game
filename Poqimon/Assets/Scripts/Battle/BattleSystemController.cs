@@ -2,13 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, Busy, PartyScreen, BattleOver}
+public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, PlayerAction, PlayerMove, EnemyMove, Busy, PartyScreen, BattleOver}
+public enum BattleAction { Move, UseItem, SwitchPoqimon, Run}
 
 public class BattleSystemController : MonoBehaviour
 {
     [SerializeField] BattleUnit playerUnit;
     [SerializeField] BattleUnit enemyUnit;
+    [SerializeField] BattleHUD playerHUD;
+    [SerializeField] BattleHUD enemyHUD;
+    [SerializeField] Image playerCharacter;
+    [SerializeField] Image trainerCharacter;
     [SerializeField] BattleDialog dialog;
     [SerializeField] PartyScreenController partyScreenController;
 
@@ -21,7 +27,14 @@ public class BattleSystemController : MonoBehaviour
     int currentMember;
 
     PoqimonParty playerParty;
+    PoqimonParty oponentParty; 
     Poqimon enemyPoqimon;
+
+    bool isTrainerBattle = false;
+    int escapeAttemps;
+
+    PlayerController playerController;
+    TrainerController trainerController;
     
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {   
@@ -31,29 +44,43 @@ public class BattleSystemController : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    public void StartTrainerBattle(PoqimonParty playerParty, PoqimonParty oponentParty)
+    {   
+        this.playerParty = playerParty;
+        this.oponentParty = oponentParty;
+
+        isTrainerBattle = true;
+
+        playerController = playerParty.GetComponent<PlayerController>();
+        trainerController = trainerController.GetComponent<TrainerController>();
+
+        StartCoroutine(SetupBattle());
+    }
+
     private IEnumerator SetupBattle()
     {
         state = BattleState.Start;
+
         playerUnit.SetUp(playerParty.GetHealthyPoqimon());
         enemyUnit.SetUp(enemyPoqimon);
-
+        
         dialog.SetMoveNames(playerUnit.Poqimon.Moves);
         
         partyScreenController.Init();
 
-        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.name} just appeared!");
+        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.PoqimonName} just appeared!");
 
         ChooseFirstTurn();
     }
 
     private void ChooseFirstTurn()
     {
-        // If the player is faster he starts
+        // If the player is faster => player's turn
         if (playerUnit.Poqimon.Speed >= enemyUnit.Poqimon.Speed)
         {
             ActionSelection();
         }
-        // If the enemy is faster he starts
+        // If the enemy is faster => enemy turn
         else
         {
             StartCoroutine(EnemyMove());
@@ -140,6 +167,8 @@ public class BattleSystemController : MonoBehaviour
             else if (currentAction == 3)
             {
                 //Run
+                //TODO: Implement new Battle logic
+                StartCoroutine(TryToRun());
             }
         }
     
@@ -270,6 +299,7 @@ public class BattleSystemController : MonoBehaviour
         yield return ShowStatusChanges(source);
         yield return ShowStatusChanges(target);
     }
+
     IEnumerator ShowStatusChanges(Poqimon poq)
     {
         while (poq.StatusChanges.Count > 0)
@@ -292,19 +322,12 @@ public class BattleSystemController : MonoBehaviour
         
         playerUnit.SetUp(switchPoqimon);
         dialog.SetMoveNames(switchPoqimon.Moves);
-        yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}");
-
-        if (currentPoqFainted)
-        {
-            ChooseFirstTurn();
-        }
-        else
-        {
-            StartCoroutine(EnemyMove());
-        }
+        yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}!");
+        
+        StartCoroutine(EnemyMove());
         
     }
-    
+
     IEnumerator PlayerMove()
     {
         state = BattleState.PerformMove;
@@ -317,7 +340,7 @@ public class BattleSystemController : MonoBehaviour
             StartCoroutine(EnemyMove());
         }
     }
-    
+
     IEnumerator EnemyMove()
     {
         state = BattleState.PerformMove;
@@ -330,6 +353,7 @@ public class BattleSystemController : MonoBehaviour
             ActionSelection();
         }
     }
+    
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
@@ -389,6 +413,43 @@ public class BattleSystemController : MonoBehaviour
         else if (damageDetails.TypeEffectiveness < 1f)
         {
             yield return dialog.TypeTxt("It's not effective");
+        }
+    }
+
+    IEnumerator TryToRun()
+    {
+        state = BattleState.Busy;
+        if ( /*isTrainerBattle*/false)
+        {
+            yield return dialog.TypeTxt($"You can't run from a trainer battle!");
+            state = BattleState.PlayerAction;
+            yield break;
+        }
+        int playerSpeed = playerUnit.Poqimon.Speed;
+        int enemySpeed = enemyUnit.Poqimon.Speed;
+
+        ++escapeAttemps;
+
+        if (enemySpeed < playerSpeed)
+        {
+            yield return dialog.TypeTxt($"You ran away safely!");
+            OnBattleOver(true);
+        }
+        else
+        {
+            float f = (playerSpeed * 128) / enemySpeed + 30 * escapeAttemps;
+            f = f % 256;
+
+            if (UnityEngine.Random.Range(0,256) < f)
+            {
+                yield return dialog.TypeTxt($"You ran away safely!");
+                OnBattleOver(true);
+            }
+            else
+            {
+                yield return dialog.TypeTxt($"Can't escape!");
+                state = BattleState.PlayerAction; 
+            }
         }
     }
 }

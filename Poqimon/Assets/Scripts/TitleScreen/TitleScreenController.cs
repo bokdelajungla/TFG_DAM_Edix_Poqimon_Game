@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class TitleScreenController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class TitleScreenController : MonoBehaviour
     private AudioSource canvasAudioSource;
     private float delay;
     private Vector3 backgroundStartPosition;
+    private string saveFile = "saveSlot1";
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,11 @@ public class TitleScreenController : MonoBehaviour
         backgroundStartPosition = background.transform.position;
         //TODO: SAVE GAME STATUS
         //if there is gamesaved -> Enable continue button
-        //else
+        var path = SavingSystem.i.GetPath(saveFile);
+        Debug.Log(path);
+        if (File.Exists(path))
+            continueButton.GetComponent<Button>().interactable = true;
+        else
             continueButton.GetComponent<Button>().interactable = false;
     }
 
@@ -48,12 +54,17 @@ public class TitleScreenController : MonoBehaviour
     }
     public void StartGame(){
         canvasAudioSource.PlayOneShot(buttonSelected);
+        SavingSystem.i.IsNewGame = true;
         SceneManager.LoadScene("World");
         
     }
     public void ContinueGame()
     {
         //TODO: ContinueGame Logic
+        canvasAudioSource.PlayOneShot(buttonSelected);
+        SavingSystem.i.IsNewGame = false;
+        SceneManager.LoadScene("World");
+        
     }
     public void QuitGame(){
         canvasAudioSource.PlayOneShot(buttonSelected);

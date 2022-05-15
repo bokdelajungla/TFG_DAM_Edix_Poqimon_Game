@@ -15,8 +15,9 @@ MonoBehaviour:
   moveName: Tackle
   moveDescription: A physical attack in which the user charges and slams into the
     foe with its whole body.
-  moveType: 0
+  moveType: 1
   moveCategory: 0
   movePower: 40
   moveAccuracy: 100
   movePP: 35
+  priority: 0

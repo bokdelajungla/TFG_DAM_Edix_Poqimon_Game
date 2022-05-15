@@ -22,8 +22,4 @@ public class RecoveryItem : ItemBase
    [SerializeField] bool revive;
    [SerializeField] bool maxRevive;
 
-
-
-
-
 }
