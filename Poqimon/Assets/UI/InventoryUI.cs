@@ -27,6 +27,11 @@ public class InventoryUI : MonoBehaviour
         updateItemList();
     }
 
+    private void Update() {
+        inventory = Inventory.getInventory();
+        updateItemList();
+    }
+
     void updateItemList() {
         foreach (Transform child in itemList.transform)
             Destroy(child.gameObject);
