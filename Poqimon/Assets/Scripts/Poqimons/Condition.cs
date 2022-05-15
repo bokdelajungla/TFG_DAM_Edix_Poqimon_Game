@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,4 +8,8 @@ public class Condition
     public string Name { get; set; }
     public string Description { get; set; }
     public string StartMsg { get; set; }
+    
+    // Action called after an event
+    public Action<Poqimon> OnAfterTurn { get; set; }
 }
+
