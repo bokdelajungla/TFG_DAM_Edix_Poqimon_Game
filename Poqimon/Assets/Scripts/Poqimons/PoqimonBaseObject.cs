@@ -38,13 +38,45 @@ public class PoqimonBaseObject : ScriptableObject
     public int SpDefense => spDefense;
     public int Speed => speed;
 
+    //Experience Properties
+    [SerializeField] int expYield;
+    public int ExpYield => expYield;
+    [SerializeField] GrowthRate growthRate;
+    public GrowthRate GrowthRate => growthRate;
+
+    //Cathcing Properties
+    [SerializeField] int catchRate;
+    public int CatchRate => catchRate;
+
     //Movesets
     [SerializeField] private List<LearnableMove> learnableMoves;
     public List<LearnableMove> LearnableMoves => learnableMoves;
+
+    //Evolution Properties
+    [SerializeField] List<Evolution> evolutions;
+    public List<Evolution> Evolutions => evolutions;
+
+    public int MaxNumberOfMoves {get; set;} = 4;
+
+    public int GetExperienceForLvl(int level)
+    {
+        if (growthRate == GrowthRate.Fast)
+            return 4 * (level * level * level ) / 5;
+        else if (growthRate == GrowthRate.MediumFast)
+            return level * level * level;
+        else if (growthRate == GrowthRate.MediumSlow)
+            return (6 * (level * level * level ) / 5) - (15 * (level * level)) + (100 * level) - 140;
+        else if (growthRate == GrowthRate.Slow)
+            return 5 * (level * level * level) / 4;
+
+        return -1;
+    }
+
 }
 
 public enum PoqimonType
 {
+    None,
     Normal,
     Fight,
     Flying,
@@ -63,6 +95,15 @@ public enum PoqimonType
     Dragon,
     Dark,
     Fairy
+}
+
+public enum Stat 
+{
+    Attack,
+    Defense,
+    SpAttack,
+    SpDefense,
+    Speed
 }
 
 public class TypeChart
@@ -102,3 +143,17 @@ public class LearnableMove
 
 }
 
+public enum GrowthRate
+{
+    Fast, MediumFast, MediumSlow, Slow
+}
+
+[System.Serializable]
+public class Evolution
+{
+    [SerializeField] PoqimonBaseObject evolvesInto;
+    [SerializeField] int levelRequired;
+
+    public PoqimonBaseObject EvolvesInto => evolvesInto;
+    public int LevelRequired => levelRequired;
+}

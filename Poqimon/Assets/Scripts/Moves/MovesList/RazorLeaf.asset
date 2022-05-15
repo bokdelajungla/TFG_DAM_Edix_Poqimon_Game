@@ -15,8 +15,9 @@ MonoBehaviour:
   moveName: Growth
   moveDescription: 'The user''s body is forced to grow all at once. It raises the
     Sp. Atk stat. '
-  moveType: 0
+  moveType: 1
   moveCategory: 2
   movePower: 0
   moveAccuracy: 0
   movePP: 20
+  priority: 0

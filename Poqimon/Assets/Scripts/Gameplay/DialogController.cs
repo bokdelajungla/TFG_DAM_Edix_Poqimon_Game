@@ -24,12 +24,14 @@ public class DialogController : MonoBehaviour
     Dialog dialog;
     int currentLine = 0;
     bool isTyping;
+    public bool IsShowing {get; private set;}
 
-    public IEnumerator ShowDialog(Dialog dialog)
+    public IEnumerator ShowDialog(Dialog dialog, Action OnFinished = null)
     {
         yield return new WaitForEndOfFrame();
         OnShowDialog?.Invoke();
 
+        IsShowing = true;
         this.dialog = dialog;
         dialogBox.SetActive(true);
         StartCoroutine(TypeDialog(dialog.Lines[0]));
@@ -46,6 +48,7 @@ public class DialogController : MonoBehaviour
             }
             else
             {
+                IsShowing = false;
                 currentLine = 0;
                 dialogBox.SetActive(false);
                 OnCloseDialog?.Invoke();
@@ -64,5 +67,19 @@ public class DialogController : MonoBehaviour
             yield return new WaitForSeconds(1f/lettersPerSecond);
         }
         isTyping = false;
-    }  
+    } 
+
+    //Simple Dialog Text for multiple Purpouses
+    public IEnumerator ShowDialogText(String text, bool waitForInput=true)
+    {
+        IsShowing = true;
+        dialogBox.SetActive(true);
+        yield return TypeDialog(text);
+        if (waitForInput){
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
+        }
+        
+        dialogBox.SetActive(false);
+        IsShowing = false;
+    } 
 }

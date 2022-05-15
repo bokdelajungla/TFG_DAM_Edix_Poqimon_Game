@@ -15,8 +15,9 @@ MonoBehaviour:
   moveName: Tail Whip
   moveDescription: The user wags its tail cutely, making the foe less wary. The target's
     Defense stat is lowered.
-  moveType: 0
+  moveType: 1
   moveCategory: 2
   movePower: 0
   moveAccuracy: 100
   movePP: 30
+  priority: 0

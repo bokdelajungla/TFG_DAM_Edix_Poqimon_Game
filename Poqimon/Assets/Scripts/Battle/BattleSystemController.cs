@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy, PartyScreen}
+public enum BattleAction { Move, UseItem, SwitchPoqimon, Run}
 
 public class BattleSystemController : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] BattleUnit enemyUnit;
     [SerializeField] BattleHUD playerHUD;
     [SerializeField] BattleHUD enemyHUD;
+    [SerializeField] Image playerCharacter;
+    [SerializeField] Image trainerCharacter;
     [SerializeField] BattleDialog dialog;
     [SerializeField] PartyScreenController partyScreenController;
 
@@ -23,7 +27,14 @@ public class BattleSystemController : MonoBehaviour
     int currentMember;
 
     PoqimonParty playerParty;
+    PoqimonParty oponentParty; 
     Poqimon enemyPoqimon;
+
+    bool isTrainerBattle = false;
+    int escapeAttemps;
+
+    PlayerController playerController;
+    TrainerController trainerController;
     
 
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
@@ -34,20 +45,55 @@ public class BattleSystemController : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    public void StartTrainerBattle(PoqimonParty playerParty, PoqimonParty oponentParty)
+    {   
+        this.playerParty = playerParty;
+        this.oponentParty = oponentParty;
+
+        isTrainerBattle = true;
+
+        playerController = playerParty.GetComponent<PlayerController>();
+        trainerController = trainerController.GetComponent<TrainerController>();
+
+        StartCoroutine(SetupBattle());
+    }
+
     public IEnumerator SetupBattle()
     {
         state = BattleState.Start;
-        playerUnit.SetUp(playerParty.GetHealthyPoqimon());
-        enemyUnit.SetUp(enemyPoqimon);
-        playerHUD.SetData(playerUnit.Poqimon);
-        enemyHUD.SetData(enemyUnit.Poqimon);
+        if(!isTrainerBattle)
+        {
+            //Battle with wild pokemon
+            playerUnit.SetUp(playerParty.GetHealthyPoqimon());
+            enemyUnit.SetUp(enemyPoqimon);
+            
+            playerHUD.SetData(playerUnit.Poqimon);
+            enemyHUD.SetData(enemyUnit.Poqimon);
+
+            yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.PoqimonName} just appeared!");
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            //Battle with trainer
+            //Show player ans trainer character sprites
+            playerUnit.gameObject.SetActive(false);
+            enemyUnit.gameObject.SetActive(false);
+
+            playerCharacter.gameObject.SetActive(true);
+            trainerCharacter.gameObject.SetActive(true);
+
+            playerCharacter.sprite = playerController.Sprite;
+            trainerCharacter.sprite = trainerController.Sprite;
+
+            yield return dialog.TypeTxt($"{trainerController.TrainerName} wants to figth!");
+
+        }
 
         partyScreenController.Init();
-
-        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.name} just appeared!");
-        yield return new WaitForSeconds(1f);
-
+        escapeAttemps = 0;
         PlayerAction();
+        
     }
 
     void PlayerAction()
@@ -124,6 +170,8 @@ public class BattleSystemController : MonoBehaviour
             else if (currentAction == 3)
             {
                 //Run
+                //TODO: Implement new Battle logic
+                StartCoroutine(TryToRun());
             }
         }
     
@@ -215,7 +263,6 @@ public class BattleSystemController : MonoBehaviour
         
     }
 
-
     IEnumerator PerformPlayerMove()
     {
         state = BattleState.Busy;
@@ -295,4 +342,43 @@ public class BattleSystemController : MonoBehaviour
         }
     }
     */
+
+    IEnumerator TryToRun()
+    {
+        state = BattleState.Busy;
+        if ( /*isTrainerBattle*/false)
+        {
+            yield return dialog.TypeTxt($"You can't run from a trainer battle!");
+            state = BattleState.PlayerAction;
+            yield break;
+        }
+        int playerSpeed = playerUnit.Poqimon.Speed;
+        int enemySpeed = enemyUnit.Poqimon.Speed;
+
+        ++escapeAttemps;
+
+        if (enemySpeed < playerSpeed)
+        {
+            yield return dialog.TypeTxt($"You ran away safely!");
+            OnBattleOver(true);
+        }
+        else
+        {
+            float f = (playerSpeed * 128) / enemySpeed + 30 * escapeAttemps;
+            f = f % 256;
+
+            if (UnityEngine.Random.Range(0,256) < f)
+            {
+                yield return dialog.TypeTxt($"You ran away safely!");
+                OnBattleOver(true);
+            }
+            else
+            {
+                yield return dialog.TypeTxt($"Can't escape!");
+                state = BattleState.PlayerAction; 
+            }
+        }
+    }
+
+    
 }

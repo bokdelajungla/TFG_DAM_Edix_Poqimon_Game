@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Scratch
   moveDescription: Scratches the target with sharp claws.
-  moveType: 0
+  moveType: 1
   moveCategory: 0
   movePower: 40
   moveAccuracy: 100
   movePP: 35
+  priority: 0
