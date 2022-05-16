@@ -19,9 +19,10 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] BattleDialog dialog;
     [SerializeField] PartyScreenController partyScreenController;
     [SerializeField] private AudioSource audioSFX;
+    [SerializeField] private AudioClip worldMusic;
+    [SerializeField] private AudioClip battleMusic;
     [SerializeField] private GameObject poqibolSprite;
     
-
     //Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver; 
     
@@ -42,18 +43,22 @@ public class BattleSystemController : MonoBehaviour
     
     
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
-    {   
+    {
+        AudioManager.i.PlayMusic(battleMusic);
+        
         isTrainerBattle = false;
         this.playerParty = playerParty;
         this.enemyPoqimon = enemyPoqimon;
-        
+
         playerController = playerParty.GetComponent<PlayerController>();
-        
+
         StartCoroutine(SetupBattle());
     }
 
     public void StartTrainerBattle(PoqimonParty playerParty, PoqimonParty oponentParty)
-    {   
+    {
+        AudioManager.i.PlayMusic(battleMusic);
+        
         this.playerParty = playerParty;
         this.oponentParty = oponentParty;
 
@@ -138,6 +143,7 @@ public class BattleSystemController : MonoBehaviour
         // Reset All the Stats of every Poqimmon at the Party when the battle is over
         playerParty.Party.ForEach(poq => poq.OnBattleOver());
         OnBattleOver(won);
+        AudioManager.i.PlayMusic(worldMusic);
     }
     
     private void ActionSelection()

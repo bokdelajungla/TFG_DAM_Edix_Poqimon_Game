@@ -6,8 +6,6 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource musicPlayer;
-    [SerializeField] AudioSource FXPlayer;
-
     public static AudioManager i { get; set; }
 
     private void Awake()
@@ -17,10 +15,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(AudioClip clip, bool loop = true)
     {
+        // no audio clip
         if (clip == null)
         {
             return;
         }
+        // reproduce audio clip
         musicPlayer.clip = clip;
         musicPlayer.loop = loop;
         musicPlayer.Play();

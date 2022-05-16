@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
 
     MenuController menuController;
 
+    [SerializeField] private AudioClip worldMusic;
+    
     GameState state;
 
     //Singleton Instance
@@ -36,6 +38,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.i.PlayMusic(worldMusic);
+        
         //Subscribe to PlayerController Events
         playerController.OnEncountered += StartBattle;
         playerController.OnTrainerFoV += (Collider2D trainerCollider) => {
