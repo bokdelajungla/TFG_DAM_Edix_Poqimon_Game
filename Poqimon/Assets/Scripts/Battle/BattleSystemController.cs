@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
-public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, PlayerAction, PlayerMove, EnemyMove, Busy, PartyScreen, BattleOver}
+public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, PlayerAction, PlayerMove, EnemyMove, RunningTurn, Busy, PartyScreen, BattleOver, ForgetMove}
 public enum BattleAction { Move, UseItem, SwitchPoqimon, Run}
 
 public class BattleSystemController : MonoBehaviour
@@ -20,6 +21,7 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] PartyScreenController partyScreenController;
     [SerializeField] private AudioSource audioSFX;
     [SerializeField] private GameObject poqibolSprite;
+    [SerializeField] MoveSelectionUI moveSelectionUI; 
     
 
     //Event with a bool to be able to distinguish between Win & Lose
@@ -36,10 +38,10 @@ public class BattleSystemController : MonoBehaviour
 
     bool isTrainerBattle = false;
     int escapeAttemps;
+    MoveBaseObject moveToLearn;
 
     PlayerController playerController;
-    TrainerController trainerController;
-    
+    TrainerController trainerController;    
     
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {   
@@ -176,6 +178,28 @@ public class BattleSystemController : MonoBehaviour
         else if (state == BattleState.PartyScreen)
         {
             HandlePartyScreenSelection();
+        }
+        else if (state == BattleState.ForgetMove)
+        {
+            Action<int> OnMoveSelected = (moveIndex) => 
+            {
+                moveSelectionUI.gameObject.SetActive(false);
+                if (moveIndex == PoqimonBaseObject.MaxNumberOfMoves)
+                {
+                    //Don't learn new move
+                    StartCoroutine(dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} did not learn {moveToLearn.MoveName}"));
+                }
+                else
+                {
+                    //Forget selected move and learn the new one
+                    var selectedMove = playerUnit.Poqimon.Moves[moveIndex].MoveBase;
+                    StartCoroutine(dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} forgot {selectedMove.MoveName} and learned {moveToLearn.MoveName}"));
+                    playerUnit.Poqimon.Moves[moveIndex] = new Move(moveToLearn); 
+                }
+                moveToLearn = null;
+                state = BattleState.ActionSelection;
+            };
+            moveSelectionUI.HandleMoveSelectionUI(OnMoveSelected); 
         }
 
         if (Input.GetKeyDown(KeyCode.T))
@@ -521,6 +545,28 @@ public class BattleSystemController : MonoBehaviour
             {
                 playerUnit.Hud.SetLvl();
                 yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} grew up to level {playerUnit.Poqimon.PoqimonLevel}!");
+                
+                //Check if poqimon can learn a new move
+                var newMove = playerUnit.Poqimon.GetLearnableMoveAtCurrentLvl();
+                if (newMove != null)
+                {
+                    if (playerUnit.Poqimon.Moves.Count < PoqimonBaseObject.MaxNumberOfMoves)
+                    {
+                        playerUnit.Poqimon.LearnMove(newMove);
+                        yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} learned {newMove.MoveBase.MoveName}!");
+                        dialog.SetMoveNames(playerUnit.Poqimon.Moves);
+                    }
+                    else
+                    {
+                        //Chose to forgot one move
+                        yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} is trying to learn {newMove.MoveBase.MoveName}");
+                        yield return dialog.TypeTxt($"But can only learn {PoqimonBaseObject.MaxNumberOfMoves} moves");
+                        yield return ChooseMoveToForget(playerUnit.Poqimon, newMove.MoveBase);
+                        yield return new WaitUntil(() => state != BattleState.ForgetMove);
+                        yield return new WaitForSeconds(2f);
+                    }
+                }
+
                 yield return playerUnit.Hud.SetExpSmooth(true);
             }
             yield return new WaitForSeconds(1f);
@@ -603,5 +649,17 @@ public class BattleSystemController : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             yield return poqibol.transform.DOPunchRotation(new Vector3(0, 0, 10f), 0.8f).WaitForCompletion();
         }
+    }
+
+    IEnumerator ChooseMoveToForget(Poqimon poqimon, MoveBaseObject learnableMove)
+    {
+        state = BattleState.Busy;
+        yield return dialog.TypeTxt($"Choose a move to be forgetten");
+        moveSelectionUI.gameObject.SetActive(true);
+        moveSelectionUI.SetMoveData(poqimon.Moves.Select(x => x.MoveBase).ToList(), learnableMove);
+        moveToLearn = learnableMove;
+
+        state = BattleState.ForgetMove;
+
     }
 }
