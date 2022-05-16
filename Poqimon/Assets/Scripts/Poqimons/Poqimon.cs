@@ -75,7 +75,7 @@ public class Poqimon
         Stats.Add(Stat.SpDefense, Mathf.FloorToInt((poqimonBase.SpDefense*poqimonLevel) / 100f) + 5);
         Stats.Add(Stat.Speed, Mathf.FloorToInt((poqimonBase.Speed*poqimonLevel) / 100f) + 5);
         
-        MaxHp = Mathf.FloorToInt((poqimonBase.MaxHP*poqimonLevel) / 100f) + 10;
+        MaxHp = Mathf.FloorToInt((poqimonBase.MaxHP * poqimonLevel) / 100f) + 10;
     }
 
     // Reset (to 0) all the stats
@@ -217,8 +217,11 @@ public class Poqimon
     // get a random move (IA enemey)
     public Move GetRndMove()
     {
-        int r = UnityEngine.Random.Range(0, Moves.Count);
-        return Moves[r];
+        // To onlu use moves with more than 0 PP
+        var movesWithPP = Moves.Where(m => m.MovePP > 0).ToList();
+        
+        int r = UnityEngine.Random.Range(0, movesWithPP.Count);
+        return movesWithPP[r];
     }
 
     // Reset the Stats if the battle is over
