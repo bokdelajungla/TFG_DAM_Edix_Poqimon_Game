@@ -23,6 +23,9 @@ MonoBehaviour:
     boosts:
     - stat: 2
       boost: 1
+    status: 0
+    volatileStatus: 0
   moveAccuracy: 0
   movePP: 20
   priority: 0
+  moveAudio: {fileID: 8300000, guid: 05c0f1ab702ef42ff9503e023773492f, type: 3}

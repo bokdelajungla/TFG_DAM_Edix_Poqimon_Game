@@ -25,3 +25,4 @@ MonoBehaviour:
   moveAccuracy: 90
   movePP: 20
   priority: 0
+  moveAudio: {fileID: 8300000, guid: c187b4f8ec5b64db0be976a757c0b1e1, type: 3}

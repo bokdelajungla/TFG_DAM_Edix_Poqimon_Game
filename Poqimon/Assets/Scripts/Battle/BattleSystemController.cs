@@ -17,6 +17,7 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] Image trainerCharacter;
     [SerializeField] BattleDialog dialog;
     [SerializeField] PartyScreenController partyScreenController;
+    [SerializeField] private AudioSource audioSFX;
 
     //Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver; 
@@ -35,6 +36,7 @@ public class BattleSystemController : MonoBehaviour
 
     PlayerController playerController;
     TrainerController trainerController;
+    
     
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {   
@@ -385,6 +387,11 @@ public class BattleSystemController : MonoBehaviour
         
         move.MovePP--;
         yield return dialog.TypeTxt($"{sourceUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
+        
+        if (move.MoveBase.MoveAudio != null)
+        {
+            audioSFX.PlayOneShot(move.MoveBase.MoveAudio);
+        }
         
         sourceUnit.PlayAtkAnimation();
         yield return new WaitForSeconds(0.5f);

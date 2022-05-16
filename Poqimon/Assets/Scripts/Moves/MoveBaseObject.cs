@@ -26,6 +26,9 @@ public class MoveBaseObject : ScriptableObject
     public int MovePP => movePP;
     [SerializeField] private int priority;
     public int Priority => priority;
+
+    [SerializeField] private AudioClip moveAudio;
+    public AudioClip MoveAudio => moveAudio;
 }
 
 [System.Serializable]

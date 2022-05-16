@@ -18,6 +18,12 @@ MonoBehaviour:
   moveType: 10
   moveCategory: 1
   movePower: 40
+  target: 0
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
   moveAccuracy: 100
-  movePP: 25
+  movePP: 1
   priority: 0
+  moveAudio: {fileID: 8300000, guid: 9c4c71ade295944068cfe6b53b56864c, type: 3}
