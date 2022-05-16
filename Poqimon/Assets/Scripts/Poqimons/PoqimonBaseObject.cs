@@ -61,13 +61,13 @@ public class PoqimonBaseObject : ScriptableObject
     public int GetExperienceForLvl(int level)
     {
         if (growthRate == GrowthRate.Fast)
-            return 4 * (level * level * level ) / 5;
+            return Mathf.FloorToInt(4 * (level * level * level ) / 5);
         else if (growthRate == GrowthRate.MediumFast)
-            return level * level * level;
+            return Mathf.FloorToInt(level * level * level);
         else if (growthRate == GrowthRate.MediumSlow)
-            return (6 * (level * level * level ) / 5) - (15 * (level * level)) + (100 * level) - 140;
+            return Mathf.FloorToInt((6 * (level * level * level ) / 5) - (15 * (level * level)) + (100 * level) - 140);
         else if (growthRate == GrowthRate.Slow)
-            return 5 * (level * level * level) / 4;
+            return Mathf.FloorToInt(5 * (level * level * level) / 4);
 
         return -1;
     }

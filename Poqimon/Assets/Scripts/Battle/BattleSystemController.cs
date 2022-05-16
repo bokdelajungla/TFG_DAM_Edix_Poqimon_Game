@@ -38,6 +38,7 @@ public class BattleSystemController : MonoBehaviour
     
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {   
+        isTrainerBattle = false;
         this.playerParty = playerParty;
         this.enemyPoqimon = enemyPoqimon;
 
@@ -460,11 +461,7 @@ public class BattleSystemController : MonoBehaviour
         // Enemy Dies
         if (targetUnit.Poqimon.CurrentHp <= 0)
         {
-            yield return dialog.TypeTxt($"{targetUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
-            targetUnit.PlayFaintedAnimation();
-            
-            yield return new WaitForSeconds(2f);
-            CheckForBattleOver(targetUnit);
+           yield return HandleFaintedPoqimon(targetUnit);
         }
         
         // Some statuses (burn, poison hurt the poqimon after the turn)
@@ -473,12 +470,40 @@ public class BattleSystemController : MonoBehaviour
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.Poqimon.CurrentHp <= 0)
         {
-            yield return dialog.TypeTxt($"{sourceUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
-            sourceUnit.PlayFaintedAnimation();
-            
-            yield return new WaitForSeconds(2f);
-            CheckForBattleOver(sourceUnit);
+            yield return HandleFaintedPoqimon(sourceUnit);
         }
+    }
+
+    IEnumerator HandleFaintedPoqimon(BattleUnit faintedUnit)
+    {
+        yield return dialog.TypeTxt($"{faintedUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
+        faintedUnit.PlayFaintedAnimation();
+        
+        //Calculate Expereince gains if fainted unit is not from player:
+        if (!faintedUnit.IsPlayer)
+        {
+            int expYield = faintedUnit.Poqimon.PoqimonBase.ExpYield;
+            int enemyLevel = faintedUnit.Poqimon.PoqimonLevel;
+            float trainerBonus = (isTrainerBattle)? 1.5f : 1f;
+
+            //Simplified Formula to calculate Exp Gain (from Bulbapedia)
+            int expGain = Mathf.FloorToInt((expYield * enemyLevel * trainerBonus) / 7);
+            playerUnit.Poqimon.Exp += expGain;
+            yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} has gained {expGain} Exp");
+            yield return playerUnit.Hud.SetExpSmooth();
+
+            //Check if Poqimon gained enough exp to level up
+            while (playerUnit.Poqimon.CheckForLevelUp())
+            {
+                playerUnit.Hud.SetLvl();
+                yield return dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} grew up to level {playerUnit.Poqimon.PoqimonLevel}!");
+                yield return playerUnit.Hud.SetExpSmooth(true);
+            }
+            yield return new WaitForSeconds(1f);
+        }
+
+        yield return new WaitForSeconds(2f);
+        CheckForBattleOver(faintedUnit);
     }
 
     IEnumerator ShowDamageDetails(DamageDetails damageDetails)

@@ -26,7 +26,7 @@ MonoBehaviour:
   spDefense: 0
   speed: 0
   expYield: 0
-  growthRate: 0
+  growthRate: 2
   catchRate: 0
   learnableMoves: []
   evolutions: []

@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour, ISavable
 
     public float moveSpeed;
 
+    const float offsetY = 0.3f;
+
     public event Action OnEncountered;
     public event Action<Collider2D> OnTrainerFoV;
 
@@ -114,7 +116,7 @@ public class PlayerController : MonoBehaviour, ISavable
 
     private void CheckForEncounters()
     {
-        if (Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.LongGrassLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position - new Vector3(0,offsetY), 0.2f, GameLayers.i.LongGrassLayer) != null)
         {
             if (UnityEngine.Random.Range(1,101) <= 10)
             {
