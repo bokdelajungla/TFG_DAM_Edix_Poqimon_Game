@@ -177,11 +177,6 @@ public class BattleSystemController : MonoBehaviour
         {
             HandlePartyScreenSelection();
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(ThrowPoqibol());
-        }
     }
 
     void HandleActionSelection()
@@ -207,7 +202,8 @@ public class BattleSystemController : MonoBehaviour
             }
             else if (currentAction == 1)
             {
-                //Bag
+                //Bag (Poqibol)
+                StartCoroutine(ThrowPoqibol());
             }
             else if (currentAction == 2)
             {
@@ -587,6 +583,13 @@ public class BattleSystemController : MonoBehaviour
     {
         state = BattleState.Busy;
 
+        if (isTrainerBattle)
+        {
+            yield return dialog.TypeTxt($"You can't steal a trainers poqimon!");
+            state = BattleState.EnemyMove;
+            yield break;
+        }
+
         yield return dialog.TypeTxt($"{playerUnit.name} used Poqibol");
 
         var poqibolObj = Instantiate(poqibolSprite, playerUnit.transform.position, Quaternion.identity);
@@ -611,6 +614,9 @@ public class BattleSystemController : MonoBehaviour
         {
             yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} was caught");
             yield return poqibol.DOFade(0, 1.5f).WaitForCompletion();
+            
+            playerParty.AddPoqimon(enemyPoqimon);
+            yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} added to party");
             
             Destroy(poqibol);
             BattleOver(true);
