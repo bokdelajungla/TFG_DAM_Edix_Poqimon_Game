@@ -10,8 +10,6 @@ public class Poqimon
     // Base characterictis
     [SerializeField] PoqimonBaseObject poqimonBase;
     public PoqimonBaseObject PoqimonBase => poqimonBase;
-    
-    public int Exp {get; set;}
 
     // Lvl
     [SerializeField] int poqimonLevel;
@@ -35,6 +33,9 @@ public class Poqimon
     public int CurrentHp { get; set; }
     public bool HpChanged { get; set; }
 
+    //Exp
+    public int Exp {get; set;}
+
     public event Action OnStatusChanged;
 
     //Initializer
@@ -55,6 +56,9 @@ public class Poqimon
                 break;
             }
         }
+
+        Exp = PoqimonBase.GetExperienceForLvl(PoqimonLevel);
+        
 
         CalcStats();
         CurrentHp = MaxHp;

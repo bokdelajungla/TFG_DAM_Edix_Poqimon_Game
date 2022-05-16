@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class BattleHUD : MonoBehaviour
     [SerializeField] private Text lvlTxt;
     [SerializeField] private Text statusTxt;
     [SerializeField] private HPBar hpBar;
+    [SerializeField] private GameObject expBar;
     
     private Dictionary<ConditionID, Color> statusColors;
 
@@ -19,9 +21,10 @@ public class BattleHUD : MonoBehaviour
         this.poqimon = poqimon;
         
         nameTxt.text = this.poqimon.PoqimonBase.PoqimonName;
-        lvlTxt.text = "lvl " + this.poqimon.PoqimonLevel;
+        SetLvl();
         hpBar.SetHP((float) this.poqimon.CurrentHp / this.poqimon.MaxHp);
         hpBar.setHPText(this.poqimon.CurrentHp + " / " + this.poqimon.MaxHp);
+        SetExp();
 
         statusColors = new Dictionary<ConditionID, Color>()
         {
@@ -49,6 +52,36 @@ public class BattleHUD : MonoBehaviour
         }
     }
 
+    public void SetExp()
+    {
+        //Only for playerHud
+        if (expBar != null)
+        {
+            float normalizedExp = GetNormalizedExp();
+            expBar.transform.localScale = new Vector3 (normalizedExp, 1f, 1f);
+        }
+    }
+
+    public IEnumerator SetExpSmooth(bool reset=false)
+    {
+        //Only for playerHud
+        if (expBar != null)
+        {
+            if (reset) { expBar.transform.localScale = new Vector3 (0, 1f, 1f); }
+            float normalizedExp = GetNormalizedExp();
+            yield return expBar.transform.DOScaleX(normalizedExp, 1.5f).WaitForCompletion();
+        }
+
+    }
+
+    float GetNormalizedExp()
+    {
+        int currentLevelExp = poqimon.PoqimonBase.GetExperienceForLvl(poqimon.PoqimonLevel);
+        int nextLevelExp = poqimon.PoqimonBase.GetExperienceForLvl(poqimon.PoqimonLevel + 1);
+        float normalizedExp = (float)(poqimon.Exp - currentLevelExp) / (nextLevelExp - currentLevelExp);
+        return Mathf.Clamp01(normalizedExp);
+    }
+
     public IEnumerator UpdateHP()
     {
         if (poqimon.HpChanged)
@@ -61,5 +94,10 @@ public class BattleHUD : MonoBehaviour
         
         yield return hpBar.SetHpSmooth((float) poqimon.CurrentHp / poqimon.MaxHp);
         hpBar.setHPText(poqimon.CurrentHp + " / " + poqimon.MaxHp);
+    }
+
+    public void SetLvl()
+    {
+        lvlTxt.text = "lvl " + poqimon.PoqimonLevel;
     }
 }
