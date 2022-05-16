@@ -430,6 +430,7 @@ public class BattleSystemController : MonoBehaviour
         if (!canRunMove)
         {
             yield return ShowStatusChanges(sourceUnit.Poqimon);
+            yield return sourceUnit.Hud.UpdateHP();
             yield break;
         }
         

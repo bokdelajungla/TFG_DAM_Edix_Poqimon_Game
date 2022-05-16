@@ -133,7 +133,7 @@ public class ConditionsDB
                     OnBeforeMove = (Poqimon poq) =>
                     {
                         // the poqimon is not confused
-                        if (poq.StatusTime <= 0)
+                        if (poq.VolatileStatusTime <= 0)
                         {
                             poq.CureVolatileStatus();
                             poq.StatusChanges.Enqueue($"{poq.PoqimonBase.PoqimonName} is not confused anymore");
