@@ -21,6 +21,9 @@ public class GameController : MonoBehaviour
 
     private void Awake() 
     {
+        // TODO SAVE CONDITIONS ¿Está ben colocado?
+        ConditionsDB.Init();
+        
         Instance = this;
         menuController = GetComponent<MenuController>();
         if (SavingSystem.i.IsNewGame == false)

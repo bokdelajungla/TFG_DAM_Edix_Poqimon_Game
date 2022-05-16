@@ -62,13 +62,13 @@ public class CharacterAnimator : MonoBehaviour
     public void SetFacingDirection(FacingDirection facingDirection)
     {
         if(facingDirection == FacingDirection.Down)
-        MoveY = -1;
+            MoveY = -1;
         if(facingDirection == FacingDirection.Up)
-        MoveY = 1;
+            MoveY = 1;
         if(facingDirection == FacingDirection.Left)
-        MoveX = -1;
+            MoveX = -1;
         if(facingDirection == FacingDirection.Right)
-        MoveX = 1;
+            MoveX = 1;
     }
 
     public FacingDirection DefaultFacingDirection {

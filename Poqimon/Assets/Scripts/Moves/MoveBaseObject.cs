@@ -36,6 +36,9 @@ public class MoveEffects
     
     [SerializeField] private ConditionID status;
     public ConditionID Status => status;
+    
+    [SerializeField] private ConditionID volatileStatus;
+    public ConditionID VolatileStatus => volatileStatus;
 }
 
 [System.Serializable]

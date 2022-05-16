@@ -26,12 +26,17 @@ public class Poqimon
     
     // Status & Status Changes
     public Condition Status { get; set; }
+    public int StatusTime { get; set; }
+    public Condition VolatileStatus { get; set; }
+    public int VolatileStatusTime { get; set; }
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
     // HP
     public int CurrentHp { get; set; }
     public bool HpChanged { get; set; }
-    
+
+    public event Action OnStatusChanged;
+
     //Initializer
     public void Init()
     {
@@ -53,7 +58,10 @@ public class Poqimon
 
         CalcStats();
         CurrentHp = MaxHp;
+        
         ResetStatBoost();
+        Status = null;
+        VolatileStatus = null;
     }
 
     // calculate the stats of the poqimon
@@ -172,8 +180,38 @@ public class Poqimon
 
     public void SetStatus(ConditionID conditionID)
     {
+        if (Status != null)
+        {
+            return;
+        }
+    
         Status = ConditionsDB.Conditions[conditionID];
+        Status?.OnStart?.Invoke(this);
         StatusChanges.Enqueue($"{PoqimonBase.PoqimonName} {Status.StartMsg}");
+        OnStatusChanged?.Invoke();
+    }
+
+    public void CureStatus()
+    {
+        Status = null;
+        OnStatusChanged?.Invoke();
+    }
+    
+    public void SetVolatileStatus(ConditionID conditionID)
+    {
+        if (Status != null)
+        {
+            return;
+        }
+    
+        VolatileStatus = ConditionsDB.Conditions[conditionID];
+        VolatileStatus?.OnStart?.Invoke(this);
+        StatusChanges.Enqueue($"{PoqimonBase.PoqimonName} {VolatileStatus.StartMsg}");
+    }
+    
+    public void CureVolatileStatus()
+    {
+        VolatileStatus = null;
     }
 
     // get a random move (IA enemey)
@@ -183,15 +221,40 @@ public class Poqimon
         return Moves[r];
     }
 
+    // Reset the Stats if the battle is over
     public void OnBattleOver()
     {
+        VolatileStatus = null;
         ResetStatBoost();
     }
+
+    // Event before move (used if it's paralyzed, sleeping, ...)
+    public bool OnBeforeMove()
+    {
+        bool canPerformMove = true;
+        if (Status?.OnBeforeMove != null)
+        {
+            if (!Status.OnBeforeMove(this))
+            {
+                canPerformMove = false;
+            }
+        }
+        if (VolatileStatus?.OnBeforeMove != null)
+        {
+            if (!VolatileStatus.OnBeforeMove(this))
+            {
+                canPerformMove = false;
+            }
+        }
+        return canPerformMove;
+    }
     
+    // Event after the turn (used if it's poisoned, burned, ...)
     public void OnAfterTurn()
     {
         // (coditional call) We'll only call it if is not null
         Status?.OnAfterTurn?.Invoke(this);
+        VolatileStatus?.OnAfterTurn?.Invoke(this);
     }
     
     // Update the HP taking damage
