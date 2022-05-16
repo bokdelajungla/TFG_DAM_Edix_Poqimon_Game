@@ -24,6 +24,6 @@ MonoBehaviour:
     status: 0
     volatileStatus: 0
   moveAccuracy: 100
-  movePP: 1
+  movePP: 40
   priority: 0
   moveAudio: {fileID: 8300000, guid: 9c4c71ade295944068cfe6b53b56864c, type: 3}
