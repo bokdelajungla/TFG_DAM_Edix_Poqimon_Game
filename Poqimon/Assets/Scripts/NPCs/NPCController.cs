@@ -10,12 +10,15 @@ public class NPCController : MonoBehaviour, Interactable
     Character character;
 
     NPCState npcState;
+
+    Healer healer;
     float IdleTimer = 0f;
     int currentMovePattern = 0;
 
     private void Awake() 
     {
         character = GetComponent<Character>();
+        healer = GetComponent<Healer>();
     }
     // Start is called before the first frame update
     private void Start()
@@ -44,6 +47,10 @@ public class NPCController : MonoBehaviour, Interactable
     {
         if (npcState == NPCState.Idle)
             StartCoroutine(DialogController.Instance.ShowDialog(npcDialog));
+
+        if (healer != null) {
+            healer.heal(npcDialog);
+        }
     }
 
     IEnumerator Walk()
