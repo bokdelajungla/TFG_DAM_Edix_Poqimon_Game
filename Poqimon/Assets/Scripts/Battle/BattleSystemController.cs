@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] BattleDialog dialog;
     [SerializeField] PartyScreenController partyScreenController;
     [SerializeField] private AudioSource audioSFX;
+    [SerializeField] private GameObject poqibolSprite;
+    
 
     //Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver; 
@@ -42,7 +45,9 @@ public class BattleSystemController : MonoBehaviour
     {   
         this.playerParty = playerParty;
         this.enemyPoqimon = enemyPoqimon;
-
+        
+        playerController = playerParty.GetComponent<PlayerController>();
+        
         StartCoroutine(SetupBattle());
     }
 
@@ -170,6 +175,11 @@ public class BattleSystemController : MonoBehaviour
         else if (state == BattleState.PartyScreen)
         {
             HandlePartyScreenSelection();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StartCoroutine(ThrowPoqibol());
         }
     }
 
@@ -545,6 +555,28 @@ public class BattleSystemController : MonoBehaviour
                 yield return dialog.TypeTxt($"Can't escape!");
                 state = BattleState.PlayerAction; 
             }
+        }
+    }
+
+    IEnumerator ThrowPoqibol()
+    {
+        state = BattleState.Busy;
+
+        yield return dialog.TypeTxt($"{playerUnit.name} used Poqibol");
+
+        var poqibolObj = Instantiate(poqibolSprite, playerUnit.transform.position, Quaternion.identity);
+        var poqibol = poqibolObj.GetComponent<SpriteRenderer>();
+        
+        // Poqibol animation
+        yield return poqibol.transform.DOJump(enemyUnit.transform.position + new Vector3(0, 2), 2f, 1, 1f).WaitForCompletion();
+        yield return enemyUnit.playCapturedAnimation();
+        yield return poqibol.transform.DOMoveY(enemyUnit.transform.position.y - 1.3f, 0.5f).WaitForCompletion();
+        
+        // Shake the poqibol 3 times
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            yield return poqibol.transform.DOPunchRotation(new Vector3(0, 0, 10f), 0.8f).WaitForCompletion();
         }
     }
 }
