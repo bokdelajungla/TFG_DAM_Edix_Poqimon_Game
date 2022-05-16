@@ -295,6 +295,12 @@ public class BattleSystemController : MonoBehaviour
             target.SetStatus(effects.Status);
         }
         
+        // Volatile Status condition
+        if (effects.VolatileStatus != ConditionID.none)
+        {
+            target.SetVolatileStatus(effects.VolatileStatus);
+        }
+        
         // Show changes
         yield return ShowStatusChanges(source);
         yield return ShowStatusChanges(target);

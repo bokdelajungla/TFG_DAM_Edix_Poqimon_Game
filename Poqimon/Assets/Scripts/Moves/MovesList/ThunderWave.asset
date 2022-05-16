@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: 
   moveDescription: 
-  moveType: 0
+  moveType: 13
   moveCategory: 2
   movePower: 0
   target: 0
   effects:
     boosts: []
     status: 4
+    volatileStatus: 0
   moveAccuracy: 90
   movePP: 20
   priority: 0

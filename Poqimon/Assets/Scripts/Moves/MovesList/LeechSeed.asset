@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: 
   moveDescription: 
-  moveType: 1
+  moveType: 12
   moveCategory: 0
   movePower: 0
+  target: 0
+  effects:
+    boosts: []
+    status: 0
+    volatileStatus: 0
   moveAccuracy: 0
   movePP: 0
   priority: 0
