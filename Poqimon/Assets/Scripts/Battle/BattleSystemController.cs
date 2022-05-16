@@ -604,4 +604,10 @@ public class BattleSystemController : MonoBehaviour
             yield return poqibol.transform.DOPunchRotation(new Vector3(0, 0, 10f), 0.8f).WaitForCompletion();
         }
     }
+
+    // Data from https://bulbapedia.bulbagarden.net/wiki/Catch_rate
+    int TyoToCatch()
+    {
+        
+    }
 }

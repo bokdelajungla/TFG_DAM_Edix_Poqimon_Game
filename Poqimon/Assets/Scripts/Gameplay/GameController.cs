@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
 
     private void Awake() 
     {
-        // TODO SAVE CONDITIONS ¿Está ben colocado?
+        // DB states
         ConditionsDB.Init();
         
         Instance = this;
