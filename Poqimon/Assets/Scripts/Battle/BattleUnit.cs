@@ -78,7 +78,7 @@ public class BattleUnit : MonoBehaviour
         sequence.Join(image.DOFade(0f, 0.5f));
     }
 
-    public IEnumerator playCapturedAnimation()
+    public IEnumerator PlayCapturedAnimation()
     {
         var sequence = DOTween.Sequence();
         sequence.Append(image.DOFade(0, 0.5f));
@@ -87,4 +87,12 @@ public class BattleUnit : MonoBehaviour
         yield return sequence.WaitForCompletion();
     }
     
+    public IEnumerator PlayBrokeAnimation()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Append(image.DOFade(1, 0.5f));
+        sequence.Join(transform.DOLocalMoveY(originalPosition.y, 0.5f));
+        sequence.Join(transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f));
+        yield return sequence.WaitForCompletion();
+    }
 }

@@ -27,6 +27,6 @@ MonoBehaviour:
   speed: 0
   expYield: 0
   growthRate: 2
-  catchRate: 0
+  catchRate: 45
   learnableMoves: []
   evolutions: []

@@ -25,12 +25,12 @@ public class PoqimonBaseObject : ScriptableObject
     public PoqimonType PoqimonType2 => poqimonType2;
 
     //Stats
-    [SerializeField]private int maxHP;
-    [SerializeField]private int attack;
-    [SerializeField]private int defense;
-    [SerializeField]private int spAttack;
-    [SerializeField]private int spDefense;
-    [SerializeField]private int speed;
+    [SerializeField] private int maxHP;
+    [SerializeField] private int attack;
+    [SerializeField] private int defense;
+    [SerializeField] private int spAttack;
+    [SerializeField] private int spDefense;
+    [SerializeField] private int speed;
     public int MaxHP => maxHP;
     public int Attack => attack;
     public int Defense => defense;
@@ -45,6 +45,7 @@ public class PoqimonBaseObject : ScriptableObject
     public GrowthRate GrowthRate => growthRate;
 
     //Cathcing Properties
+    // data from https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_catch_rate
     [SerializeField] int catchRate;
     public int CatchRate => catchRate;
 

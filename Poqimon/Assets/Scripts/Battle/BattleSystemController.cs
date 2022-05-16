@@ -594,20 +594,66 @@ public class BattleSystemController : MonoBehaviour
         
         // Poqibol animation
         yield return poqibol.transform.DOJump(enemyUnit.transform.position + new Vector3(0, 2), 2f, 1, 1f).WaitForCompletion();
-        yield return enemyUnit.playCapturedAnimation();
+        yield return enemyUnit.PlayCapturedAnimation();
         yield return poqibol.transform.DOMoveY(enemyUnit.transform.position.y - 1.3f, 0.5f).WaitForCompletion();
+
+        int shakeCount = TyoToCatch(enemyUnit.Poqimon);
         
-        // Shake the poqibol 3 times
-        for (int i = 0; i < 3; i++)
+        // Animate - Shake the poqibol 3 times
+        for (int i = 0; i < Mathf.Min(shakeCount, 3); i++)
         {
             yield return new WaitForSeconds(0.5f);
             yield return poqibol.transform.DOPunchRotation(new Vector3(0, 0, 10f), 0.8f).WaitForCompletion();
         }
+
+        // poqimon caught
+        if (shakeCount == 4)
+        {
+            yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} was caught");
+            yield return poqibol.DOFade(0, 1.5f).WaitForCompletion();
+            
+            Destroy(poqibol);
+            BattleOver(true);
+        }
+        // poqimon escaped
+        else
+        {
+            yield return new WaitForSeconds(1f);
+            yield return poqibol.DOFade(0, 0.2f).WaitForCompletion();
+            yield return enemyUnit.PlayBrokeAnimation();
+            if (shakeCount < 2)
+            {
+                yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} broke free");
+            }
+            else
+            {
+                yield return dialog.TypeTxt($"Almost caught it");
+            }
+            Destroy(poqibol);
+            state = BattleState.EnemyMove;
+        }
     }
 
     // Data from https://bulbapedia.bulbagarden.net/wiki/Catch_rate
-    int TyoToCatch()
+    int TyoToCatch(Poqimon poq)
     {
-        
+        float a = (3 * poq.MaxHp - 2 * poq.CurrentHp) * poq.PoqimonBase.CatchRate * ConditionsDB.GetStatusBonus(poq.Status) / (3 * poq.MaxHp);
+        if (a >= 255)
+        {
+            return 4;
+        }
+
+        float b = 1048560 / Mathf.Sqrt(Mathf.Sqrt(16711680 / a));
+
+        int shakeCount = 0;
+        while (shakeCount < 4)
+        {
+            if (UnityEngine.Random.Range(0, 65535) > b)
+            {
+                break;
+            }
+            ++shakeCount;
+        }
+        return shakeCount;
     }
 }
