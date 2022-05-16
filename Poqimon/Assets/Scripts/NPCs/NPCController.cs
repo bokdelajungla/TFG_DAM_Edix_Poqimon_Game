@@ -49,7 +49,9 @@ public class NPCController : MonoBehaviour, Interactable
             StartCoroutine(DialogController.Instance.ShowDialog(npcDialog));
 
         if (healer != null) {
-            healer.heal(npcDialog);
+            Debug.Log("ENTRA EN healer not null");
+            healer.dialog(npcDialog);
+            healer.Heal();
         }
     }
 

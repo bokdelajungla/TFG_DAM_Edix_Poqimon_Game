@@ -6,8 +6,11 @@ public class Healer : MonoBehaviour
 {
 
     [SerializeField] GameObject player;
-    public IEnumerator heal(Dialog dialog) {
-       yield return DialogController.Instance.ShowDialog(dialog);
+    public IEnumerator dialog(Dialog dialog) {
+        yield return DialogController.Instance.ShowDialog(dialog);
+    }
+
+    public void Heal() {
 
         var playerParty = player.GetComponent<PoqimonParty>();
         playerParty.Party.ForEach(p => p.Heal());

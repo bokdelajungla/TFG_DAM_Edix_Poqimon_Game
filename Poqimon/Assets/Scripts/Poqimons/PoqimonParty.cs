@@ -70,7 +70,7 @@ public class PoqimonParty : MonoBehaviour
     }
 
     public void PartyUpdated() {
-        OnUpdated.Invoke();
+        OnUpdated?.Invoke();
     }
 
 }
