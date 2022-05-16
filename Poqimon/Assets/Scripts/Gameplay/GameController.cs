@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
 
     MenuController menuController;
 
+    [SerializeField] private AudioClip battleMusic;
     [SerializeField] private AudioClip worldMusic;
     
     GameState state;
@@ -70,8 +71,15 @@ public class GameController : MonoBehaviour
         menuController.onMenuSelected += OnMenuSelected;
 
         //Subscribe to EvolutinController Events
-        EvolutionController.i.OnEvolutionStart += () => state = GameState.Evolution;
-        EvolutionController.i.OnEvolutionEnd += () => state = GameState.FreeRoam;
+        EvolutionController.i.OnEvolutionStart += () =>
+        {
+            state = GameState.Evolution;
+        };
+        EvolutionController.i.OnEvolutionEnd += () =>
+        {
+            state = GameState.FreeRoam;
+            AudioManager.i.PlayMusic(worldMusic);
+        };
     }
 
     // Update is called once per frame
@@ -95,7 +103,7 @@ public class GameController : MonoBehaviour
             DialogController.Instance.HandleUpdate();
         }
         else if (state == GameState.Menu)
-         {
+        {
              menuController.HandleUpdate();
         }
         else if (state == GameState.Bag) 
@@ -111,6 +119,7 @@ public class GameController : MonoBehaviour
 
     private void StartBattle()
     {
+        AudioManager.i.PlayMusic(battleMusic);
         state = GameState.Battle;
         battleSystemController.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
@@ -123,6 +132,7 @@ public class GameController : MonoBehaviour
 
     public void StartTrainerBattle(TrainerController trainerController)
     {
+        AudioManager.i.PlayMusic(battleMusic);
         state = GameState.Battle;
         battleSystemController.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
@@ -134,7 +144,7 @@ public class GameController : MonoBehaviour
     }
     
     private void EndBattle(bool playerWon)
-    {        
+    {
         //Return to FreeRoam state
         state = GameState.FreeRoam;
         battleSystemController.gameObject.SetActive(false);
@@ -143,7 +153,7 @@ public class GameController : MonoBehaviour
         //CheckForEvolutions in party
         var playerParty = playerController.GetComponent<PoqimonParty>();
         StartCoroutine(playerParty.CheckForEvolutions());
-
+        AudioManager.i.PlayMusic(worldMusic);
     }
 
     void OnMenuSelected(int selectedItem) {

@@ -12,7 +12,8 @@ public class EvolutionController : MonoBehaviour
     
     [SerializeField] GameObject evolutionSwirl;
     [SerializeField] GameObject evolutionBurst;
-
+    
+    [SerializeField] private AudioClip evolutionMusic;
     public event Action OnEvolutionStart;
     public event Action OnEvolutionEnd;
 
@@ -36,6 +37,8 @@ public class EvolutionController : MonoBehaviour
         OnEvolutionStart?.Invoke();
         evolutionUI.SetActive(true);
 
+        AudioManager.i.PlayMusic(evolutionMusic);
+        
         poqimonImage.sprite = poqimon.PoqimonBase.PoqimonFrontSprite;
         evolutionImage.sprite = evolution.EvolvesInto.PoqimonFrontSprite;
 
