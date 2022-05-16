@@ -235,6 +235,13 @@ public class BattleSystemController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            // 0PP can't use the move
+            if (playerUnit.Poqimon.Moves[currentMove].MovePP == 0)
+            {
+                return;
+            }
+            
+            // > 0PP can use the move
             dialog.EnableMoveSelector(false);
             dialog.EnableDialogTxt(true);
             StartCoroutine(PlayerMove());

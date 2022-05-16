@@ -69,8 +69,73 @@ public class BattleDialog : MonoBehaviour
         }
 
         ppTxt.text = $"PP {move.MovePP}/{move.MoveBase.MovePP}";
+        ppTxt.color = (move.MovePP == 0) ? Color.red : Color.black;
         moveTypeTxt.text = move.MoveBase.MoveType.ToString();
+        switch (moveTypeTxt.text)
+        {
+            case "Fire":
+                moveTypeTxt.color = Color.red;
+                break;
+            case "Normal":
+                moveTypeTxt.color = Color.gray;
+                break;
+            case "None":
+                moveTypeTxt.color = Color.black;
+                break;
+            case "Dark":
+                moveTypeTxt.color = new Color(  91, 72, 23  );
+                break;
+            case "Fairy":
+                moveTypeTxt.color = new Color(  201, 144, 198  );
+                break;
+            case "Ground":
+                moveTypeTxt.color = new Color(  190, 170, 72  );
+                break;
+            case "Flying":
+                moveTypeTxt.color = new Color(  133, 115, 238  );
+                break;
+            case "Bug":
+                moveTypeTxt.color = new Color( 138, 202, 0 );
+                break;
+            case "Rock":
+                moveTypeTxt.color = new Color( 126, 84, 0 );
+                break;
+            case "Ghost":
+                moveTypeTxt.color = new Color( 73, 0, 162 );
+                break;
+            case "Poison":
+                moveTypeTxt.color = new Color( 163, 0, 236 );
+                break;
+            case "Fight":
+                moveTypeTxt.color = new Color(  150, 0, 0  );
+                break;
+            case "Ice":
+                moveTypeTxt.color = Color.cyan;
+                break;
+            case "Electr":
+                moveTypeTxt.color = Color.yellow;
+                break;
+            case "Grass":
+                moveTypeTxt.color = Color.green;
+                break;
+            case "Dragon":
+                moveTypeTxt.color = Color.blue;
+                break;
+            case "Water":
+                moveTypeTxt.color = new Color( 0, 183, 241 );
+                break;
+            case "Psychc":
+                moveTypeTxt.color = Color.magenta;
+                break;
+            case "Steel":
+                moveTypeTxt.color = Color.grey;
+                break;
+            default:
+                moveTypeTxt.color = Color.black;
+                break;
+        }
         moveCategoryTxt.text = move.MoveBase.MoveCategory.ToString();
+        
     }
 
     public void SetMoveNames(List<Move> moves)
