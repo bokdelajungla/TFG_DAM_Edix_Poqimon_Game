@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
         animator = GetComponent<CharacterAnimator>();
     }
 
-    public IEnumerator moveTowards(Vector2 moveVector, Action OnMoveOver=null) { 
+    public IEnumerator MoveTo(Vector2 moveVector, Action OnMoveOver=null) { 
 
         animator.MoveX = Mathf.Clamp(moveVector.x, -1f, 1f);
         animator.MoveY = Mathf.Clamp(moveVector.y, -1f, 1f);
@@ -51,6 +51,18 @@ public class Character : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void LookTowards(Vector3 targetPosition)
+    {
+        var xDiff = Mathf.Floor(targetPosition.x) - Mathf.Floor(transform.position.x);
+        var yDiff = Mathf.Floor(targetPosition.y) - Mathf.Floor(transform.position.y);
+
+        if (xDiff == 0 || yDiff == 0)
+        {
+            animator.MoveX = Mathf.Clamp(xDiff, -1f, 1f);
+            animator.MoveY = Mathf.Clamp(yDiff, -1f, 1f);
+        }
     }
 
     public CharacterAnimator Animator {

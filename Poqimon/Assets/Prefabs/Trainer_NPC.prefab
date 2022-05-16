@@ -195,12 +195,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainerName: Campista Alberto
+  trainerSprite: {fileID: 1442582669, guid: 2d95a9ae37369d446ad58adeab53917f, type: 3}
   dialog:
     lines:
     - Let's Figth!
+  dialogAfterBattle:
+    lines:
+    - It's not fair... you cheated!!
   exclamationBubble: {fileID: 1475790917376572168}
   fov: {fileID: 1475790916912337572}
-  trainerSprite: {fileID: 1442582669, guid: 2d95a9ae37369d446ad58adeab53917f, type: 3}
 --- !u!114 &5683133631986216216
 MonoBehaviour:
   m_ObjectHideFlags: 0

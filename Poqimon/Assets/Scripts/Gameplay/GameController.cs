@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
     GameState state;
 
+    //Singleton Instance
     public static GameController Instance {get; private set;}
 
     private void Awake() 

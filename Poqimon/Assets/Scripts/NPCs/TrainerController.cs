@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TrainerController : MonoBehaviour
+public class TrainerController : MonoBehaviour, Interactable
 {
     [SerializeField] string trainerName;
+    [SerializeField] Sprite trainerSprite;
     [SerializeField] Dialog dialog;
+    [SerializeField] Dialog dialogAfterBattle;
     [SerializeField] GameObject exclamationBubble;
     [SerializeField] GameObject fov;
-    [SerializeField] Sprite trainerSprite;
 
+    private bool isDefeated = false;
+    
     Character character;
 
     public string TrainerName 
@@ -32,6 +35,25 @@ public class TrainerController : MonoBehaviour
         SetFoVRotation(character.Animator.DefaultFacingDirection);
     }
 
+    private void Update() {
+        character.HandleUpdate();    
+    }
+
+    public void Interact(Transform player)
+    {
+        character.LookTowards(player.position);
+
+        if(!isDefeated){
+            StartCoroutine(DialogController.Instance.ShowDialog(dialog, () => {
+                GameController.Instance.StartTrainerBattle(this);
+            }));
+        }
+        else
+        {
+            StartCoroutine(DialogController.Instance.ShowDialog(dialogAfterBattle));
+        }        
+    }
+
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
         //Show Exclamation Bubble
@@ -45,7 +67,7 @@ public class TrainerController : MonoBehaviour
         var moveVector = diff - diff.normalized;
         moveVector = new Vector2(Mathf.Round(moveVector.x), Mathf.Round(moveVector.y));
 
-        yield return character.moveTowards(moveVector);
+        yield return character.MoveTo(moveVector);
 
         //Show Dialog Message
         StartCoroutine(DialogController.Instance.ShowDialog(dialog, () => {
@@ -64,5 +86,11 @@ public class TrainerController : MonoBehaviour
             angle = 90f;
         
         fov.transform.eulerAngles = new Vector3(0f, 0f, angle);
+    }
+
+    public void LostBattle()
+    {
+        fov.gameObject.SetActive(false);
+        isDefeated = true;
     }
 }

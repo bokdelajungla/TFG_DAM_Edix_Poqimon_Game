@@ -13,8 +13,8 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] BattleUnit enemyUnit;
     [SerializeField] BattleHUD playerHUD;
     [SerializeField] BattleHUD enemyHUD;
-    [SerializeField] Image playerCharacter;
-    [SerializeField] Image trainerCharacter;
+    [SerializeField] Image playerImage;
+    [SerializeField] Image trainerImage;
     [SerializeField] BattleDialog dialog;
     [SerializeField] PartyScreenController partyScreenController;
 
@@ -52,24 +52,61 @@ public class BattleSystemController : MonoBehaviour
         isTrainerBattle = true;
 
         playerController = playerParty.GetComponent<PlayerController>();
-        trainerController = trainerController.GetComponent<TrainerController>();
+        trainerController = oponentParty.GetComponent<TrainerController>();
 
         StartCoroutine(SetupBattle());
     }
 
     private IEnumerator SetupBattle()
     {
+        //Remove HUD before battle start
+        playerUnit.Clear();
+        enemyUnit.Clear();
+
+        if (!isTrainerBattle)
+        {
+            //Wild Poqimon Battle
+            playerUnit.SetUp(playerParty.GetHealthyPoqimon());
+            enemyUnit.SetUp(enemyPoqimon);
+
+            dialog.SetMoveNames(playerUnit.Poqimon.Moves);
+            yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.PoqimonName} just appeared!");
+
+        }
+        else
+        {
+            //Trainer Battle
+            //Show Trainer & Player Sprites
+            //Hide Poqimons Units
+            playerUnit.gameObject.SetActive(false);
+            enemyUnit.gameObject.SetActive(false);
+
+            playerImage.gameObject.SetActive(true);
+            trainerImage.gameObject.SetActive(true);
+
+            playerImage.sprite = playerController.Sprite;
+            trainerImage.sprite = trainerController.Sprite;
+
+            yield return dialog.TypeTxt($"{trainerController.TrainerName} wants to fight!");
+
+            //Send Out first Poqimon for trainer
+            trainerImage.gameObject.SetActive(false);
+            enemyUnit.gameObject.SetActive(true);
+            var enemyPoqimon = oponentParty.GetHealthyPoqimon();
+            enemyUnit.SetUp(enemyPoqimon);
+            yield return dialog.TypeTxt($"{trainerController.TrainerName} sent out {enemyPoqimon.PoqimonBase.PoqimonName}");
+
+            //Send out first poqimon for player
+            playerImage.gameObject.SetActive(false);
+            playerUnit.gameObject.SetActive(true);
+            var playerPoqimon = playerParty.GetHealthyPoqimon();
+            playerUnit.SetUp(playerPoqimon);
+            dialog.SetMoveNames(playerUnit.Poqimon.Moves);
+            yield return dialog.TypeTxt($"Go {playerPoqimon.PoqimonBase.PoqimonName}!");
+        }
+
         state = BattleState.Start;
-
-        playerUnit.SetUp(playerParty.GetHealthyPoqimon());
-        enemyUnit.SetUp(enemyPoqimon);
-        
-        dialog.SetMoveNames(playerUnit.Poqimon.Moves);
-        
         partyScreenController.Init();
-
-        yield return dialog.TypeTxt($"A wild {enemyUnit.Poqimon.PoqimonBase.PoqimonName} just appeared!");
-
         ChooseFirstTurn();
     }
 
@@ -263,14 +300,32 @@ public class BattleSystemController : MonoBehaviour
             //No more poqimons. Combat ended, player Lost!
             else
             {
-                BattleOver(false);
+                BattleOver(true);   
             }
         }
-        // if enemy poqimon is fainted, Player Win!
+        // if enemy poqimon is fainted, Check for more poqimons
         else
         {
-            BattleOver(true);
-        }
+            //If it is not Trainer battle => wild poqimon defeated!
+            if (!isTrainerBattle)
+            {
+                BattleOver(false);
+            }
+            else
+            {
+                var nextEnemyPoqimon = oponentParty.GetHealthyPoqimon();
+                if (nextEnemyPoqimon != null)
+                {
+                    StartCoroutine(SwitchTrainerPOqimon(nextEnemyPoqimon));
+                }
+                else 
+                {
+                    //The trainer lost the Battle
+                    trainerController.LostBattle();
+                    BattleOver(true);
+                }
+            }
+        }         
     }
 
     IEnumerator RunMoveEffects(Move move, Poqimon source, Poqimon target)
@@ -311,12 +366,10 @@ public class BattleSystemController : MonoBehaviour
     
     IEnumerator SwitchPoqimon(Poqimon switchPoqimon)
     {
-        bool currentPoqFainted = true;
         if(playerUnit.Poqimon.CurrentHp > 0)
         {
-            currentPoqFainted = false;
             yield return dialog.TypeTxt($"Come back {playerUnit.Poqimon.PoqimonBase.PoqimonName}!");
-            //TODO: playerUnit.PlaySwitchAnimation();
+            playerUnit.PlayFaintedAnimation();
             yield return new WaitForSeconds(2f);
         }
         
@@ -325,7 +378,16 @@ public class BattleSystemController : MonoBehaviour
         yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}!");
         
         StartCoroutine(EnemyMove());
+    }
+
+    IEnumerator SwitchTrainerPOqimon(Poqimon switchPoqimon)
+    {
+        state = BattleState.Busy;
+                
+        enemyUnit.SetUp(switchPoqimon);
+        yield return dialog.TypeTxt($"{trainerController.TrainerName} sent out {switchPoqimon.PoqimonBase.PoqimonName}");
         
+        state = BattleState.ActionSelection;
     }
 
     IEnumerator PlayerMove()

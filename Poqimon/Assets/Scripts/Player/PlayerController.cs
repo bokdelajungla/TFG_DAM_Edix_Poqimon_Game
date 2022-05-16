@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour, ISavable
 {
     [SerializeField] string playerName;
     [SerializeField] Sprite playerSprite;
-
     public string PlayerName 
     {
         get => playerName;
@@ -90,7 +89,7 @@ public class PlayerController : MonoBehaviour, ISavable
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f,  GameLayers.i.InteractableLayer); 
         if (collider != null)
         {
-            collider.GetComponent<Interactable>()?.Interact();
+            collider.GetComponent<Interactable>()?.Interact(transform);
         }
     }
 

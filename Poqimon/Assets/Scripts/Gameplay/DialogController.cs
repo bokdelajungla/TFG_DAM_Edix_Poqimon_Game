@@ -12,7 +12,9 @@ public class DialogController : MonoBehaviour
 
     public event Action OnShowDialog;
     public event Action OnCloseDialog;
+    event Action OnFinished;
 
+    //Singleton Instance
     public static DialogController Instance {get; private set;}
 
     private void Awake()
@@ -22,17 +24,19 @@ public class DialogController : MonoBehaviour
 
     //******//
     Dialog dialog;
+    Action onDialogFinished;
     int currentLine = 0;
     bool isTyping;
     public bool IsShowing {get; private set;}
 
-    public IEnumerator ShowDialog(Dialog dialog, Action OnFinished = null)
+    public IEnumerator ShowDialog(Dialog dialog, Action OnFinished=null)
     {
         yield return new WaitForEndOfFrame();
         OnShowDialog?.Invoke();
 
         IsShowing = true;
         this.dialog = dialog;
+        onDialogFinished = OnFinished;
         dialogBox.SetActive(true);
         StartCoroutine(TypeDialog(dialog.Lines[0]));
     }
@@ -51,6 +55,7 @@ public class DialogController : MonoBehaviour
                 IsShowing = false;
                 currentLine = 0;
                 dialogBox.SetActive(false);
+                onDialogFinished?.Invoke();
                 OnCloseDialog?.Invoke();
             }
         }

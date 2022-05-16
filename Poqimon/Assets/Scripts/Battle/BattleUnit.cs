@@ -31,10 +31,17 @@ public class BattleUnit : MonoBehaviour
         
         image.sprite = (isPLayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : Poqimon.PoqimonBase.PoqimonFrontSprite;
 
+        hud.gameObject.SetActive(true);
         hud.SetData(poqimon);
         
         image.color = originalColor;
         PlayEnterAnimation();
+    }
+
+    public void Clear()
+    {
+        hud.gameObject.SetActive(false);
+
     }
     
     public void PlayEnterAnimation()

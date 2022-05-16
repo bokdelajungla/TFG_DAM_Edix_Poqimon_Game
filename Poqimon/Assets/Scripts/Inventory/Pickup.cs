@@ -9,11 +9,11 @@ public class Pickup : MonoBehaviour, Interactable
     [SerializeField] Dialog itemDialog;
 
     public bool used {get; set;} = false;
-    public void Interact()
+    public void Interact(Transform player)
     {
         if (!used) {
         Debug.Log("Pickup is working");
-        var player = FindObjectOfType<PlayerController>();
+        //var player = FindObjectOfType<PlayerController>();
         player.GetComponent<Inventory>().addItem(item);
         used = true;
 
