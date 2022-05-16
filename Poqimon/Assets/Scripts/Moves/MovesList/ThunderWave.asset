@@ -15,12 +15,12 @@ MonoBehaviour:
   moveName: 
   moveDescription: 
   moveType: 0
-  moveCategory: 0
+  moveCategory: 2
   movePower: 0
   target: 0
   effects:
     boosts: []
-    status: 0
-  moveAccuracy: 0
-  movePP: 0
+    status: 4
+  moveAccuracy: 90
+  movePP: 20
   priority: 0
