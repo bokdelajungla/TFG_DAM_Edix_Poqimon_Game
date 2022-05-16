@@ -357,6 +357,18 @@ public class BattleSystemController : MonoBehaviour
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
+        bool canRunMove = sourceUnit.Poqimon.OnBeforeMove();
+        // breaks the coroutine in case the poqimon can't move
+        if (!canRunMove)
+        {
+            yield return ShowStatusChanges(sourceUnit.Poqimon);
+            yield break;
+        }
+        
+        // If the poqimon can move do the coroutine as normal
+        
+        yield return ShowStatusChanges(sourceUnit.Poqimon);
+        
         move.MovePP--;
         yield return dialog.TypeTxt($"{sourceUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
         
