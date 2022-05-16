@@ -21,6 +21,8 @@ MonoBehaviour:
   effects:
     boosts: []
     status: 1
+    volatileStatus: 0
   moveAccuracy: 75
   movePP: 35
   priority: 0
+  moveAudio: {fileID: 8300000, guid: d055ac3cee91249839738775822b5213, type: 3}
