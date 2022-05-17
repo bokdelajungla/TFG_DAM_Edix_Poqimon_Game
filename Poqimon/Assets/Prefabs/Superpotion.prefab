@@ -101,7 +101,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 7fe7e4467a77fde4eafd00ca08aa9882, type: 2}
   itemDialog:
     lines:
-    - You found a Superotion!
+    - You found a Superpotion!
 --- !u!61 &6386213129962144813
 BoxCollider2D:
   m_ObjectHideFlags: 0
