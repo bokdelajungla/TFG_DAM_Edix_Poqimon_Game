@@ -688,7 +688,10 @@ public class BattleSystemController : MonoBehaviour
                 yield return dialog.TypeTxt($"Almost caught it");
             }
             Destroy(poqibol);
-            state = BattleState.PerformMove;
+            yield return dialog.TypeTxt($"{enemyUnit.Poqimon.PoqimonBase.PoqimonName} has scaped");
+            enemyUnit.PlayEscapeAnimation();
+            yield return new WaitForSeconds(2f);
+            BattleOver(true);
         }
     }
 
