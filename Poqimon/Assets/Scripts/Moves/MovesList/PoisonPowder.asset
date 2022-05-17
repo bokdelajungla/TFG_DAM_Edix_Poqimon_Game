@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a0e1983dd97a24883c50805530eeb6, type: 3}
   m_Name: PoisonPowder
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
+  moveName: Posion Powder
+  moveDescription: Bla bla bla
   moveType: 4
   moveCategory: 2
   movePower: 0

@@ -57,7 +57,7 @@ public class PoqimonBaseObject : ScriptableObject
     [SerializeField] List<Evolution> evolutions;
     public List<Evolution> Evolutions => evolutions;
 
-    public int MaxNumberOfMoves {get; set;} = 4;
+    public static int MaxNumberOfMoves {get;} = 4;
 
     public int GetExperienceForLvl(int level)
     {

@@ -50,7 +50,7 @@ public class Poqimon
             {
                 Moves.Add(new Move(learnableMove.MoveBase));
             }
-            if(Moves.Count >= 4)
+            if(Moves.Count >= PoqimonBaseObject.MaxNumberOfMoves)
             {
                 //TODO: Learning logic (only 4 slots)
                 break;
@@ -280,6 +280,19 @@ public class Poqimon
             return true;
         }
         return false;
+    }
+
+    public LearnableMove GetLearnableMoveAtCurrentLvl()
+    {
+        return PoqimonBase.LearnableMoves.Where(x => x.LearnLevel ==  PoqimonLevel).FirstOrDefault(); 
+    }
+
+    public void LearnMove(LearnableMove learnableMove)
+    {   
+        if(Moves.Count <= PoqimonBaseObject.MaxNumberOfMoves)
+        {
+            Moves.Add(new Move(learnableMove.MoveBase));
+        }
     }
 
 

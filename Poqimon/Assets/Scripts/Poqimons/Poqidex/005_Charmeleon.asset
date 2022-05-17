@@ -35,6 +35,10 @@ MonoBehaviour:
     learnLevel: 1
   - moveBase: {fileID: 11400000, guid: dc382acc7df1e7143aa907238199e018, type: 2}
     learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 22ee57be981720343a8e436339beb552, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: b5a788e33e2e84de9ab03a5f536549ca, type: 2}
+    learnLevel: 1
   evolutions:
   - evolvesInto: {fileID: 11400000, guid: af14a6972543ef14eb568d3d55b2af8e, type: 2}
     levelRequired: 32
