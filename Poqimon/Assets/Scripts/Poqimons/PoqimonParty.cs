@@ -69,4 +69,8 @@ public class PoqimonParty : MonoBehaviour
         OnUpdated?.Invoke();
     }
 
+    public void PartyUpdated() {
+        OnUpdated?.Invoke();
+    }
+
 }

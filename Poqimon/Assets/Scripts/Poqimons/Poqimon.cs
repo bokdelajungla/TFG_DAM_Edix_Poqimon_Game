@@ -95,6 +95,10 @@ public class Poqimon
         };
     }
 
+    public void Heal() {
+        CurrentHp = MaxHp;
+    }
+
     // Getter stats
     private int GetStat(Stat stat)
     {

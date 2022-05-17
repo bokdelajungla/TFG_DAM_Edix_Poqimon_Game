@@ -165,19 +165,16 @@ public class GameController : MonoBehaviour
 
     void OnMenuSelected(int selectedItem) {
         if (selectedItem == 0) {
-            //Pokemon
-        }
-        else if (selectedItem == 1) {
             // Bag
             inventoryUI.gameObject.SetActive(true);
             state = GameState.Bag;
         }
-        else if (selectedItem == 2) {
+        else if (selectedItem == 1) {
             // Save
             SavingSystem.i.Save("saveSlot1");
             state = GameState.FreeRoam;
         }
-        else if (selectedItem == 3) {
+        else if (selectedItem == 2) {
             // Load
             SavingSystem.i.Load("saveSlot1");
             state = GameState.FreeRoam;
