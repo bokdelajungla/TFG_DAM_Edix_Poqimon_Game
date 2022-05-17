@@ -34,6 +34,8 @@ public class BattleUnit : MonoBehaviour
         hud.gameObject.SetActive(true);
         hud.SetData(poqimon);
         
+        transform.localScale = new Vector3(1, 1, 1);
+        
         image.color = originalColor;
         PlayEnterAnimation();
     }
@@ -94,5 +96,11 @@ public class BattleUnit : MonoBehaviour
         sequence.Join(transform.DOLocalMoveY(originalPosition.y, 0.5f));
         sequence.Join(transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f));
         yield return sequence.WaitForCompletion();
+    }
+    
+    public void PlayEscapeAnimation()
+    {
+        image.transform.localPosition = new Vector3(originalPosition.x, originalPosition.y);
+        image.transform.DOLocalMoveX(550f, 1f);
     }
 }
