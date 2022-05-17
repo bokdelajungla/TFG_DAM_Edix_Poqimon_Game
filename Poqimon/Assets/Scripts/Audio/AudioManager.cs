@@ -6,6 +6,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource musicPlayer;
+    [SerializeField] AudioSource sfxPlayer;
     public static AudioManager i { get; set; }
 
     private void Awake()

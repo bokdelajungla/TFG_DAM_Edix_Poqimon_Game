@@ -14,6 +14,8 @@ public class EvolutionController : MonoBehaviour
     [SerializeField] GameObject evolutionBurst;
     
     [SerializeField] private AudioClip evolutionMusic;
+    [SerializeField] private AudioClip evolutionSuccesMusic;
+
     public event Action OnEvolutionStart;
     public event Action OnEvolutionEnd;
 
@@ -47,6 +49,7 @@ public class EvolutionController : MonoBehaviour
         StartCoroutine(EvolveAnimation(poqimonImage, evolutionImage));
         yield return new WaitForSeconds(animationDuration);
         
+        AudioManager.i.PlayMusic(evolutionSuccesMusic, false);
         
         var originalName = poqimon.PoqimonBase.PoqimonName;
         poqimon.Evolve(evolution);

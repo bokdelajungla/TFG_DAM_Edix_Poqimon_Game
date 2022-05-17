@@ -78,6 +78,8 @@ public class GameController : MonoBehaviour
         EvolutionController.i.OnEvolutionEnd += () =>
         {
             state = GameState.FreeRoam;
+            battleSystemController.gameObject.SetActive(false);
+            worldCamera.gameObject.SetActive(true);
             AudioManager.i.PlayMusic(worldMusic);
         };
     }
@@ -145,15 +147,20 @@ public class GameController : MonoBehaviour
     
     private void EndBattle(bool playerWon)
     {
-        //Return to FreeRoam state
-        state = GameState.FreeRoam;
-        battleSystemController.gameObject.SetActive(false);
-        worldCamera.gameObject.SetActive(true);
-
+        //Stop Battle Music
+        AudioManager.i.PlayMusic(null);
+        
         //CheckForEvolutions in party
         var playerParty = playerController.GetComponent<PoqimonParty>();
         StartCoroutine(playerParty.CheckForEvolutions());
-        AudioManager.i.PlayMusic(worldMusic);
+
+        //Return to FreeRoam state
+        if (state != GameState.Evolution ) {
+            state = GameState.FreeRoam;
+            battleSystemController.gameObject.SetActive(false);
+            worldCamera.gameObject.SetActive(true);
+            AudioManager.i.PlayMusic(worldMusic);
+        }
     }
 
     void OnMenuSelected(int selectedItem) {
@@ -175,8 +182,6 @@ public class GameController : MonoBehaviour
             SavingSystem.i.Load("saveSlot1");
             state = GameState.FreeRoam;
         }
-
-       
     }
 }
 
