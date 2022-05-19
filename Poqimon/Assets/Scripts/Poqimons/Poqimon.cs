@@ -38,14 +38,6 @@ public class Poqimon
 
     public event Action OnStatusChanged;
 
-    public Poqimon(PoqimonBaseObject poqimonBase, int poqimonLevel)
-    {
-        this.poqimonBase = poqimonBase;
-        this.poqimonLevel = poqimonLevel;
-
-        Init();
-    }
-    
     //Initializer
     public void Init()
     {

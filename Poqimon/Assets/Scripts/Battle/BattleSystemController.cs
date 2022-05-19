@@ -642,7 +642,7 @@ public class BattleSystemController : MonoBehaviour
             yield break;
         }
 
-        yield return dialog.TypeTxt($"{playerController.PlayerName} used Poqibol");
+        yield return dialog.TypeTxt($"{playerUnit.name} used Poqibol");
 
         var poqibolObj = Instantiate(poqibolSprite, playerUnit.transform.position, Quaternion.identity);
         var poqibol = poqibolObj.GetComponent<SpriteRenderer>();

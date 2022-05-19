@@ -129,10 +129,7 @@ public class GameController : MonoBehaviour
         var playerParty = playerController.GetComponent<PoqimonParty>();
         var enemyPoqimon = GetComponent<MapArea>().GetRandomWildPoqimon();
         
-        // In case of capture, the one's captured is a diferent poqimon and not the same object
-        var enemyPoqimonCopy = new Poqimon(enemyPoqimon.PoqimonBase, enemyPoqimon.PoqimonLevel);
-        
-        battleSystemController.StartBattle(playerParty, enemyPoqimonCopy);
+        battleSystemController.StartBattle(playerParty, enemyPoqimon);
     }
 
     public void StartTrainerBattle(TrainerController trainerController)
