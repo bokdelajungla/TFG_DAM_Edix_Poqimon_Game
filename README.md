@@ -40,9 +40,9 @@ In the end we delivered a prototype that imitates:
   - Moves with almost all properties
 
 
-#Gameplay
+# Gameplay
 For those that played one Pokemon game before, the gameplay is almost the same as the original.
-##Controls
+## Controls
 - Arrow Keys - Movement
 - Z - Interact
 - X - Cancel, Return
@@ -55,6 +55,7 @@ https://reliccastle.com/resources/609/
 
 Info and Formulas from:
 https://bulbapedia.bulbagarden.net/wiki/Main_Page
+
 ---
 ## Authors ✒️
 
