@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475790917376572169}
   - component: {fileID: 1475790917376572174}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,8 +128,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 691784751
-  m_SortingLayer: 2
+  m_SortingLayerID: 1240443439
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 446541b4be3798642a1cd44475fa4421, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

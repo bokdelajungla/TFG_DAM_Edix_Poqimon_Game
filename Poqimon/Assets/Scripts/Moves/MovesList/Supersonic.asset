@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a0e1983dd97a24883c50805530eeb6, type: 3}
   m_Name: Supersonic
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
+  moveName: Supersonic
+  moveDescription: High frequenzy sound that can produce confusion on the enemy
   moveType: 1
   moveCategory: 2
   movePower: 0
