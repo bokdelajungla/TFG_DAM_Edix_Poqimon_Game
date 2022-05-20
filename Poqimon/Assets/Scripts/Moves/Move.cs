@@ -1,22 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Move
 {
-    private MoveBaseObject moveBase;
-    public MoveBaseObject MoveBase => moveBase;
-    private int movePP;
-    public int MovePP 
+    public MoveBase MoveBase {get; set;}
+    public int MovePP {get; set;}
+
+    public Move(MoveBase moveBase)
     {
-        get => movePP; 
-        set => movePP = value;
+        MoveBase = moveBase;
+        MovePP = moveBase.MovePP;
     }
 
-    public Move(MoveBaseObject moveBase)
+    public Move(MoveSaveData saveData)
     {
-        this.moveBase = moveBase;
-        this.movePP = moveBase.MovePP;
+        MoveBase =  MoveDB.GetObjectByName(saveData.name);
+        MovePP = saveData.pp;
     }
 
+    public MoveSaveData GetSaveData()
+    {
+        var saveData = new MoveSaveData()
+        {
+            name = MoveBase.MoveName,
+            pp = MovePP
+        };
+        return saveData;
+    }
+
+}
+
+[Serializable]
+public class MoveSaveData
+{
+    public string name;
+    public int pp;
 }

@@ -41,25 +41,19 @@ public class NPCController : MonoBehaviour, Interactable
         character.HandleUpdate();    
     }
 
-    public void Interact(Transform player)
+    public IEnumerator Interact(Transform player)
     {
         if (npcState == NPCState.Idle)
         {
             npcState = NPCState.Talking;
             character.LookTowards(player.position);
-            StartCoroutine(DialogController.Instance.ShowDialog(npcDialog, ()=> {
+            yield return DialogController.Instance.ShowDialog(npcDialog, ()=> {
                 IdleTimer = 0f;
                 npcState = NPCState.Idle;
-            }));
+            });
         }
             
-            StartCoroutine(DialogController.Instance.ShowDialog(npcDialog));
-
-        if (healer != null) {
-            Debug.Log("ENTRA EN healer not null");
-            healer.dialog(npcDialog);
-            healer.Heal();
-        }
+        yield return DialogController.Instance.ShowDialog(npcDialog);
     }
 
     IEnumerator Walk()
@@ -70,8 +64,6 @@ public class NPCController : MonoBehaviour, Interactable
         npcState = NPCState.Idle;
     }
 }
-
-
 
 public enum NPCState
 {

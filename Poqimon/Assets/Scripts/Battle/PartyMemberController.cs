@@ -12,7 +12,7 @@ public class PartyMemberController : MonoBehaviour
     Poqimon poqimon;
     Animator animator;
     
-    private void Start()
+    private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
     }
@@ -29,9 +29,11 @@ public class PartyMemberController : MonoBehaviour
 
     public void SetSelected(bool selected)
     {
-        if(selected)
-            animator.SetBool("isSelected", true);
-        else
-            animator.SetBool("isSelected", false);
+        if(animator != null) {
+            if(selected)
+                animator.SetBool("isSelected", true);
+            else
+                animator.SetBool("isSelected", false);
+        }
     }
 }

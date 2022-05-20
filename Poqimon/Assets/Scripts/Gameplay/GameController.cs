@@ -3,30 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Busy, Evolution }
+
 public class GameController : MonoBehaviour
 {
-    public PlayerController playerController;
-    public BattleSystemController battleSystemController;
-
-    public Camera worldCamera;
-
+    [SerializeField] PlayerController playerController;
+    [SerializeField] BattleSystemController battleSystemController;
+    [SerializeField] Camera worldCamera;
+    [SerializeField] PartyScreenController partyScrren;
     [SerializeField] InventoryUI inventoryUI;
 
     MenuController menuController;
 
-    [SerializeField] private AudioClip battleMusic;
     [SerializeField] private AudioClip worldMusic;
     
     GameState state;
+    GameState prevState;
 
     //Singleton Instance
     public static GameController Instance {get; private set;}
 
     private void Awake() 
     {
-        // DB states
-        ConditionsDB.Init();
-        
         Instance = this;
         menuController = GetComponent<MenuController>();
         if (SavingSystem.i.IsNewGame == false)
@@ -34,6 +32,12 @@ public class GameController : MonoBehaviour
             SavingSystem.i.Load("saveSlot1");
         }
         state = GameState.FreeRoam;
+
+        // DB states
+        ConditionsDB.Init();
+        PoqimonDB.Init();
+        MoveDB.Init();
+        ItemDB.Init();
     }
 
     // Start is called before the first frame update
@@ -121,7 +125,6 @@ public class GameController : MonoBehaviour
 
     private void StartBattle()
     {
-        AudioManager.i.PlayMusic(battleMusic);
         state = GameState.Battle;
         battleSystemController.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
@@ -137,7 +140,6 @@ public class GameController : MonoBehaviour
 
     public void StartTrainerBattle(TrainerController trainerController)
     {
-        AudioManager.i.PlayMusic(battleMusic);
         state = GameState.Battle;
         battleSystemController.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
@@ -184,5 +186,3 @@ public class GameController : MonoBehaviour
         }
     }
 }
-
-public enum GameState { FreeRoam, Battle, Dialog, Menu, Bag, Busy, Evolution }

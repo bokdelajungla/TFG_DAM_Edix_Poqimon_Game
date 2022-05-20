@@ -9,7 +9,7 @@ public class Pickup : MonoBehaviour, Interactable
     [SerializeField] Dialog itemDialog;
 
     public bool used {get; set;} = false;
-    public void Interact(Transform player)
+    public IEnumerator Interact(Transform player)
     {
         if (!used) {
         Debug.Log("Pickup is working");
@@ -20,7 +20,7 @@ public class Pickup : MonoBehaviour, Interactable
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
 
-        StartCoroutine(DialogController.Instance.ShowDialog(itemDialog));
+        yield return DialogController.Instance.ShowDialog(itemDialog);
         }
         
     }

@@ -11,6 +11,8 @@ public class HPBar : MonoBehaviour
     [SerializeField] Color averageCondition;
     [SerializeField] Color criticalCondition;
     
+    public bool IsUpdating {get; set;}
+
     public void SetHP(float hpNormalized)
     {
         health.transform.localScale = new Vector3(hpNormalized, 1f, 1f);
@@ -34,6 +36,7 @@ public class HPBar : MonoBehaviour
 
     public IEnumerator SetHpSmooth(float newHP)
     {
+        IsUpdating = true;
         float currentHP = health.transform.localScale.x;
         float changeAmt = currentHP - newHP;
 
@@ -45,5 +48,6 @@ public class HPBar : MonoBehaviour
             yield return null;
         }
         health.transform.localScale = new Vector3(newHP, 1f);
+        IsUpdating = false;
     }
 }
