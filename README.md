@@ -2,7 +2,7 @@
 Repository for TFG DAM - VideoGame - **"Poqimon - Learning Version"**
 
 # Landing Page
-http://placeholder.we.have.problems.with.the.hosting.com
+https://poqimon.000webhostapp.com/
 
 # Introduction
 This is the repository for the TFG DAM course in which we sought to implement a videogame that mimiqued the gameplay from the classic 2D Pokémon games.
