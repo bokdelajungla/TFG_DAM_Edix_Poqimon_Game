@@ -1,6 +1,9 @@
 # TFG_DAM_Edix_Poqimon_Game
 Repository for TFG DAM - VideoGame - **"Poqimon - Learning Version"**
 
+# Landing Page
+http://placeholder.we.have.problems.with.the.hosting.com
+
 # Introduction
 This is the repository for the TFG DAM course in which we sought to implement a videogame that mimiqued the gameplay from the classic 2D Pokémon games.
 The objective was to be able to implement the maximun number of mechanics of the originals using Unity.
