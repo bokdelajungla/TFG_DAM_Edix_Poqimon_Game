@@ -14,19 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poqimonNumber: 0
   poqimonName: 
-  poqimonDescription: 
+  poqimonDescription: It whittles its constantly growing fangs by gnawing on hard
+    things. It can chew apart cinder walls.
   poqimonFrontSprite: {fileID: 0}
   poqimonBackSprite: {fileID: 0}
-  poqimonType1: 0
+  poqimonType1: 1
   poqimonType2: 0
-  maxHP: 0
-  attack: 0
-  defense: 0
-  spAttack: 0
-  spDefense: 0
-  speed: 0
-  expYield: 0
-  growthRate: 0
-  catchRate: 0
-  learnableMoves: []
+  maxHP: 55
+  attack: 81
+  defense: 60
+  spAttack: 50
+  spDefense: 70
+  speed: 97
+  expYield: 145
+  growthRate: 1
+  catchRate: 127
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 6bb252c524175ad41a2d8a0f9c7300ac, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: b5f0f5ae23c50b5439a086fc0e1b8103, type: 2}
+    learnLevel: 4
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 10
   evolutions: []

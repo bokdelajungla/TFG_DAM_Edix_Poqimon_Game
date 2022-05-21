@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: SleepPowder
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
-  moveType: 0
-  moveCategory: 0
+  moveName: Sleep Powder
+  moveDescription: The user scatters a big cloud of sleep-inducing dust around the
+    foe.
+  moveType: 12
+  moveCategory: 2
   movePower: 0
   target: 0
   effects:
     boosts: []
-    status: 0
+    status: 3
     volatileStatus: 0
-  moveAccuracy: 0
-  movePP: 0
+  moveAccuracy: 75
+  movePP: 15
   priority: 0
-  moveAudio: {fileID: 0}
+  moveAudio: {fileID: 8300000, guid: 968c19610ef7646d1afb5bb3dd26bf37, type: 3}

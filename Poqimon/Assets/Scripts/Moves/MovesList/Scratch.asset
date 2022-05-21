@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
+  moveName: Scratch
+  moveDescription: Hard, pointed, and sharp claws rake the foe to inflict damage.
   moveType: 0
   moveCategory: 0
-  movePower: 0
+  movePower: 40
   target: 0
   effects:
     boosts: []
     status: 0
     volatileStatus: 0
-  moveAccuracy: 0
-  movePP: 0
+  moveAccuracy: 100
+  movePP: 35
   priority: 0
-  moveAudio: {fileID: 0}
+  moveAudio: {fileID: 8300000, guid: 47517dede1fca415c9c9146e4c686aa0, type: 3}

@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: Supersonic
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
-  moveType: 0
-  moveCategory: 0
+  moveName: Supersonic
+  moveDescription: The user generates odd sound waves from its body. It may confuse
+    the target.
+  moveType: 1
+  moveCategory: 2
   movePower: 0
   target: 0
   effects:
     boosts: []
     status: 0
-    volatileStatus: 0
-  moveAccuracy: 0
-  movePP: 0
+    volatileStatus: 6
+  moveAccuracy: 55
+  movePP: 20
   priority: 0
-  moveAudio: {fileID: 0}
+  moveAudio: {fileID: 8300000, guid: 06806efb7c72447eb8e1dfc77e5084e8, type: 3}

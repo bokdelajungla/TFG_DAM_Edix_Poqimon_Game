@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: ThunderWave
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
-  moveType: 0
-  moveCategory: 0
+  moveName: Thunder Wave
+  moveDescription: A weak electric charge is launched at the foe. It causes paralysis
+    if it hits.
+  moveType: 13
+  moveCategory: 2
   movePower: 0
   target: 0
   effects:
     boosts: []
-    status: 0
+    status: 4
     volatileStatus: 0
-  moveAccuracy: 0
-  movePP: 0
+  moveAccuracy: 90
+  movePP: 20
   priority: 0
-  moveAudio: {fileID: 0}
+  moveAudio: {fileID: 8300000, guid: c187b4f8ec5b64db0be976a757c0b1e1, type: 3}

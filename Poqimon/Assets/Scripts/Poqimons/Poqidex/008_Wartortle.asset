@@ -12,21 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 008_Wartortle
   m_EditorClassIdentifier: 
-  poqimonNumber: 0
-  poqimonName: 
-  poqimonDescription: 
-  poqimonFrontSprite: {fileID: 0}
-  poqimonBackSprite: {fileID: 0}
-  poqimonType1: 0
+  poqimonNumber: 8
+  poqimonName: Wartortle
+  poqimonDescription: It is said to live 10,000 years. Its furry tail is popular
+    as a symbol of longevity.
+  poqimonFrontSprite: {fileID: -536709005, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: -1148596425, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonType1: 11
   poqimonType2: 0
-  maxHP: 0
-  attack: 0
-  defense: 0
-  spAttack: 0
-  spDefense: 0
-  speed: 0
-  expYield: 0
-  growthRate: 0
-  catchRate: 0
-  learnableMoves: []
-  evolutions: []
+  maxHP: 59
+  attack: 63
+  defense: 80
+  spAttack: 65
+  spDefense: 80
+  speed: 58
+  expYield: 143
+  growthRate: 2
+  catchRate: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 6bb252c524175ad41a2d8a0f9c7300ac, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: f8c6155e323a64b4d8ef3624bf7fcdba, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 12
+  evolutions:
+  - evolvesInto: {fileID: 11400000, guid: d2e14692e09ffbf43ada285262b501a6, type: 2}
+    levelRequired: 32

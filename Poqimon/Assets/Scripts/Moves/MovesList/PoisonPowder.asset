@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: PoisonPowder
   m_EditorClassIdentifier: 
-  moveName: 
-  moveDescription: 
-  moveType: 0
-  moveCategory: 0
+  moveName: Poison Powder
+  moveDescription: A cloud of poisonous dust is scattered on the foe. It may poison
+    the target.
+  moveType: 4
+  moveCategory: 2
   movePower: 0
   target: 0
   effects:
     boosts: []
-    status: 0
+    status: 1
     volatileStatus: 0
-  moveAccuracy: 0
-  movePP: 0
+  moveAccuracy: 75
+  movePP: 35
   priority: 0
-  moveAudio: {fileID: 0}
+  moveAudio: {fileID: 8300000, guid: d055ac3cee91249839738775822b5213, type: 3}

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 007_Squirtle
   m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
   poqimonNumber: 7
@@ -26,9 +26,9 @@ MonoBehaviour:
   spAttack: 50
   spDefense: 64
   speed: 43
-  expYield: 300
+  expYield: 66
   growthRate: 2
-  catchRate: 255
+  catchRate: 45
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
     learnLevel: 1
@@ -36,6 +36,8 @@ MonoBehaviour:
     learnLevel: 1
   - moveBase: {fileID: 11400000, guid: f8c6155e323a64b4d8ef3624bf7fcdba, type: 2}
     learnLevel: 3
-  - moveBase: {fileID: 11400000, guid: ff7da5f044fd0482f91273d074ba10ee, type: 2}
-    learnLevel: 3
-  evolutions: []
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 12
+  evolutions:
+  - evolvesInto: {fileID: 11400000, guid: 2ada50273aad9cc458cb31fe8de4e898, type: 2}
+    levelRequired: 16

@@ -21,8 +21,8 @@ MonoBehaviour:
   target: 0
   effects:
     boosts: []
-    status: 2
-    volatileStatus: 2
+    status: 0
+    volatileStatus: 0
   moveAccuracy: 100
   movePP: 25
   priority: 0
