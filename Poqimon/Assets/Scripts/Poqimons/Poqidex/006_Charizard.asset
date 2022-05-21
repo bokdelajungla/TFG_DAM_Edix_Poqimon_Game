@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 006_Charizard
   m_EditorClassIdentifier: 
-  poqimonNumber: 6
-  poqimonName: Charizard
+  poqimonNumber: 0
+  poqimonName: 
   poqimonDescription: 
-  poqimonFrontSprite: {fileID: -1933332934, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
-  poqimonBackSprite: {fileID: -2060551096, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
-  poqimonType1: 10
-  poqimonType2: 3
+  poqimonFrontSprite: {fileID: 0}
+  poqimonBackSprite: {fileID: 0}
+  poqimonType1: 0
+  poqimonType2: 0
   maxHP: 0
   attack: 0
   defense: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   spDefense: 0
   speed: 0
   expYield: 0
-  growthRate: 2
-  catchRate: 45
+  growthRate: 0
+  catchRate: 0
   learnableMoves: []
   evolutions: []

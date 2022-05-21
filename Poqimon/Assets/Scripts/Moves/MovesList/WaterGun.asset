@@ -9,20 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a0e1983dd97a24883c50805530eeb6, type: 3}
+  m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: WaterGun
   m_EditorClassIdentifier: 
-  moveName: Water Gun
-  moveDescription: ' Squirts water to attack the target.'
-  moveType: 11
-  moveCategory: 1
-  movePower: 40
+  moveName: 
+  moveDescription: 
+  moveType: 0
+  moveCategory: 0
+  movePower: 0
   target: 0
   effects:
     boosts: []
     status: 0
     volatileStatus: 0
-  moveAccuracy: 100
-  movePP: 25
+  moveAccuracy: 0
+  movePP: 0
   priority: 0
-  moveAudio: {fileID: 8300000, guid: 1b5710f58b4ba465a973b3602aa6c4fd, type: 3}
+  moveAudio: {fileID: 0}

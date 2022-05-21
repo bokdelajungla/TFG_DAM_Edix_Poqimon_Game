@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7030408568228168846}
   - component: {fileID: 2892507624466623141}
+  - component: {fileID: 7624804438964038100}
+  - component: {fileID: 4354726572187468364}
   - component: {fileID: 7030408568228168841}
   - component: {fileID: 7030408568228168840}
   - component: {fileID: 7030408568228168843}
-  - component: {fileID: 7624804438964038100}
-  - component: {fileID: 4354726572187468364}
   m_Layer: 10
   m_Name: NPC
   m_TagString: Untagged
@@ -53,6 +53,52 @@ MonoBehaviour:
     lines: []
   movePattern: []
   transitionTime: 0
+--- !u!114 &7624804438964038100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030408568228168842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c2abb2f93cad342a5591459a78a81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkDownSprites:
+  - {fileID: 1166611127, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -1351223084, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -1646170070, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: 1860012806, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  walkUpSprites:
+  - {fileID: 1105542300, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: 1257332583, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: 1223651795, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -1692997079, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  walkLeftSprites:
+  - {fileID: 1315848603, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -1543288999, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -491269149, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -294337456, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  walkRightSprites:
+  - {fileID: -1121326793, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: 155225420, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: -1428678077, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  - {fileID: 265809198, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
+  defaultFacingDirection: 0
+--- !u!114 &4354726572187468364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030408568228168842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b757d9de811b644ad924b953b614a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!212 &7030408568228168841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -152,49 +198,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 1.25}
   m_EdgeRadius: 0
---- !u!114 &7624804438964038100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030408568228168842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c2abb2f93cad342a5591459a78a81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkDownSprites:
-  - {fileID: 1166611127, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -1351223084, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -1646170070, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: 1860012806, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  walkUpSprites:
-  - {fileID: 1105542300, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: 1257332583, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: 1223651795, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -1692997079, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  walkLeftSprites:
-  - {fileID: 1315848603, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -1543288999, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -491269149, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -294337456, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  walkRightSprites:
-  - {fileID: -1121326793, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: 155225420, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: -1428678077, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  - {fileID: 265809198, guid: d434e40acacbf4f409822c43e19d8c4c, type: 3}
-  defaultFacingDirection: 0
---- !u!114 &4354726572187468364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030408568228168842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b757d9de811b644ad924b953b614a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5

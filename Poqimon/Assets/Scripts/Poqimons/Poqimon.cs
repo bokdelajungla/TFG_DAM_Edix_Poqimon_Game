@@ -61,8 +61,7 @@ public class Poqimon
             {
                 Moves.Add(new Move(learnableMove.MoveBase));
             }
-            if(Moves.Count >= PoqimonBase
-    .MaxNumberOfMoves)
+            if(Moves.Count >= PoqimonBase.MaxNumberOfMoves)
             {
                 //TODO: Learning logic (only 4 slots)
                 break;

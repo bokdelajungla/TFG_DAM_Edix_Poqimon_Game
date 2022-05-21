@@ -17,19 +17,12 @@ public class PlayerController : MonoBehaviour, ISavable
         get => playerSprite;
     }
 
-    public float moveSpeed;
-
-    const float offsetY = 0.3f;
+    private Vector2 input;
+    private Character character;
 
     public event Action OnEncountered;
     public event Action<Collider2D> OnTrainerFoV;
 
-    private bool isMoving;
-    private Vector2 input;
-
-    private Character character;
-
-    // Start is called before the first frame update
     private void Awake() 
     {
         character = GetComponent<Character>();
@@ -39,7 +32,7 @@ public class PlayerController : MonoBehaviour, ISavable
     //GameController from its Update function
     public void HandleUpdate()
     {
-        if (!isMoving) 
+        if (!character.IsMoving) 
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
@@ -78,11 +71,11 @@ public class PlayerController : MonoBehaviour, ISavable
 
     private void CheckForEncounters()
     {
-        if (Physics2D.OverlapCircle(transform.position - new Vector3(0,offsetY), 0.2f, GameLayers.i.LongGrassLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.LongGrassLayer) != null)
         {
             if (UnityEngine.Random.Range(1,101) <= 10)
             {
-                isMoving = false;
+                character.IsMoving = false;
                 OnEncountered();
             }
         }
@@ -93,7 +86,7 @@ public class PlayerController : MonoBehaviour, ISavable
         var collider = Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.TrainerFoVLayer); 
         if (collider != null)
         {
-            isMoving = false;
+            character.IsMoving = false;
             OnTrainerFoV?.Invoke(collider);
         }
     }
