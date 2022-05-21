@@ -21,7 +21,8 @@ public class BattleSystemController : MonoBehaviour
     [SerializeField] PartyScreenController partyScreenController;
     [SerializeField] private AudioSource audioSFX;
     [SerializeField] private GameObject poqibolSprite;
-    [SerializeField] MoveSelectionUI moveSelectionUI; 
+    [SerializeField] MoveSelectionUI moveSelectionUI;
+    [SerializeField] private ParticleSystem moveAnimation;
     
     //Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver; 
@@ -486,14 +487,16 @@ public class BattleSystemController : MonoBehaviour
         
         move.MovePP--;
         yield return dialog.TypeTxt($"{sourceUnit.Poqimon.PoqimonBase.PoqimonName} used {move.MoveBase.MoveName}");
-        
+
         if (move.MoveBase.MoveAudio != null)
         {
             audioSFX.PlayOneShot(move.MoveBase.MoveAudio);
         }
         
         sourceUnit.PlayAtkAnimation();
-        yield return new WaitForSeconds(0.5f);
+        moveAnimation.Play();
+        yield return new WaitForSeconds(2f);
+        moveAnimation.Stop();
         targetUnit.PlayHitAnimation();
 
         // Status movement
