@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public Camera worldCamera;
 
     [SerializeField] InventoryUI inventoryUI;
+    [SerializeField] private PartyScreenController partyScreen;
 
     MenuController menuController;
 
@@ -40,6 +41,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         AudioManager.i.PlayMusic(worldMusic);
+        
+        partyScreen.Init();
         
         //Subscribe to PlayerController Events
         playerController.OnEncountered += StartBattle;
@@ -117,6 +120,19 @@ public class GameController : MonoBehaviour
 
             inventoryUI.HandleUpdate(onBack);
         }
+        else if (state == GameState.PartyScreen)
+        {
+            Action onSelected = () =>
+            {
+                // TODO sumary screen
+            };
+            Action onBack = () =>
+            {
+                partyScreen.gameObject.SetActive(false);
+                state = GameState.FreeRoam;
+            };
+            partyScreen.HandleUpdate(onSelected, onBack);
+        }
     }
 
     private void StartBattle()
@@ -165,16 +181,22 @@ public class GameController : MonoBehaviour
 
     void OnMenuSelected(int selectedItem) {
         if (selectedItem == 0) {
+            // Party 
+            partyScreen.gameObject.SetActive(true);
+            partyScreen.SetPartyData(playerController.GetComponent<PoqimonParty>().Party);
+            state = GameState.PartyScreen;
+        }
+        else if (selectedItem == 1) {
             // Bag
             inventoryUI.gameObject.SetActive(true);
             state = GameState.Bag;
         }
-        else if (selectedItem == 1) {
+        else if (selectedItem == 2) {
             // Save
             SavingSystem.i.Save("saveSlot1");
             state = GameState.FreeRoam;
         }
-        else if (selectedItem == 2) {
+        else if (selectedItem == 3) {
             // Load
             SavingSystem.i.Load("saveSlot1");
             state = GameState.FreeRoam;
@@ -182,4 +204,4 @@ public class GameController : MonoBehaviour
     }
 }
 
-public enum GameState { FreeRoam, Battle, Dialog, Menu, Bag, Busy, Evolution }
+public enum GameState { FreeRoam, Battle, Dialog, Menu, PartyScreen, Bag, Busy, Evolution }
