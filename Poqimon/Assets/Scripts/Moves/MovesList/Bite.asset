@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Bite
   moveDescription: Bites the enemy with powerfull jaws.
-  moveType: 17
+  moveType: 16
   moveCategory: 0
   movePower: 60
   target: 0

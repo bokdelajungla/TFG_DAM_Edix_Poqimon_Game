@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Scratch
   moveDescription: Hard, pointed, and sharp claws rake the foe to inflict damage.
-  moveType: 0
+  moveType: 1
   moveCategory: 0
   movePower: 40
   target: 0
