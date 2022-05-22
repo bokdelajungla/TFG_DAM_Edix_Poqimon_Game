@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour
     MenuController menuController;
 
     [SerializeField] AudioClip worldMusic;
-    [SerializeField] AudioClip battleVictoryMusic;
     
     GameState state;
     GameState prevState;
@@ -160,9 +159,7 @@ public class GameController : MonoBehaviour
     private void EndBattle(bool playerWon)
     {
         if (playerWon)
-        {
-            AudioManager.i.PlayMusic(battleVictoryMusic);
-            
+        {            
             //Return to FreeRoam state
             state = GameState.FreeRoam;
             battleSystemController.gameObject.SetActive(false);

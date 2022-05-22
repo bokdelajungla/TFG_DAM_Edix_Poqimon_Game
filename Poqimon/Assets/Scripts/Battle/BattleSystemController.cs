@@ -25,6 +25,7 @@ public class BattleSystemController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip wildBattleMusic;
     [SerializeField] AudioClip trainerBattleMusic;
+    [SerializeField] AudioClip battleVictoryMusic;
     
     //Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver;
@@ -501,6 +502,10 @@ public class BattleSystemController : MonoBehaviour
             //If it is not Trainer battle => wild poqimon defeated!
             if (!isTrainerBattle)
             {
+                AudioManager.i.PlayMusic(null);
+                AudioManager.i.PlayMusic(battleVictoryMusic);
+                StartCoroutine(dialog.TypeTxt($"{playerController.PlayerName} won the battle!"));
+                StartCoroutine(new WaitUntil(() => Input.GetKeyDown(KeyCode.Z)));
                 BattleOver(true);
             }
             else
@@ -513,7 +518,11 @@ public class BattleSystemController : MonoBehaviour
                 else 
                 {
                     //The trainer lost the Battle
+                    AudioManager.i.PlayMusic(null);
+                    AudioManager.i.PlayMusic(battleVictoryMusic);
                     trainerController.LostBattle();
+                    StartCoroutine(dialog.TypeTxt($"{playerController.PlayerName} won the battle!"));
+                    StartCoroutine(new WaitUntil(() => Input.GetKeyDown(KeyCode.Z)));
                     BattleOver(true);
                 }
             }
@@ -644,7 +653,7 @@ public class BattleSystemController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         CheckForBattleOver(faintedUnit);
     }
 
