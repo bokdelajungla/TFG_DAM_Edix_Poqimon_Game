@@ -51,7 +51,12 @@ public class PoqimonParty : MonoBehaviour
         }
     }
 
-    public IEnumerator CheckForEvolutions() 
+    public bool CheckForEvolutions()
+    {
+        return party.Any(p => p.CheckForEvolution() != null);
+    }
+
+    public IEnumerator RunEvolutions() 
     {
         foreach (var poqimon in party)
         {

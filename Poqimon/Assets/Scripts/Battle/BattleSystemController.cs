@@ -25,12 +25,12 @@ public class BattleSystemController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip wildBattleMusic;
     [SerializeField] AudioClip trainerBattleMusic;
-    [SerializeField] AudioClip battleVictoryMusic;
     
     //Event with a bool to be able to distinguish between Win & Lose
-    public event Action<bool> OnBattleOver; 
+    public event Action<bool> OnBattleOver;
     
     BattleState state;
+
     int currentAction;
     int currentMove;
     int currentMember;
@@ -38,6 +38,7 @@ public class BattleSystemController : MonoBehaviour
     PoqimonParty playerParty;
     PoqimonParty oponentParty; 
     Poqimon enemyPoqimon;
+    
     Poqimon selectedMember;
 
     bool isTrainerBattle = false;
@@ -126,14 +127,14 @@ public class BattleSystemController : MonoBehaviour
         ActionSelection();
     }
 
-    private void BattleOver(bool won)
+    private void BattleOver(bool isWon)
     {
-        state = BattleState.BattleOver;
-        // Reset All the Stats of every Poqimmon at the Party when the battle is over
-        playerParty.Party.ForEach(poq => poq.OnBattleOver());
-        playerUnit.Hud.ClearData();
-        enemyUnit.Hud.ClearData();
-        OnBattleOver(won);
+            state = BattleState.BattleOver;
+            // Reset All the Stats of every Poqimmon at the Party when the battle is over
+            playerParty.Party.ForEach(poq => poq.OnBattleOver());
+            playerUnit.Hud.ClearData();
+            enemyUnit.Hud.ClearData();
+            OnBattleOver(isWon);
     }
     
     private void ActionSelection()
@@ -145,9 +146,12 @@ public class BattleSystemController : MonoBehaviour
 	
 	void OpenBag()
     {
-        state = BattleState.Bag;
-        inventoryUI.gameObject.SetActive(true);
+        //TODO: Check Inventroy
+        //Invoke Use Item from there:
+        //For now just Use Item poqibol by default
+        StartCoroutine(RunTurns(BattleAction.UseItem));
     }
+
 
     private void OpenPartyScreen()
     {
@@ -219,15 +223,20 @@ public class BattleSystemController : MonoBehaviour
             if (playerAction == BattleAction.SwitchPoqimon)
             {
                 state = BattleState.Busy;
+                dialog.EnableActionSelector(false);
                 yield return SwitchPoqimon(selectedMember);
             }
             else if (playerAction == BattleAction.UseItem)
             {
-                // This is handled from item screen, so do nothing and skip to enemy move
+                state = BattleState.Busy;
                 dialog.EnableActionSelector(false);
+                yield return ThrowPoqibol();
+                
             }
             else if (playerAction == BattleAction.Run)
             {
+                state = BattleState.Busy;
+                dialog.EnableActionSelector(false);
                 yield return TryToRun();
             }
 
@@ -350,11 +359,6 @@ public class BattleSystemController : MonoBehaviour
             moveSelectionUI.HandleMoveSelectionUI(OnMoveSelected); 
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(ThrowPoqibol());
-        }
-
     }
 
     void HandleActionSelection()
@@ -380,11 +384,9 @@ public class BattleSystemController : MonoBehaviour
             }
             else if (currentAction == 1)
             {
-                //Bag (Throw Poqibol)
-                StartCoroutine(ThrowPoqibol());
-                /*TODO: When Bag Implemented
+                //TODO: Open Bag window
+                //For now: Bag => (Use Item - Poqibol)
                 OpenBag();
-                */
             }
             else if (currentAction == 2)
             {
@@ -439,6 +441,7 @@ public class BattleSystemController : MonoBehaviour
 
     private void HandlePartyScreenSelection()
     {
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
             currentMember++;
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -489,7 +492,7 @@ public class BattleSystemController : MonoBehaviour
             //No more poqimons. Combat ended, player Lost!
             else
             {
-                BattleOver(true);   
+                BattleOver(false);   
             }
         }
         // if enemy poqimon is fainted, Check for more poqimons
@@ -498,7 +501,7 @@ public class BattleSystemController : MonoBehaviour
             //If it is not Trainer battle => wild poqimon defeated!
             if (!isTrainerBattle)
             {
-                BattleOver(false);
+                BattleOver(true);
             }
             else
             {
@@ -740,13 +743,12 @@ public class BattleSystemController : MonoBehaviour
             
             Destroy(poqibol);
             BattleOver(true);
-            yield break;
         }
         // poqimon escaped
         else
         {
             yield return new WaitForSeconds(1f);
-            yield return poqibol.DOFade(0, 0.2f).WaitForCompletion();
+            poqibol.DOFade(0, 0.2f);
             yield return enemyUnit.PlayBrokeAnimation();
             if (shakeCount < 2)
             {

@@ -20,6 +20,13 @@ public class PartyMemberController : MonoBehaviour
     public void SetData(Poqimon poqimon)
     {
         this.poqimon = poqimon;
+        UpdateData();
+
+        poqimon.OnHPChanged += UpdateData;
+    }
+
+    void UpdateData()
+    {
         nameTxt.text = poqimon.PoqimonBase.PoqimonName;
         lvlTxt.text = poqimon.PoqimonLevel.ToString();
         hpBar.SetHP((float) poqimon.CurrentHp / poqimon.MaxHp);

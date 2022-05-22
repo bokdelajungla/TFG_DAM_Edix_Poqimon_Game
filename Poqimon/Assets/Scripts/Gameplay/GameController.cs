@@ -13,9 +13,12 @@ public class GameController : MonoBehaviour
     [SerializeField] PartyScreenController partyScrren;
     [SerializeField] InventoryUI inventoryUI;
 
+    [SerializeField] Transform playerStartPosition;
+
     MenuController menuController;
 
-    [SerializeField] private AudioClip worldMusic;
+    [SerializeField] AudioClip worldMusic;
+    [SerializeField] AudioClip battleVictoryMusic;
     
     GameState state;
     GameState prevState;
@@ -108,7 +111,7 @@ public class GameController : MonoBehaviour
         }
         else if (state == GameState.Dialog)
         {
-            DialogController.Instance.HandleUpdate();
+            // Check
         }
         else if (state == GameState.Menu)
         {
@@ -154,20 +157,28 @@ public class GameController : MonoBehaviour
     
     private void EndBattle(bool playerWon)
     {
-        //Stop Battle Music
-        AudioManager.i.PlayMusic(null);
-        
-        //CheckForEvolutions in party
-        var playerParty = playerController.GetComponent<PoqimonParty>();
-        StartCoroutine(playerParty.CheckForEvolutions());
-
-        //Return to FreeRoam state
-        if (state != GameState.Evolution ) {
+        if (playerWon)
+        {
+            AudioManager.i.PlayMusic(battleVictoryMusic);
+            
+            //Return to FreeRoam state
             state = GameState.FreeRoam;
             battleSystemController.gameObject.SetActive(false);
             worldCamera.gameObject.SetActive(true);
-            AudioManager.i.PlayMusic(worldMusic);
+
+            //CheckForEvolutions in party
+            var playerParty = playerController.GetComponent<PoqimonParty>();
+            bool hasEvolutions = playerParty.CheckForEvolutions();
+
+            if (hasEvolutions)
+                StartCoroutine(playerParty.RunEvolutions());
+            else
+                AudioManager.i.PlayMusic(worldMusic, true);
         }
+        else 
+        {
+            ResetToStartPosition();
+        }        
     }
 
     void OnMenuSelected(int selectedItem) {
@@ -185,6 +196,18 @@ public class GameController : MonoBehaviour
             // Load
             SavingSystem.i.Load("saveSlot1");
             state = GameState.FreeRoam;
+        }
+    }
+
+    private void ResetToStartPosition()
+    {
+        // Restart Position
+        playerController.gameObject.transform.position = playerStartPosition.position;
+        // Restore Poqimons
+        var playerParty = playerController.gameObject.GetComponent<PoqimonParty>();
+        {
+        playerParty.Party.ForEach(p => p.Heal());
+        playerParty.PartyUpdated();
         }
     }
 }

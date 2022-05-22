@@ -44,8 +44,6 @@ public class DialogController : MonoBehaviour
             CloseDialog();
         }
         OnDialogFinished?.Invoke();
-
-        OnDialogFinished?.Invoke();
     }
 
     public void CloseDialog()
@@ -72,11 +70,6 @@ public class DialogController : MonoBehaviour
         dialogBox.SetActive(false);
         IsShowing = false;
         OnDialogFinished?.Invoke();
-    }
-
-    public void HandleUpdate()
-    {
-
     }
 
     //Coroutine for showing text letter by letter     
