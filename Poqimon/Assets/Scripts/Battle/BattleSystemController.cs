@@ -80,6 +80,9 @@ public class BattleSystemController : MonoBehaviour
     
     //
     private Poqimon selectedMember;
+
+    //
+    private BattleUnit faintedUnit;
     
     //
     private MoveBase moveToLearn;
@@ -364,9 +367,9 @@ public class BattleSystemController : MonoBehaviour
                 partyScreenController.SetMessageText(selectedMember.PoqimonBase.PoqimonName + " is already fighting!");
                 return;
             }
-            partyScreenController.gameObject.SetActive(false);
-            state = BattleState.Busy;
-            StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
+                partyScreenController.gameObject.SetActive(false);
+                state = BattleState.Busy;
+                StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
@@ -591,6 +594,17 @@ public class BattleSystemController : MonoBehaviour
         {
             if (playerAction == BattleAction.SwitchPoqimon)
             {
+                if (faintedUnit != null)
+                {
+                    if (faintedUnit.IsPlayer)
+                    {
+                        state = BattleState.ActionSelection;
+                        dialog.EnableActionSelector(true);
+                        yield return SwitchPoqimon(selectedMember);
+                        faintedUnit = null;
+                        yield break; //Skip Enemy turn                       
+                    }
+                } 
                 state = BattleState.Busy;
                 dialog.EnableActionSelector(false);
                 yield return SwitchPoqimon(selectedMember);
@@ -668,7 +682,8 @@ public class BattleSystemController : MonoBehaviour
         // Target Dies (Defender)
         if (targetUnit.Poqimon.CurrentHp <= 0)
         {
-           yield return HandleFaintedPoqimon(targetUnit);
+            faintedUnit = targetUnit;
+            yield return HandleFaintedPoqimon(targetUnit);
         }
         
         
@@ -697,6 +712,7 @@ public class BattleSystemController : MonoBehaviour
         // The target has fainted
         if (sourceUnit.Poqimon.CurrentHp <= 0)
         {
+            faintedUnit = sourceUnit;
             yield return HandleFaintedPoqimon(sourceUnit);
             yield return new WaitUntil(() => state == BattleState.RunningTurn);
         }
@@ -777,7 +793,8 @@ public class BattleSystemController : MonoBehaviour
         dialog.SetMoveNames(switchPoqimon.Moves);
         yield return dialog.TypeTxt($"Go {switchPoqimon.PoqimonBase.PoqimonName}!");
         
-        if (isTrainerAboutToUse)
+        // TODO: Logic to allow switching poqimon when trainer changes current poqimon
+        if (isTrainerAboutToUse) // For now is always false
             StartCoroutine(SwitchTrainerPoqimon(oponentParty.GetHealthyPoqimon()));
         else
             state = BattleState.RunningTurn;
@@ -935,7 +952,7 @@ public class BattleSystemController : MonoBehaviour
             yield break;
         }
 
-        yield return dialog.TypeTxt($"{playerUnit.name} used Poqibol");
+        yield return dialog.TypeTxt($"{playerController.PlayerName} used Poqibol");
 
         var poqibolObj = Instantiate(poqibolSprite, playerUnit.transform.position, Quaternion.identity);
         var poqibol = poqibolObj.GetComponent<SpriteRenderer>();
