@@ -1,0 +1,36 @@
+.mainpage {
+  height: 100vh;
+    background-image: url('./../imgs/background1.jpg');
+}
+
+.page {
+  height: 100vh;
+    background-image: url('./../imgs/background2.jpg');
+}
+
+.flex {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    & > .card-body {
+      background-color: #fff;
+      margin: 2em;
+      box-shadow: $shadow-m;
+      & > * {
+        margin: 1.2em .4em;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+  }
+}
