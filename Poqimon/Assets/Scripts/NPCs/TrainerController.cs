@@ -46,6 +46,7 @@ public class TrainerController : MonoBehaviour, Interactable
         character.LookTowards(player.position);
 
         if(!isDefeated){
+            AudioManager.i.PlayMusic(null);
             AudioManager.i.PlayMusic(trainerTriggerClip);
 
             yield return DialogController.Instance.ShowDialog(dialog, () => {
@@ -60,6 +61,7 @@ public class TrainerController : MonoBehaviour, Interactable
 
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
+        AudioManager.i.PlayMusic(null);
         AudioManager.i.PlayMusic(trainerTriggerClip);
         //Show Exclamation Bubble
         exclamationBubble.SetActive(true);
