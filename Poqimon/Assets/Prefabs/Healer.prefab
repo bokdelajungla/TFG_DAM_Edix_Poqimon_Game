@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d892ad1fc6ba4747b4fb0d05f493e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healChime: {fileID: 8300000, guid: 145c9c61b8955f04f9661df4561fc8fd, type: 3}
 --- !u!114 &8455758306872853027
 MonoBehaviour:
   m_ObjectHideFlags: 0
