@@ -12,30 +12,42 @@ public class BattleHUD : MonoBehaviour
     [SerializeField] private HPBar hpBar;
     [SerializeField] private GameObject expBar;
     
+    [SerializeField] Color psnColor;
+    [SerializeField] Color brnColor;
+    [SerializeField] Color slpColor;
+    [SerializeField] Color parColor;
+    [SerializeField] Color frzColor;
+
     private Dictionary<ConditionID, Color> statusColors;
 
     private Poqimon poqimon;
 
     public void SetData(Poqimon poqimon)
     {
+        if (this.poqimon != null)
+        {
+            this.poqimon.OnHPChanged -= UpdateHP;
+            this.poqimon.OnStatusChanged -= SetStatusTxt;
+        }
         this.poqimon = poqimon;
-        
-        nameTxt.text = this.poqimon.PoqimonBase.PoqimonName;
+
+        nameTxt.text = poqimon.PoqimonBase.PoqimonName;
         SetLvl();
-        hpBar.SetHP((float) this.poqimon.CurrentHp / this.poqimon.MaxHp);
-        hpBar.setHPText(this.poqimon.CurrentHp + " / " + this.poqimon.MaxHp);
+        hpBar.SetHP((float) poqimon.CurrentHp / poqimon.MaxHp);
+        hpBar.setHPText(poqimon.CurrentHp + " / " + poqimon.MaxHp);
         SetExp();
 
         statusColors = new Dictionary<ConditionID, Color>()
         {
-            { ConditionID.psn, new Color(57, 29, 194) },
-            { ConditionID.brn, new Color(241, 80, 0) },
-            { ConditionID.slp, new Color(145, 145, 145) },
-            { ConditionID.par, new Color(147, 122, 0) },
-            { ConditionID.frz, new Color(0, 212, 241) }
+            { ConditionID.psn, psnColor },
+            { ConditionID.brn, brnColor },
+            { ConditionID.slp, slpColor },
+            { ConditionID.par, parColor },
+            { ConditionID.frz, frzColor }
         };
 
         SetStatusTxt();
+        poqimon.OnHPChanged += UpdateHP;
         poqimon.OnStatusChanged += SetStatusTxt;
     }
 
@@ -50,6 +62,11 @@ public class BattleHUD : MonoBehaviour
             statusTxt.text = poqimon.Status.Id.ToString().ToUpper();
             statusTxt.color = statusColors[poqimon.Status.Id];
         }
+    }
+
+    public void SetLvl()
+    {
+        lvlTxt.text = "lvl " + poqimon.PoqimonLevel;
     }
 
     public void SetExp()
@@ -82,22 +99,31 @@ public class BattleHUD : MonoBehaviour
         return Mathf.Clamp01(normalizedExp);
     }
 
-    public IEnumerator UpdateHP()
+    public void UpdateHP()
     {
-        if (poqimon.HpChanged)
-        {
-            yield return hpBar.SetHpSmooth((float) poqimon.CurrentHp / poqimon.MaxHp);
+        StartCoroutine(UpdateHPAsync());
+    }
+
+    public IEnumerator UpdateHPAsync()
+    {
+        yield return hpBar.SetHpSmooth((float) poqimon.CurrentHp / poqimon.MaxHp);
             // TODO SetTxtSmooth - funcion propia
             hpBar.setHPText(poqimon.CurrentHp + " / " + poqimon.MaxHp);
             poqimon.HpChanged = false;
-        }
-        
-        yield return hpBar.SetHpSmooth((float) poqimon.CurrentHp / poqimon.MaxHp);
-        hpBar.setHPText(poqimon.CurrentHp + " / " + poqimon.MaxHp);
     }
 
-    public void SetLvl()
+    public IEnumerator WaitForHPUpdate()
     {
-        lvlTxt.text = "lvl " + poqimon.PoqimonLevel;
+        yield return new WaitUntil(() => hpBar.IsUpdating == false);
     }
+
+    public void ClearData()
+    {
+        if (poqimon != null)
+        {
+            poqimon.OnHPChanged -= UpdateHP;
+            poqimon.OnStatusChanged -= SetStatusTxt;
+        }
+    }
+
 }

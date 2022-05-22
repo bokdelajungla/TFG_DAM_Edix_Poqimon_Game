@@ -20,11 +20,6 @@ public class NPCController : MonoBehaviour, Interactable
         character = GetComponent<Character>();
         healer = GetComponent<Healer>();
     }
-    // Start is called before the first frame update
-    private void Start()
-    {
-
-    }
 
     private void Update() 
     {
@@ -41,37 +36,39 @@ public class NPCController : MonoBehaviour, Interactable
         character.HandleUpdate();    
     }
 
-    public void Interact(Transform player)
+    public IEnumerator Interact(Transform player)
     {
         if (npcState == NPCState.Idle)
         {
             npcState = NPCState.Talking;
             character.LookTowards(player.position);
-            StartCoroutine(DialogController.Instance.ShowDialog(npcDialog, ()=> {
-                IdleTimer = 0f;
-                npcState = NPCState.Idle;
-            }));
+            
+            if (healer != null)
+            {
+                yield return healer.Heal(player);
+            }
+            else
+            {
+                yield return DialogController.Instance.ShowDialog(npcDialog);
+            }
         }
             
-            StartCoroutine(DialogController.Instance.ShowDialog(npcDialog));
-
-        if (healer != null) {
-            Debug.Log("ENTRA EN healer not null");
-            healer.dialog(npcDialog);
-            healer.Heal();
-        }
+        IdleTimer = 0f;
+        npcState = NPCState.Idle;
     }
 
     IEnumerator Walk()
     {
         npcState = NPCState.Walking;
+        var prevPos = transform.position;
         yield return character.MoveTo(movePattern[currentMovePattern]);
-        currentMovePattern = (currentMovePattern + 1) % movePattern.Count;
+        
+        if (transform.position != prevPos)
+            currentMovePattern = (currentMovePattern + 1) % movePattern.Count;
+        
         npcState = NPCState.Idle;
     }
 }
-
-
 
 public enum NPCState
 {

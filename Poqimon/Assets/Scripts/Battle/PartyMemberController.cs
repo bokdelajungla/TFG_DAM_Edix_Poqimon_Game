@@ -12,7 +12,7 @@ public class PartyMemberController : MonoBehaviour
     Poqimon poqimon;
     Animator animator;
     
-    private void Start()
+    private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
     }
@@ -20,6 +20,13 @@ public class PartyMemberController : MonoBehaviour
     public void SetData(Poqimon poqimon)
     {
         this.poqimon = poqimon;
+        UpdateData();
+
+        poqimon.OnHPChanged += UpdateData;
+    }
+
+    void UpdateData()
+    {
         nameTxt.text = poqimon.PoqimonBase.PoqimonName;
         lvlTxt.text = poqimon.PoqimonLevel.ToString();
         hpBar.SetHP((float) poqimon.CurrentHp / poqimon.MaxHp);
@@ -29,9 +36,11 @@ public class PartyMemberController : MonoBehaviour
 
     public void SetSelected(bool selected)
     {
-        if(selected)
-            animator.SetBool("isSelected", true);
-        else
-            animator.SetBool("isSelected", false);
+        if(animator != null) {
+            if(selected)
+                animator.SetBool("isSelected", true);
+            else
+                animator.SetBool("isSelected", false);
+        }
     }
 }

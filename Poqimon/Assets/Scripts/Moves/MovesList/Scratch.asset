@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a0e1983dd97a24883c50805530eeb6, type: 3}
+  m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
   moveName: Scratch
-  moveDescription: Scratches the target with sharp claws.
-  moveType: 1
+  moveDescription: Hard, pointed, and sharp claws rake the foe to inflict damage.
+  moveType: 0
   moveCategory: 0
   movePower: 40
   target: 0

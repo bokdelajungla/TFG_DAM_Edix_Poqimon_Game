@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 001_Bulbasir
   m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
   poqimonNumber: 1
   poqimonName: Bulbasir
-  poqimonDescription: Bulbasaur can be seen napping in bright sunlight. There is
-    a seed on its back. By soaking up the sun's rays, the seed grows progressively
-    larger.
+  poqimonDescription: For some time after its birth, it grows by gaining nourishment
+    from the seed on its back.
   poqimonFrontSprite: {fileID: 923414779, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
   poqimonBackSprite: {fileID: 830431416, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
   poqimonType1: 12
@@ -29,7 +28,7 @@ MonoBehaviour:
   speed: 45
   expYield: 64
   growthRate: 2
-  catchRate: 255
+  catchRate: 45
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
     learnLevel: 1
@@ -37,6 +36,16 @@ MonoBehaviour:
     learnLevel: 1
   - moveBase: {fileID: 11400000, guid: ab2d476fa006d6a47a78b4e8f797fa7e, type: 2}
     learnLevel: 3
+  - moveBase: {fileID: 11400000, guid: 22ee57be981720343a8e436339beb552, type: 2}
+    learnLevel: 6
+  - moveBase: {fileID: 11400000, guid: 392a55cd70a914ccf9bb57c635e1f217, type: 2}
+    learnLevel: 9
+  - moveBase: {fileID: 11400000, guid: 77354d3f3c884c34b9c15173224237cd, type: 2}
+    learnLevel: 12
+  - moveBase: {fileID: 11400000, guid: b5a788e33e2e84de9ab03a5f536549ca, type: 2}
+    learnLevel: 15
+  - moveBase: {fileID: 11400000, guid: 392a55cd70a914ccf9bb57c635e1f217, type: 2}
+    learnLevel: 15
   evolutions:
   - evolvesInto: {fileID: 11400000, guid: d02f17d8f2ca4104c8badeef31b0a81e, type: 2}
     levelRequired: 16

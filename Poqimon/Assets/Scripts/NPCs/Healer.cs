@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Healer : MonoBehaviour
 {
+    [SerializeField] AudioClip healChime;
 
-    [SerializeField] GameObject player;
-    public IEnumerator dialog(Dialog dialog) {
-        yield return DialogController.Instance.ShowDialog(dialog);
-    }
+    public IEnumerator Heal(Transform player)
+    {
+        yield return DialogController.Instance.ShowDialogText($"Your poqimons look tired! Let me take care of them");
 
-    public void Heal() {
-
+        AudioManager.i.PlaySfx(healChime, true);
         var playerParty = player.GetComponent<PoqimonParty>();
         playerParty.Party.ForEach(p => p.Heal());
         playerParty.PartyUpdated();
+
+        yield return DialogController.Instance.ShowDialogText($"Your poqimon should be fully healed now");
     }
+        
 }

@@ -8,11 +8,23 @@ public class Character : MonoBehaviour
     CharacterAnimator animator;
     public float moveSpeed;
 
-    public bool IsMoving {get; set;} 
+    public bool IsMoving {get; set;}
+
+    // Y offset to adjust centering
+    public float OffsetY { get; private set; } = 0.3f; 
 
     private void Awake()
     {
         animator = GetComponent<CharacterAnimator>();
+        SetPositionAndSnapToTile(transform.position);
+    }
+
+    public void SetPositionAndSnapToTile(Vector2 pos)
+    {
+        pos.x = Mathf.Floor(pos.x) + 0.5f;
+        pos.y = Mathf.Floor(pos.y) + 0.5f + OffsetY;
+
+        transform.position = pos;
     }
 
     public IEnumerator MoveTo(Vector2 moveVector, Action OnMoveOver=null) { 
@@ -24,7 +36,7 @@ public class Character : MonoBehaviour
         targetPosition.x += moveVector.x;
         targetPosition.y += moveVector.y;
 
-        if(!isAvailable(targetPosition))
+        if (!IsPathClear(targetPosition))
             yield break;
 
         IsMoving = true;
@@ -40,17 +52,30 @@ public class Character : MonoBehaviour
         OnMoveOver?.Invoke();
     }
 
-    public void HandleUpdate()
+    private bool IsPathClear(Vector3 targetPos)
     {
-        animator.IsMoving = IsMoving;
+        var diff = targetPos - transform.position;
+        var dir = diff.normalized;
+
+        if (Physics2D.BoxCast(transform.position + dir, new Vector2(0.2f, 0.2f), 0f, dir, diff.magnitude - 1, GameLayers.i.SolidObjectsLayer | GameLayers.i.InteractableLayer | GameLayers.i.PlayerLayer) == true)
+            return false;
+
+        return true;
     }
 
-    private bool isAvailable(Vector3 target) {
-        if (Physics2D.OverlapCircle(target, 0.15f, GameLayers.i.SolidObjectsLayer | GameLayers.i.InteractableLayer)!= null) {
+    private bool IsWalkable(Vector3 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.2f, GameLayers.i.SolidObjectsLayer | GameLayers.i.InteractableLayer) != null)
+        {
             return false;
         }
 
         return true;
+    }
+
+    public void HandleUpdate()
+    {
+        animator.IsMoving = IsMoving;
     }
 
     public void LookTowards(Vector3 targetPosition)

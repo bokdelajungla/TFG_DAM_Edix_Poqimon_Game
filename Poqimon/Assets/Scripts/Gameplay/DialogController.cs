@@ -9,10 +9,10 @@ public class DialogController : MonoBehaviour
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogText;
     [SerializeField] float lettersPerSecond;
+    [SerializeField] AudioClip selectSound;
 
     public event Action OnShowDialog;
-    public event Action OnCloseDialog;
-    event Action OnFinished;
+    public event Action OnDialogFinished;
 
     //Singleton Instance
     public static DialogController Instance {get; private set;}
@@ -23,68 +23,64 @@ public class DialogController : MonoBehaviour
     }
 
     //******//
-    Dialog dialog;
-    Action onDialogFinished;
-    int currentLine = 0;
-    bool isTyping;
     public bool IsShowing {get; private set;}
-
-    public IEnumerator ShowDialog(Dialog dialog, Action OnFinished=null)
+    
+    //Simple Dialog Text for multiple Purpouses
+    public IEnumerator ShowDialogText(string text, bool waitForInput=true, bool autoClose=true)
     {
-        yield return new WaitForEndOfFrame();
         OnShowDialog?.Invoke();
-
         IsShowing = true;
-        this.dialog = dialog;
-        onDialogFinished = OnFinished;
         dialogBox.SetActive(true);
-        StartCoroutine(TypeDialog(dialog.Lines[0]));
+
+        AudioManager.i.PlaySfx(selectSound);
+        yield return TypeDialog(text);
+        if (waitForInput)
+        {
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
+        }
+
+        if (autoClose)
+        {
+            CloseDialog();
+        }
+        OnDialogFinished?.Invoke();
     }
 
-    public void HandleUpdate()
+    public void CloseDialog()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !isTyping)
+        dialogBox.SetActive(false);
+        IsShowing = false;
+    }
+
+    public IEnumerator ShowDialog(Dialog dialog)
+    {
+        yield return new WaitForEndOfFrame();
+
+        OnShowDialog?.Invoke();
+        IsShowing = true;
+        dialogBox.SetActive(true);
+
+        foreach (var line in dialog.Lines)
         {
-            ++currentLine;
-            if (currentLine < dialog.Lines.Count)
-            {
-                StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
-            }
-            else
-            {
-                IsShowing = false;
-                currentLine = 0;
-                dialogBox.SetActive(false);
-                onDialogFinished?.Invoke();
-                OnCloseDialog?.Invoke();
-            }
+            AudioManager.i.PlaySfx(selectSound);
+            yield return TypeDialog(line);
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
         }
+
+        dialogBox.SetActive(false);
+        IsShowing = false;
+        OnDialogFinished?.Invoke();
     }
 
     //Coroutine for showing text letter by letter     
     public IEnumerator TypeDialog(string line)
     {
-        isTyping = true;
         dialogText.text = "";
         foreach (var letter in line.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(1f/lettersPerSecond);
         }
-        isTyping = false;
     } 
 
-    //Simple Dialog Text for multiple Purpouses
-    public IEnumerator ShowDialogText(String text, bool waitForInput=true)
-    {
-        IsShowing = true;
-        dialogBox.SetActive(true);
-        yield return TypeDialog(text);
-        if (waitForInput){
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Z));
-        }
-        
-        dialogBox.SetActive(false);
-        IsShowing = false;
-    } 
 }

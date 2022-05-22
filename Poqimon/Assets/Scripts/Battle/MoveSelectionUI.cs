@@ -11,7 +11,7 @@ public class MoveSelectionUI : MonoBehaviour
 
     int currentSelection = 0;
 
-    public void SetMoveData(List<MoveBaseObject> currentMoves, MoveBaseObject learnableMove)
+    public void SetMoveData(List<MoveBase> currentMoves, MoveBase learnableMove)
     {
         for (int i=0; i<currentMoves.Count;i++)
         {
@@ -32,7 +32,7 @@ public class MoveSelectionUI : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
             --currentSelection;
 
-        currentSelection = Mathf.Clamp(currentSelection, 0, PoqimonBaseObject.MaxNumberOfMoves);
+        currentSelection = Mathf.Clamp(currentSelection, 0, PoqimonBase.MaxNumberOfMoves);
 
         UpdateMoveSelection(currentSelection);
 
@@ -44,7 +44,7 @@ public class MoveSelectionUI : MonoBehaviour
 
     private void UpdateMoveSelection(int selection)
     {
-        for (int i=0; i<PoqimonBaseObject.MaxNumberOfMoves+1;i++)
+        for (int i=0; i<PoqimonBase.MaxNumberOfMoves+1;i++)
         {
             if (i == selection)
             {

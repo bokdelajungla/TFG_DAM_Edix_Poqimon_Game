@@ -31,10 +31,6 @@ public class PoqimonParty : MonoBehaviour
         }
     }
 
-    private void Start() {
-        
-    }
-
     //Return the first not Fainted Pokemon in the party
     public Poqimon GetHealthyPoqimon()
     {   
@@ -55,7 +51,12 @@ public class PoqimonParty : MonoBehaviour
         }
     }
 
-    public IEnumerator CheckForEvolutions() 
+    public bool CheckForEvolutions()
+    {
+        return party.Any(p => p.CheckForEvolution() != null);
+    }
+
+    public IEnumerator RunEvolutions() 
     {
         foreach (var poqimon in party)
         {
@@ -71,6 +72,11 @@ public class PoqimonParty : MonoBehaviour
 
     public void PartyUpdated() {
         OnUpdated?.Invoke();
+    }
+
+    public static PoqimonParty GetPlayerParty()
+    {
+        return FindObjectOfType<PlayerController>().GetComponent<PoqimonParty>();
     }
 
 }

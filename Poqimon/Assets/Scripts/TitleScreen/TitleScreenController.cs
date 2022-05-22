@@ -23,7 +23,6 @@ public class TitleScreenController : MonoBehaviour
         canvasAudioSource = GetComponent<AudioSource>();
         newGameButton.GetComponent<Button>().Select();
         backgroundStartPosition = background.transform.position;
-        //TODO: SAVE GAME STATUS
         //if there is gamesaved -> Enable continue button
         var path = SavingSystem.i.GetPath(saveFile);
         Debug.Log(path);
@@ -60,7 +59,6 @@ public class TitleScreenController : MonoBehaviour
     }
     public void ContinueGame()
     {
-        //TODO: ContinueGame Logic
         canvasAudioSource.PlayOneShot(buttonSelected);
         SavingSystem.i.IsNewGame = false;
         SceneManager.LoadScene("World");
@@ -74,7 +72,7 @@ public class TitleScreenController : MonoBehaviour
     void AnimateBackground()
     {
         background.transform.position -= new Vector3(1f,0f,0f);
-        if (background.transform.position.x <= -359f)
+        if (background.transform.position.x <= -964f)
         {
             background.transform.position = backgroundStartPosition;
         }

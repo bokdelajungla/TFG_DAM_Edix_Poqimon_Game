@@ -8,8 +8,8 @@ using Random = System.Random;
 public class Poqimon 
 {
     // Base characterictis
-    [SerializeField] PoqimonBaseObject poqimonBase;
-    public PoqimonBaseObject PoqimonBase => poqimonBase;
+    [SerializeField] PoqimonBase poqimonBase;
+    public PoqimonBase PoqimonBase => poqimonBase;
 
     // Lvl
     [SerializeField] int poqimonLevel;
@@ -17,6 +17,7 @@ public class Poqimon
 
     // Movements
     public List<Move> Moves {get; set;}
+    public Move CurrentMove { get; set; }
     
     // Stats & Stat Boosts
     public Dictionary<Stat, int> Stats { get; private set; }
@@ -36,7 +37,17 @@ public class Poqimon
     //Exp
     public int Exp {get; set;}
 
+    //Events
     public event Action OnStatusChanged;
+    public event Action OnHPChanged;
+    
+    public Poqimon(PoqimonBase pBase, int pLevel)
+    {
+        poqimonBase = pBase;
+        poqimonLevel = pLevel;
+
+        Init();
+    }
 
     //Initializer
     public void Init()
@@ -50,7 +61,7 @@ public class Poqimon
             {
                 Moves.Add(new Move(learnableMove.MoveBase));
             }
-            if(Moves.Count >= PoqimonBaseObject.MaxNumberOfMoves)
+            if(Moves.Count >= PoqimonBase.MaxNumberOfMoves)
             {
                 //TODO: Learning logic (only 4 slots)
                 break;
@@ -63,10 +74,47 @@ public class Poqimon
         CalcStats();
         CurrentHp = MaxHp;
         
+        StatusChanges = new Queue<string>();
         ResetStatBoost();
         Status = null;
         VolatileStatus = null;
     }
+
+    public Poqimon(PoqimonSaveData saveData)
+    {
+        poqimonBase = PoqimonDB.GetObjectByName(saveData.name);
+        CurrentHp = saveData.hp;
+        poqimonLevel = saveData.level;
+        Exp = saveData.exp;
+
+        if (saveData.statusId != null)
+            Status = ConditionsDB.Conditions[saveData.statusId.Value];
+        else
+            Status = null;
+
+        Moves = saveData.moves.Select(m => new Move(m)).ToList();
+
+        CalcStats();
+        StatusChanges = new Queue<string>();
+        ResetStatBoost();
+        VolatileStatus = null;
+    }
+
+    public PoqimonSaveData GetSaveData()
+    {
+        var saveData = new PoqimonSaveData()
+        {
+            name = PoqimonBase.PoqimonName,
+            hp = CurrentHp,
+            level = PoqimonLevel,
+            exp = Exp,
+            statusId = Status?.Id,
+            moves = Moves.Select(m => m.GetSaveData()).ToList()
+        };
+
+        return saveData;
+    }
+
 
     // calculate the stats of the poqimon
     private void CalcStats()
@@ -95,8 +143,15 @@ public class Poqimon
         };
     }
 
+    // Restore HP & PP fully
     public void Heal() {
         CurrentHp = MaxHp;
+        foreach (var move in Moves)
+        {
+            move.MovePP = move.MoveBase.MovePP;
+        }
+
+        CureStatus();
     }
 
     // Getter stats
@@ -181,9 +236,21 @@ public class Poqimon
         d = a * move.MoveBase.MovePower * ((float)atk/ def) + 2;
         int damage = Mathf.FloorToInt(d + modifiers);
 
-        UpdateHP(damage);
+        DecreaseHp(damage);
         
         return damageDetails;
+    }
+
+    public void IncreaseHp(int amount)
+    {
+        CurrentHp = Mathf.Clamp(CurrentHp + amount, 0, MaxHp);
+        OnHPChanged?.Invoke();
+    }
+
+    public void DecreaseHp(int damage)
+    {
+        CurrentHp = Mathf.Clamp(CurrentHp - damage, 0, MaxHp);
+        OnHPChanged?.Invoke();
     }
 
     public void SetStatus(ConditionID conditionID)
@@ -268,13 +335,6 @@ public class Poqimon
         VolatileStatus?.OnAfterTurn?.Invoke(this);
     }
     
-    // Update the HP taking damage
-    public void UpdateHP(int damage)
-    {
-        CurrentHp = Mathf.Clamp(CurrentHp - damage, 0, MaxHp);
-        HpChanged = true;
-    }
-
     public bool CheckForLevelUp()
     {
         if (Exp > PoqimonBase.GetExperienceForLvl(poqimonLevel + 1))
@@ -293,7 +353,8 @@ public class Poqimon
 
     public void LearnMove(LearnableMove learnableMove)
     {   
-        if(Moves.Count <= PoqimonBaseObject.MaxNumberOfMoves)
+        if(Moves.Count <= PoqimonBase
+.MaxNumberOfMoves)
         {
             Moves.Add(new Move(learnableMove.MoveBase));
         }
@@ -322,4 +383,15 @@ public class DamageDetails
     public bool Fainted { get; set; }
     public float Critical { get; set; }
     public float TypeEffectiveness { get; set; }
+}
+
+[System.Serializable]
+public class PoqimonSaveData
+{
+    public string name;
+    public int hp;
+    public int level;
+    public int exp;
+    public ConditionID? statusId;
+    public List<MoveSaveData> moves;
 }

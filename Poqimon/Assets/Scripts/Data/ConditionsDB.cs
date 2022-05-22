@@ -27,7 +27,7 @@ public class ConditionsDB
                     StartMsg = "has been poisoned",
                     OnAfterTurn = (Poqimon poq) =>
                     {
-                        poq.UpdateHP(poq.MaxHp / 8);
+                        poq.DecreaseHp(poq.MaxHp / 8);
                         poq.StatusChanges.Enqueue($"{poq.PoqimonBase.PoqimonName} hurt itself due to poison");
                     }
                 }
@@ -41,7 +41,7 @@ public class ConditionsDB
                     StartMsg = "has been burned",
                     OnAfterTurn = (Poqimon poq) =>
                     {
-                        poq.UpdateHP(poq.MaxHp / 16);
+                        poq.DecreaseHp(poq.MaxHp / 16);
                         poq.StatusChanges.Enqueue($"{poq.PoqimonBase.PoqimonName} hurt itself due to burn");
                     }
                 }
@@ -150,7 +150,7 @@ public class ConditionsDB
                         
                         // 50% chance is hurt by confusion (1/8 of his maxHP)
                         poq.StatusChanges.Enqueue($"{poq.PoqimonBase.PoqimonName} is confused");
-                        poq.UpdateHP(poq.MaxHp / 8);
+                        poq.DecreaseHp(poq.MaxHp / 8);
                         poq.StatusChanges.Enqueue($"It hurt itself due to confusion");
                         return false;
                     }

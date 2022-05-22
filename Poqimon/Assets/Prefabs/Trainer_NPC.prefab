@@ -130,7 +130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1240443439
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 446541b4be3798642a1cd44475fa4421, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,9 +152,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5088842766730035266}
   - component: {fileID: 5683133631986216217}
+  - component: {fileID: 3393203894220184216}
   - component: {fileID: 5683133631986216216}
   - component: {fileID: 1972906964852180608}
-  - component: {fileID: 3393203894220184216}
   - component: {fileID: 5088842766730035269}
   - component: {fileID: 5088842766730035268}
   - component: {fileID: 5088842766730035271}
@@ -204,6 +204,24 @@ MonoBehaviour:
     - It's not fair... you cheated!!
   exclamationBubble: {fileID: 1475790917376572168}
   fov: {fileID: 1475790916912337572}
+  trainerTriggerClip: {fileID: 8300000, guid: 833a2d2d95d894b4ebb731a57ea308e2, type: 3}
+--- !u!114 &3393203894220184216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088842766730035270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb793a26e328f034bbb4894ef9ceb4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  party:
+  - poqimonBase: {fileID: 11400000, guid: 31684f10643352142b948cb37029b309, type: 2}
+    poqimonLevel: 5
+  - poqimonBase: {fileID: 11400000, guid: 7932cc577e0fdc5429639ef9fae58a6d, type: 2}
+    poqimonLevel: 5
 --- !u!114 &5683133631986216216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,23 +268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!114 &3393203894220184216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5088842766730035270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb793a26e328f034bbb4894ef9ceb4e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  party:
-  - poqimonBase: {fileID: 11400000, guid: 31684f10643352142b948cb37029b309, type: 2}
-    poqimonLevel: 12
-  - poqimonBase: {fileID: 11400000, guid: 7932cc577e0fdc5429639ef9fae58a6d, type: 2}
-    poqimonLevel: 13
 --- !u!212 &5088842766730035269
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a0e1983dd97a24883c50805530eeb6, type: 3}
+  m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: RazorLeaf
   m_EditorClassIdentifier: 
-  moveName: Growth
-  moveDescription: 'The user''s body is forced to grow all at once. It raises the
-    Sp. Atk stat. '
+  moveName: Razor Leaf
+  moveDescription: A sharp-edged leaf is launched to slash at the foe. It has a high
+    critical-hit ratio.
   moveType: 12
   moveCategory: 0
   movePower: 55
@@ -24,6 +24,6 @@ MonoBehaviour:
     status: 0
     volatileStatus: 0
   moveAccuracy: 95
-  movePP: 20
+  movePP: 25
   priority: 0
   moveAudio: {fileID: 8300000, guid: 803dd04e89321449588f2f751e7c09db, type: 3}

@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 020_Raticate
   m_EditorClassIdentifier: 
-  poqimonNumber: 20
-  poqimonName: Raticate
-  poqimonDescription: 
-  poqimonFrontSprite: {fileID: 269915245, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
-  poqimonBackSprite: {fileID: 1650469534, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonNumber: 0
+  poqimonName: 
+  poqimonDescription: It whittles its constantly growing fangs by gnawing on hard
+    things. It can chew apart cinder walls.
+  poqimonFrontSprite: {fileID: 0}
+  poqimonBackSprite: {fileID: 0}
   poqimonType1: 1
   poqimonType2: 0
   maxHP: 55
@@ -34,5 +35,7 @@ MonoBehaviour:
   - moveBase: {fileID: 11400000, guid: 6bb252c524175ad41a2d8a0f9c7300ac, type: 2}
     learnLevel: 1
   - moveBase: {fileID: 11400000, guid: b5f0f5ae23c50b5439a086fc0e1b8103, type: 2}
-    learnLevel: 1
+    learnLevel: 4
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 10
   evolutions: []

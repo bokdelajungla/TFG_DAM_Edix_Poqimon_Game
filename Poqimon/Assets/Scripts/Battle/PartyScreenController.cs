@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,17 +10,28 @@ public class PartyScreenController : MonoBehaviour
 
     PartyMemberController[] memberSlots;
     List<Poqimon> partyPoqimons;
+    PoqimonParty poqimonParty;
+
+    int selection = 0;
+    public Poqimon SelectedMember => partyPoqimons[selection];
+
+    /// Party screen can be called from different states like ActionSelection, RunningTurn, AboutToUse
+    public BattleState? CalledFrom { get; set; }
 
     public void Init()
     {
         memberSlots = GetComponentsInChildren<PartyMemberController>(true);
+        poqimonParty = PoqimonParty.GetPlayerParty();
+        SetPartyData();
+
+        poqimonParty.OnUpdated += SetPartyData;
     }
 
-    public void SetPartyData(List<Poqimon> partyPoqimons)
+    public void SetPartyData()
     {
-        this.partyPoqimons = partyPoqimons;
+        partyPoqimons = poqimonParty.Party;
 
-        for (int i = 0; i<memberSlots.Length; i++)
+        for (int i = 0; i < memberSlots.Length; i++)
         {
             if (i < partyPoqimons.Count)
             {
@@ -27,15 +39,48 @@ public class PartyScreenController : MonoBehaviour
                 memberSlots[i].SetData(partyPoqimons[i]);
             }
             else
-            {
                 memberSlots[i].gameObject.SetActive(false);
-            }
         }
 
-        messageTxt.text = "Choose a Poqimon";
+        UpdateMemberSelection(selection);
+
+        messageTxt.text = "Choose a Pokemon";
     }
 
-    public void UpdatePartySelection(int selectedMember)
+    public void HandleUpdate(Action onSelected, Action onBack)
+    {
+        var prevSelection = selection;
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            ++selection;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            --selection;
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+            selection += 2;
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+            selection -= 2;
+
+        selection = Mathf.Clamp(selection, 0, partyPoqimons.Count - 1);
+
+        if (selection != prevSelection)
+            UpdateMemberSelection(selection);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            onSelected?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            onBack?.Invoke();
+        }
+    }
+
+    public void SetMessageText(string message)
+    {
+        messageTxt.text = message;
+    }
+
+    public void UpdateMemberSelection(int selectedMember)
     {
         for (int i = 0; i < partyPoqimons.Count; i++)
         {
@@ -44,10 +89,5 @@ public class PartyScreenController : MonoBehaviour
             else
                 memberSlots[i].SetSelected(false);
         }
-    }
-
-    public void SetMessageText(string message)
-    {
-        messageTxt.text = message;
     }
 }

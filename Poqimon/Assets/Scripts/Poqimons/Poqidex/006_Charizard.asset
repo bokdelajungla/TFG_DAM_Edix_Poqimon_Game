@@ -9,24 +9,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 006_Charizard
   m_EditorClassIdentifier: 
   poqimonNumber: 6
-  poqimonName: Charizard
-  poqimonDescription: 
+  poqimonName: Chadizard
+  poqimonDescription: "It is said that Charizard's fire burns hotter if it has experienced
+    harsh battles.\r"
   poqimonFrontSprite: {fileID: -1933332934, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
   poqimonBackSprite: {fileID: -2060551096, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
   poqimonType1: 10
   poqimonType2: 3
-  maxHP: 0
-  attack: 0
-  defense: 0
-  spAttack: 0
-  spDefense: 0
-  speed: 0
-  expYield: 0
+  maxHP: 78
+  attack: 84
+  defense: 78
+  spAttack: 109
+  spDefense: 85
+  speed: 100
+  expYield: 209
   growthRate: 2
   catchRate: 45
-  learnableMoves: []
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 9607f2f913c27d041baeb45b2cc68bd6, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 00d870c8d68a87749b509820d0311b0d, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: dc382acc7df1e7143aa907238199e018, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 5d01acc8a177c3b49a08eba580a436d3, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 12
   evolutions: []

@@ -6,8 +6,8 @@ using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] private bool isPLayer;
-    public bool IsPlayer => isPLayer;
+    [SerializeField] private bool isPlayer;
+    public bool IsPlayer => isPlayer;
 
     [SerializeField] private BattleHUD hud;
     public BattleHUD Hud => hud;
@@ -29,7 +29,7 @@ public class BattleUnit : MonoBehaviour
     {
         Poqimon = poqimon;
         
-        image.sprite = (isPLayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : Poqimon.PoqimonBase.PoqimonFrontSprite;
+        image.sprite = (isPlayer) ?  Poqimon.PoqimonBase.PoqimonBackSprite : Poqimon.PoqimonBase.PoqimonFrontSprite;
 
         hud.gameObject.SetActive(true);
         hud.SetData(poqimon);
@@ -48,14 +48,14 @@ public class BattleUnit : MonoBehaviour
     
     public void PlayEnterAnimation()
     {
-        image.transform.localPosition = (isPLayer) ? new Vector3(-550f, originalPosition.y) :  new Vector3(550f, originalPosition.y);
+        image.transform.localPosition = (isPlayer) ? new Vector3(-550f, originalPosition.y) :  new Vector3(550f, originalPosition.y);
         image.transform.DOLocalMoveX(originalPosition.x, 1f);
     }
 
     public void PlayAtkAnimation()
     {
         var sequence = DOTween.Sequence();
-        if (isPLayer)
+        if (isPlayer)
         {
             sequence.Append(image.transform.DOLocalMoveX(originalPosition.x + 50f, 0.2f));
         }

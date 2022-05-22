@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISavable
@@ -17,34 +18,22 @@ public class PlayerController : MonoBehaviour, ISavable
         get => playerSprite;
     }
 
-    public float moveSpeed;
-
-    const float offsetY = 0.3f;
+    private Vector2 input;
+    private Character character;
 
     public event Action OnEncountered;
     public event Action<Collider2D> OnTrainerFoV;
 
-    private bool isMoving;
-    private Vector2 input;
-
-    private Animator animator;
-
-    // Start is called before the first frame update
     private void Awake() 
     {
-        animator = GetComponent<Animator>();
+        character = GetComponent<Character>();
     }
     
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame so we use HandleUpdate that is called from
     //GameController from its Update function
     public void HandleUpdate()
     {
-        if (!isMoving) 
+        if (!character.IsMoving) 
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
@@ -52,61 +41,27 @@ public class PlayerController : MonoBehaviour, ISavable
             //Remove Diagonal Movement
             if (input.x != 0) { input.y = 0;}
 
-            if (input != Vector2.zero) {
-
-                animator.SetFloat("Move X", input.x);
-                animator.SetFloat("Move Y", input.y);
-                
-                var targetPosition = transform.position;
-                targetPosition.x += input.x;
-                targetPosition.y += input.y;
-                
-                if(isAvailable(targetPosition)) {
-                    StartCoroutine(moveTowards(targetPosition, OnMoveOver));
-                }
+            if (input != Vector2.zero) 
+            {
+                StartCoroutine(character.MoveTo(input, OnMoveOver));
             }
         }
 
-        animator.SetBool("isMoving", isMoving);
+        character.HandleUpdate();
 
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            Interact();
-        }
+        if (Input.GetKeyDown(KeyCode.Z))
+            StartCoroutine(Interact());
     }
 
-    private bool isAvailable(Vector3 target) {
-        if (Physics2D.OverlapCircle(target, 0.15f, (GameLayers.i.SolidObjectsLayer | GameLayers.i.InteractableLayer)) != null)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
-    private void Interact()
+    IEnumerator Interact()
     {
-        var facingDir = new Vector3(animator.GetFloat("Move X"), animator.GetFloat("Move Y"));
+        var facingDir = new Vector3(character.Animator.MoveX, character.Animator.MoveY);
         var interactPos = transform.position + facingDir;
-        //Debug.DrawLine(transform.position, interactPos, Color.red, 0.5f);
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f,  GameLayers.i.InteractableLayer); 
         if (collider != null)
         {
-            collider.GetComponent<Interactable>()?.Interact(transform);
+            yield return (collider.GetComponent<Interactable>()?.Interact(transform));
         }
-    }
-
-    IEnumerator moveTowards(Vector3 destination, Action OnMoveOver) {
-        isMoving = true;
-        while (Vector3.Distance(transform.position, destination) > Mathf.Epsilon) {
-            transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-
-        transform.position = destination;
-        isMoving = false;
-
-        OnMoveOver?.Invoke();
     }
 
     private void OnMoveOver()
@@ -117,12 +72,11 @@ public class PlayerController : MonoBehaviour, ISavable
 
     private void CheckForEncounters()
     {
-        if (Physics2D.OverlapCircle(transform.position - new Vector3(0,offsetY), 0.2f, GameLayers.i.LongGrassLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.LongGrassLayer) != null)
         {
             if (UnityEngine.Random.Range(1,101) <= 10)
             {
-                isMoving = false;
-                animator.SetBool("isMoving", isMoving);
+                character.IsMoving = false;
                 OnEncountered();
             }
         }
@@ -133,21 +87,38 @@ public class PlayerController : MonoBehaviour, ISavable
         var collider = Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.TrainerFoVLayer); 
         if (collider != null)
         {
-            isMoving = false;
-            animator.SetBool("isMoving", isMoving);
+            character.IsMoving = false;
             OnTrainerFoV?.Invoke(collider);
         }
     }
 
     public object CaptureState()
     {
-        float[] position = new float[] { transform.position.x, transform.position.y };
-        return position;
+        var saveData = new PlayerSaveData()
+        {
+            position = new float[] { transform.position.x, transform.position.y },
+            poqimons = GetComponent<PoqimonParty>().Party.Select(p => p.GetSaveData()).ToList()
+        };
+
+        return saveData;
     }
 
     public void RestoreState(object state)
     {
-        var position = (float[]) state;
-        transform.position = new Vector2(position[0], position[1]);
+        var saveData = (PlayerSaveData)state;
+
+        // Restor Position
+        var pos = saveData.position;
+        transform.position = new Vector3(pos[0], pos[1]);
+
+        // Restore Party
+        GetComponent<PoqimonParty>().Party =  saveData.poqimons.Select(s => new Poqimon(s)).ToList();
     }
+}
+
+[Serializable]
+public class PlayerSaveData
+{
+    public float[] position;
+    public List<PoqimonSaveData> poqimons;
 }

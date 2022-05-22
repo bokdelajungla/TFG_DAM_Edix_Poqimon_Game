@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Poqimon", menuName = "Poqimon/New Poqimon")]
 
-public class PoqimonBaseObject : ScriptableObject
+public class PoqimonBase : ScriptableObject
 {
     [SerializeField] private int poqimonNumber;
     public int PoqimonNumber => poqimonNumber;
@@ -154,8 +154,8 @@ public class TypeChart
 [Serializable]
 public class LearnableMove
 {
-    [SerializeField] private MoveBaseObject moveBase;
-    public MoveBaseObject MoveBase => moveBase;
+    [SerializeField] private MoveBase moveBase;
+    public MoveBase MoveBase => moveBase;
     [SerializeField] private int learnLevel;
     public int LearnLevel => learnLevel;
 
@@ -166,12 +166,12 @@ public enum GrowthRate
     Fast, MediumFast, MediumSlow, Slow
 }
 
-[System.Serializable]
+[Serializable]
 public class Evolution
 {
-    [SerializeField] PoqimonBaseObject evolvesInto;
+    [SerializeField] PoqimonBase evolvesInto;
     [SerializeField] int levelRequired;
 
-    public PoqimonBaseObject EvolvesInto => evolvesInto;
+    public PoqimonBase EvolvesInto => evolvesInto;
     public int LevelRequired => levelRequired;
 }

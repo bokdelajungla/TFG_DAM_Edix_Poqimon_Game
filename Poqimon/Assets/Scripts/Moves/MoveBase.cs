@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine; 
 
 [CreateAssetMenu(fileName = "Move", menuName = "Poqimon/New Move")]
-public class MoveBaseObject : ScriptableObject
+public class MoveBase : ScriptableObject
 {
     [SerializeField] private string moveName;
     public string MoveName => moveName;

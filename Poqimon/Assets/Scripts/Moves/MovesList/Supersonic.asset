@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a0e1983dd97a24883c50805530eeb6, type: 3}
+  m_Script: {fileID: 11500000, guid: dfbb2b88d5203514abe0ac8a7e53f313, type: 3}
   m_Name: Supersonic
   m_EditorClassIdentifier: 
   moveName: Supersonic
-  moveDescription: High frequenzy sound that can produce confusion on the enemy
+  moveDescription: The user generates odd sound waves from its body. It may confuse
+    the target.
   moveType: 1
   moveCategory: 2
   movePower: 0

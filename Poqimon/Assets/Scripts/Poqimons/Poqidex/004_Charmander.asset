@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 004_Charmander
   m_EditorClassIdentifier: Assembly-CSharp::PoqimonBase
   poqimonNumber: 4
-  poqimonName: Charmander
+  poqimonName: Chadmander
   poqimonDescription: The fire on the tip of its tail is a measure of its life. If
     healthy, its tail burns intensely.
   poqimonFrontSprite: {fileID: -1881086814, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
@@ -22,11 +22,11 @@ MonoBehaviour:
   poqimonType2: 0
   maxHP: 39
   attack: 52
-  defense: 46
+  defense: 43
   spAttack: 60
   spDefense: 50
   speed: 65
-  expYield: 62
+  expYield: 65
   growthRate: 2
   catchRate: 45
   learnableMoves:
@@ -36,9 +36,9 @@ MonoBehaviour:
     learnLevel: 1
   - moveBase: {fileID: 11400000, guid: dc382acc7df1e7143aa907238199e018, type: 2}
     learnLevel: 4
-  - moveBase: {fileID: 11400000, guid: 22ee57be981720343a8e436339beb552, type: 2}
-    learnLevel: 8
   - moveBase: {fileID: 11400000, guid: b5a788e33e2e84de9ab03a5f536549ca, type: 2}
+    learnLevel: 8
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
     learnLevel: 12
   evolutions:
   - evolvesInto: {fileID: 11400000, guid: f732e619d28251f4889c3e701bd354f0, type: 2}

@@ -9,24 +9,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca9a27cf7f0fa74cbc91bd5ec2b4686, type: 3}
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
   m_Name: 009_Blastoise
   m_EditorClassIdentifier: 
-  poqimonNumber: 0
-  poqimonName: 
-  poqimonDescription: 
-  poqimonFrontSprite: {fileID: 0}
-  poqimonBackSprite: {fileID: 0}
+  poqimonNumber: 9
+  poqimonName: Blastoise
+  poqimonDescription: The jets of water it spouts from the rocket cannons on its
+    shell can punch through thick steel.
+  poqimonFrontSprite: {fileID: 1124689590, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: 1896272595, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
   poqimonType1: 11
   poqimonType2: 0
-  maxHP: 0
-  attack: 0
-  defense: 0
-  spAttack: 0
-  spDefense: 0
-  speed: 0
-  expYield: 0
+  maxHP: 79
+  attack: 83
+  defense: 100
+  spAttack: 85
+  spDefense: 105
+  speed: 78
+  expYield: 210
   growthRate: 2
   catchRate: 45
-  learnableMoves: []
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 6bb252c524175ad41a2d8a0f9c7300ac, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: f8c6155e323a64b4d8ef3624bf7fcdba, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 12
   evolutions: []

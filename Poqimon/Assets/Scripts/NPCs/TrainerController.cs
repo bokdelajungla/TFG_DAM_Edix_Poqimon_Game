@@ -12,6 +12,8 @@ public class TrainerController : MonoBehaviour, Interactable
     [SerializeField] GameObject exclamationBubble;
     [SerializeField] GameObject fov;
 
+    [SerializeField] AudioClip trainerTriggerClip;
+
     private bool isDefeated = false;
     
     Character character;
@@ -39,23 +41,26 @@ public class TrainerController : MonoBehaviour, Interactable
         character.HandleUpdate();    
     }
 
-    public void Interact(Transform player)
+    public IEnumerator Interact(Transform player)
     {
         character.LookTowards(player.position);
 
         if(!isDefeated){
-            StartCoroutine(DialogController.Instance.ShowDialog(dialog, () => {
-                GameController.Instance.StartTrainerBattle(this);
-            }));
+            AudioManager.i.PlayMusic(trainerTriggerClip);
+
+            yield return DialogController.Instance.ShowDialog(dialog);
+            GameController.Instance.StartTrainerBattle(this);
+
         }
         else
         {
-            StartCoroutine(DialogController.Instance.ShowDialog(dialogAfterBattle));
+            yield return DialogController.Instance.ShowDialog(dialogAfterBattle);
         }        
     }
 
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
+        AudioManager.i.PlayMusic(trainerTriggerClip);
         //Show Exclamation Bubble
         exclamationBubble.SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -70,9 +75,8 @@ public class TrainerController : MonoBehaviour, Interactable
         yield return character.MoveTo(moveVector);
 
         //Show Dialog Message
-        StartCoroutine(DialogController.Instance.ShowDialog(dialog, () => {
-            GameController.Instance.StartTrainerBattle(this);
-        }));
+        yield return DialogController.Instance.ShowDialog(dialog);
+        GameController.Instance.StartTrainerBattle(this);
     }
 
     public void SetFoVRotation(FacingDirection facingDirection)
@@ -93,4 +97,20 @@ public class TrainerController : MonoBehaviour, Interactable
         fov.gameObject.SetActive(false);
         isDefeated = true;
     }
+
+    // Save trainer state
+    public object CaptureState()
+    {
+        return isDefeated;
+    }
+
+    // Restore trainer state
+    public void RestoreState(object state)
+    {
+        isDefeated = (bool)state;
+
+        if (isDefeated)
+            fov.gameObject.SetActive(false);
+    }
+
 }
