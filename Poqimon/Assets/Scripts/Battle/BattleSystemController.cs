@@ -552,26 +552,37 @@ public class BattleSystemController : MonoBehaviour
             // Check who goes first
             bool playerGoesFirst = true;
             if (enemyMovePriority > playerMovePriority)
+            {
                 playerGoesFirst = false;
+                
+            }
             else if (enemyMovePriority == playerMovePriority)
+            {
                 playerGoesFirst = playerUnit.Poqimon.Speed >= enemyUnit.Poqimon.Speed;
+            }
 
-            var firstUnit = (playerGoesFirst) ? playerUnit : enemyUnit;
-            var secondUnit = (playerGoesFirst) ? enemyUnit : playerUnit;
+            var firstUnit = playerGoesFirst ? playerUnit : enemyUnit;
+            var secondUnit = playerGoesFirst ? enemyUnit : playerUnit;
 
             var secondPokemon = secondUnit.Poqimon;
 
             // First Turn
             yield return RunMove(firstUnit, secondUnit, firstUnit.Poqimon.CurrentMove);
             yield return RunAfterTurns(firstUnit);
-            if (state == BattleState.BattleOver) yield break;
+            if (state == BattleState.BattleOver)
+            {
+                yield break;
+            }
 
             if (secondPokemon.CurrentHp > 0)
             {
                 // Second Turn
                 yield return RunMove(secondUnit, firstUnit, secondUnit.Poqimon.CurrentMove);
                 yield return RunAfterTurns(secondUnit);
-                if (state == BattleState.BattleOver) yield break;
+                if (state == BattleState.BattleOver)
+                {
+                    yield break;
+                }
             }
         }
         else
@@ -800,7 +811,7 @@ public class BattleSystemController : MonoBehaviour
         {
             int expYield = faintedUnit.Poqimon.PoqimonBase.ExpYield;
             int enemyLevel = faintedUnit.Poqimon.PoqimonLevel;
-            float trainerBonus = (isTrainerBattle)? 1.5f : 1f;
+            float trainerBonus = isTrainerBattle ? 1.5f : 1f;
 
             //Simplified Formula to calculate Exp Gain (from Bulbapedia)
             int expGain = Mathf.FloorToInt((expYield * enemyLevel * trainerBonus) / 7);
