@@ -30,10 +30,7 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
         menuController = GetComponent<MenuController>();
-        if (SavingSystem.i.IsNewGame == false)
-        {
-            SavingSystem.i.Load("saveSlot1");
-        }
+
         state = GameState.FreeRoam;
 
         // DB states
@@ -41,6 +38,11 @@ public class GameController : MonoBehaviour
         PoqimonDB.Init();
         MoveDB.Init();
         ItemDB.Init();
+
+        if (SavingSystem.i.IsNewGame == false)
+        {
+            SavingSystem.i.Load("saveSlot1");
+        }
     }
 
     // Start is called before the first frame update
