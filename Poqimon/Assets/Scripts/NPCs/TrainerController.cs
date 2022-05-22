@@ -46,12 +46,11 @@ public class TrainerController : MonoBehaviour, Interactable
         character.LookTowards(player.position);
 
         if(!isDefeated){
-            AudioManager.i.PlayMusic(null);
             AudioManager.i.PlayMusic(trainerTriggerClip);
 
-            yield return DialogController.Instance.ShowDialog(dialog, () => {
-                GameController.Instance.StartTrainerBattle(this);
-            });
+            yield return DialogController.Instance.ShowDialog(dialog);
+            GameController.Instance.StartTrainerBattle(this);
+
         }
         else
         {
@@ -61,7 +60,6 @@ public class TrainerController : MonoBehaviour, Interactable
 
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
-        AudioManager.i.PlayMusic(null);
         AudioManager.i.PlayMusic(trainerTriggerClip);
         //Show Exclamation Bubble
         exclamationBubble.SetActive(true);
@@ -77,9 +75,8 @@ public class TrainerController : MonoBehaviour, Interactable
         yield return character.MoveTo(moveVector);
 
         //Show Dialog Message
-        StartCoroutine(DialogController.Instance.ShowDialog(dialog, () => {
-            GameController.Instance.StartTrainerBattle(this);
-        }));
+        yield return DialogController.Instance.ShowDialog(dialog);
+        GameController.Instance.StartTrainerBattle(this);
     }
 
     public void SetFoVRotation(FacingDirection facingDirection)

@@ -143,9 +143,13 @@ public class Poqimon
         };
     }
 
+    // Restore HP & PP fully
     public void Heal() {
         CurrentHp = MaxHp;
-        OnHPChanged?.Invoke();
+        foreach (var move in Moves)
+        {
+            move.MovePP = move.MoveBase.MovePP;
+        }
 
         CureStatus();
     }

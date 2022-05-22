@@ -61,11 +61,13 @@ public class GameController : MonoBehaviour
         //Subscribe to DialogController Events
         DialogController.Instance.OnShowDialog += () => 
         {
+            prevState = state;
             state = GameState.Dialog;
         };
-        DialogController.Instance.OnCloseDialog += () => 
+        DialogController.Instance.OnDialogFinished += () => 
         {   
-            if (state == GameState.Dialog) {state = GameState.FreeRoam;}
+            if (state == GameState.Dialog)
+                state = prevState;
         };
 
         //Subscribe to MenuController Events

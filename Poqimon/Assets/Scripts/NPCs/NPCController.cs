@@ -45,7 +45,7 @@ public class NPCController : MonoBehaviour, Interactable
             
             if (healer != null)
             {
-                yield return healer.Heal(player, npcDialog);
+                yield return healer.Heal(player);
             }
             else
             {
