@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
+  m_Name: 005_Chadmeleon
+  m_EditorClassIdentifier: 
+  poqimonNumber: 5
+  poqimonName: Chadmeleon
+  poqimonDescription: In the rocky mountains where Charmeleon live, their fiery tails
+    shine at night like stars.
+  poqimonFrontSprite: {fileID: -93069978, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: -462746770, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonType1: 10
+  poqimonType2: 0
+  maxHP: 58
+  attack: 64
+  defense: 58
+  spAttack: 80
+  spDefense: 65
+  speed: 80
+  expYield: 142
+  growthRate: 2
+  catchRate: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 9607f2f913c27d041baeb45b2cc68bd6, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 00d870c8d68a87749b509820d0311b0d, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: dc382acc7df1e7143aa907238199e018, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 5d01acc8a177c3b49a08eba580a436d3, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 947aec3c1fd15fd4b8ad882fc9dcd7cb, type: 2}
+    learnLevel: 12
+  evolutions:
+  - evolvesInto: {fileID: 11400000, guid: af14a6972543ef14eb568d3d55b2af8e, type: 2}
+    levelRequired: 32

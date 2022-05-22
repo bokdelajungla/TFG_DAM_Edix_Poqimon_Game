@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
+  m_Name: 002_Ivysir
+  m_EditorClassIdentifier: 
+  poqimonNumber: 2
+  poqimonName: Ivysir
+  poqimonDescription: When the bud on its back starts swelling, a sweet aroma wafts
+    to indicate the flower's coming bloom.
+  poqimonFrontSprite: {fileID: 1997508448, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: 1851794508, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonType1: 12
+  poqimonType2: 4
+  maxHP: 60
+  attack: 62
+  defense: 63
+  spAttack: 80
+  spDefense: 80
+  speed: 60
+  expYield: 141
+  growthRate: 2
+  catchRate: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: d13356fdbd969294f887dddc78dd88d5, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 00d870c8d68a87749b509820d0311b0d, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: ab2d476fa006d6a47a78b4e8f797fa7e, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 22ee57be981720343a8e436339beb552, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 0d9db8c45d24c24478b0e8f0c175176b, type: 2}
+    learnLevel: 9
+  - moveBase: {fileID: 11400000, guid: 77354d3f3c884c34b9c15173224237cd, type: 2}
+    learnLevel: 12
+  - moveBase: {fileID: 11400000, guid: b5a788e33e2e84de9ab03a5f536549ca, type: 2}
+    learnLevel: 15
+  - moveBase: {fileID: 11400000, guid: 392a55cd70a914ccf9bb57c635e1f217, type: 2}
+    learnLevel: 15
+  evolutions:
+  - evolvesInto: {fileID: 11400000, guid: f886999a39c3a624390381c43c1b9904, type: 2}
+    levelRequired: 32
