@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, ISavable
 {
     [SerializeField] string playerName;
     [SerializeField] Sprite playerSprite;
+    [SerializeField] Transform PlayerSpwanPosition {get;}
     public string PlayerName 
     {
         get => playerName;

@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475790917376572169}
   - component: {fileID: 1475790917376572174}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}

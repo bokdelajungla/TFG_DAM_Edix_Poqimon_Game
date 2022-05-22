@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour
     MenuController menuController;
 
     [SerializeField] AudioClip worldMusic;
-    [SerializeField] AudioClip battleVictoryMusic;
     
     GameState state;
     GameState prevState;
@@ -30,10 +29,7 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
         menuController = GetComponent<MenuController>();
-        if (SavingSystem.i.IsNewGame == false)
-        {
-            SavingSystem.i.Load("saveSlot1");
-        }
+
         state = GameState.FreeRoam;
 
         // DB states
@@ -41,6 +37,11 @@ public class GameController : MonoBehaviour
         PoqimonDB.Init();
         MoveDB.Init();
         ItemDB.Init();
+
+        if (SavingSystem.i.IsNewGame == false)
+        {
+            SavingSystem.i.Load("saveSlot1");
+        }
     }
 
     // Start is called before the first frame update
@@ -137,10 +138,7 @@ public class GameController : MonoBehaviour
         var playerParty = playerController.GetComponent<PoqimonParty>();
         var enemyPoqimon = GetComponent<MapArea>().GetRandomWildPoqimon();
         
-        // In case of capture, the one's captured is a diferent poqimon and not the same object
-        var enemyPoqimonCopy = new Poqimon(enemyPoqimon.PoqimonBase, enemyPoqimon.PoqimonLevel);
-        
-        battleSystemController.StartBattle(playerParty, enemyPoqimonCopy);
+        battleSystemController.StartBattle(playerParty, enemyPoqimon);
     }
 
     public void StartTrainerBattle(TrainerController trainerController)
@@ -158,9 +156,7 @@ public class GameController : MonoBehaviour
     private void EndBattle(bool playerWon)
     {
         if (playerWon)
-        {
-            AudioManager.i.PlayMusic(battleVictoryMusic);
-            
+        {            
             //Return to FreeRoam state
             state = GameState.FreeRoam;
             battleSystemController.gameObject.SetActive(false);
