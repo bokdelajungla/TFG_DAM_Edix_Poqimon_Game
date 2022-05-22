@@ -38,6 +38,7 @@ public class BattleSystemController : MonoBehaviour
     PoqimonParty playerParty;
     PoqimonParty oponentParty; 
     Poqimon enemyPoqimon;
+    Poqimon selectedMember;
 
     bool isTrainerBattle = false;
     int escapeAttemps;
@@ -217,9 +218,8 @@ public class BattleSystemController : MonoBehaviour
         {
             if (playerAction == BattleAction.SwitchPoqimon)
             {
-                var selectedPokemon = partyScreenController.SelectedMember;
                 state = BattleState.Busy;
-                yield return SwitchPoqimon(selectedPokemon);
+                yield return SwitchPoqimon(selectedMember);
             }
             else if (playerAction == BattleAction.UseItem)
             {
@@ -345,7 +345,7 @@ public class BattleSystemController : MonoBehaviour
                     playerUnit.Poqimon.Moves[moveIndex] = new Move(moveToLearn); 
                 }
                 moveToLearn = null;
-                state = BattleState.ActionSelection;
+                state = BattleState.RunningTurn;
             };
             moveSelectionUI.HandleMoveSelectionUI(OnMoveSelected); 
         }
@@ -380,8 +380,11 @@ public class BattleSystemController : MonoBehaviour
             }
             else if (currentAction == 1)
             {
-                //Bag (Poqibol)
+                //Bag (Throw Poqibol)
                 StartCoroutine(ThrowPoqibol());
+                /*TODO: When Bag Implemented
+                OpenBag();
+                */
             }
             else if (currentAction == 2)
             {
@@ -391,7 +394,7 @@ public class BattleSystemController : MonoBehaviour
             else if (currentAction == 3)
             {
                 //Run
-                StartCoroutine(TryToRun());
+                StartCoroutine(RunTurns(BattleAction.Run));
             }
         }
     
@@ -400,21 +403,14 @@ public class BattleSystemController : MonoBehaviour
     private void HandleMoveSelection()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
             ++currentMove;
-        }
         else if (Input.GetKeyDown(KeyCode.LeftArrow)) 
-        {
             --currentMove;
-        } 
         else if (Input.GetKeyDown(KeyCode.DownArrow)) 
-        {
             currentMove += 2;
-        }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
             currentMove -= 2;
-        }
+
         currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poqimon.Moves.Count - 1);
         
         dialog.UpdateMoveSelection(currentMove, playerUnit.Poqimon.Moves[currentMove]);
@@ -457,7 +453,7 @@ public class BattleSystemController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            var selectedMember = playerParty.Party[currentMember];
+            selectedMember = playerParty.Party[currentMember];
             if (selectedMember.CurrentHp <= 0){
                 partyScreenController.SetMessageText("Poqimon is fainted and cannot fight!");
                 return;
@@ -469,7 +465,7 @@ public class BattleSystemController : MonoBehaviour
             }
             partyScreenController.gameObject.SetActive(false);
             state = BattleState.Busy;
-            StartCoroutine(SwitchPoqimon(selectedMember));
+            StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
@@ -591,7 +587,7 @@ public class BattleSystemController : MonoBehaviour
         enemyUnit.SetUp(switchPoqimon);
         yield return dialog.TypeTxt($"{trainerController.TrainerName} sent out {switchPoqimon.PoqimonBase.PoqimonName}");
         
-        state = BattleState.ActionSelection;
+        state = BattleState.RunningTurn;
     }
     
     
@@ -710,7 +706,7 @@ public class BattleSystemController : MonoBehaviour
         if (isTrainerBattle)
         {
             yield return dialog.TypeTxt($"You can't steal a trainers poqimon!");
-            state = BattleState.ActionSelection;
+            state = BattleState.RunningTurn;
             yield break;
         }
 
