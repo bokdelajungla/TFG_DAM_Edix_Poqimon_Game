@@ -47,34 +47,6 @@ public class PartyScreenController : MonoBehaviour
         messageTxt.text = "Choose a Pokemon";
     }
 
-    public void HandleUpdate(Action onSelected, Action onBack)
-    {
-        var prevSelection = selection;
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            ++selection;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            --selection;
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            selection += 2;
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-            selection -= 2;
-
-        selection = Mathf.Clamp(selection, 0, partyPoqimons.Count - 1);
-
-        if (selection != prevSelection)
-            UpdateMemberSelection(selection);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            onSelected?.Invoke();
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            onBack?.Invoke();
-        }
-    }
-
     public void SetMessageText(string message)
     {
         messageTxt.text = message;

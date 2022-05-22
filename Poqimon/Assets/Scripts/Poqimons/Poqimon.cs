@@ -7,40 +7,95 @@ using Random = System.Random;
 [Serializable]
 public class Poqimon 
 {
-    // Base characterictis
-    [SerializeField] PoqimonBase poqimonBase;
+    /*
+     *      *****************
+     *      *   ATRIBUTES   *
+     *      *****************
+     */ 
+    
+    /*
+     *      SERIALIZED FIELDS
+     */
+    
+    // Poqimon Base characterictis 
+    [SerializeField] private PoqimonBase poqimonBase;
+   /// <summary>
+   /// Poqimon base characteristics' getter
+   /// </summary>
     public PoqimonBase PoqimonBase => poqimonBase;
 
-    // Lvl
+    // Poqimon's level
     [SerializeField] int poqimonLevel;
+    // Poqimon's level getter
     public int PoqimonLevel => poqimonLevel;
 
-    // Movements
-    public List<Move> Moves {get; set;}
-    public Move CurrentMove { get; set; }
-    
-    // Stats & Stat Boosts
+    /*
+     *      STATS & STATS BOOSTS
+     */
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     
-    // Status & Status Changes
+    /*
+     *      STATUS & STATUS CHANGES
+     */
+    
+    //
     public Condition Status { get; set; }
+    
+    //
     public int StatusTime { get; set; }
+    
+    //
     public Condition VolatileStatus { get; set; }
+    
+    //
     public int VolatileStatusTime { get; set; }
+    
+    //
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
-    // HP
+    /*
+     *      HP & EXPERIENCE
+     */
+    
+    //
     public int CurrentHp { get; set; }
+    
+    //
     public bool HpChanged { get; set; }
 
-    //Exp
+    // Poqimon ecperience (with getter & setter)
     public int Exp {get; set;}
+    
+    /*
+     *      MOVEMENTS
+     */
 
-    //Events
+    // Poqimon movements's list (with getter and setter)
+    public List<Move> Moves {get; set;}
+    // Current move used by the poqimon (with getter and setter)
+    public Move CurrentMove { get; set; }
+
+    /*
+     *  EVENTS
+     */
+    
+    //
     public event Action OnStatusChanged;
+    //
     public event Action OnHPChanged;
     
+    /*
+     *      ******************
+     *      *   CONSTUCTOR   *
+     *      ******************
+     */ 
+    
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="pBase">poqimon's base atributes</param>
+    /// <param name="pLevel">poqimon's level</param>
     public Poqimon(PoqimonBase pBase, int pLevel)
     {
         poqimonBase = pBase;
@@ -48,8 +103,16 @@ public class Poqimon
 
         Init();
     }
-
-    //Initializer
+    
+    /*
+     *      ************************
+     *      *   PUBLIC FUNCTIONS   *
+     *      ************************
+     */
+    
+    /// <summary>
+    /// Initializer
+    /// </summary>
     public void Init()
     {
         //Generate Moves
@@ -80,6 +143,10 @@ public class Poqimon
         VolatileStatus = null;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="saveData"></param>
     public Poqimon(PoqimonSaveData saveData)
     {
         poqimonBase = PoqimonDB.GetObjectByName(saveData.name);
@@ -100,6 +167,10 @@ public class Poqimon
         VolatileStatus = null;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public PoqimonSaveData GetSaveData()
     {
         var saveData = new PoqimonSaveData()
@@ -114,59 +185,7 @@ public class Poqimon
 
         return saveData;
     }
-
-
-    // calculate the stats of the poqimon
-    private void CalcStats()
-    {
-        //Stats Formulas (from Bulbapedia)
-        Stats = new Dictionary<Stat, int>();
-        Stats.Add(Stat.Attack, Mathf.FloorToInt((poqimonBase.Attack*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.Defense, Mathf.FloorToInt((poqimonBase.Defense*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((poqimonBase.SpAttack*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((poqimonBase.SpDefense*poqimonLevel) / 100f) + 5);
-        Stats.Add(Stat.Speed, Mathf.FloorToInt((poqimonBase.Speed*poqimonLevel) / 100f) + 5);
-        
-        MaxHp = Mathf.FloorToInt((poqimonBase.MaxHP * poqimonLevel) / 100f) + 10;
-    }
-
-    // Reset (to 0) all the stats
-    private void ResetStatBoost()
-    {
-        StatBoosts = new Dictionary<Stat, int>()
-        {
-            { Stat.Attack , 0 },
-            { Stat.Defense , 0 },
-            { Stat.SpAttack , 0 },
-            { Stat.SpDefense , 0 },
-            { Stat.Speed , 0 }
-        };
-    }
-
-    // Restore HP & PP fully
-    public void Heal() {
-        CurrentHp = MaxHp;
-        foreach (var move in Moves)
-        {
-            move.MovePP = move.MoveBase.MovePP;
-        }
-
-        CureStatus();
-    }
-
-    // Getter stats
-    private int GetStat(Stat stat)
-    {
-        int statValue = Stats[stat];
-        
-        int boost = StatBoosts[stat];
-        var boostValues = new float[] {1f, 1.5f, 2f, 2.5f, 3f, 3.5f, 4f};
-
-        statValue = (boost >= 0) ? Mathf.FloorToInt(statValue * boostValues[boost]) : statValue = Mathf.FloorToInt(statValue / boostValues[-boost]);
-
-        return statValue;
-    }
-
+    
     // Apply boosts to the stats
     public void ApplyBoosts(List<StatBoost> statBoosts)
     {
@@ -189,13 +208,21 @@ public class Poqimon
         }
     }
     
-    //Stats Formulas (from Bulbapedia)
-    public int Attack => GetStat(Stat.Attack);
-    public int Defense => GetStat(Stat.Defense);
-    public int SpAttack => GetStat(Stat.SpAttack);
-    public int SpDefense => GetStat(Stat.SpDefense);
-    public int Speed => GetStat(Stat.Speed);
+    /*
+     *      STATS GETTERS
+     */
     
+    //
+    public int Attack => GetStat(Stat.Attack);
+    //
+    public int Defense => GetStat(Stat.Defense);
+    //
+    public int SpAttack => GetStat(Stat.SpAttack);
+    //
+    public int SpDefense => GetStat(Stat.SpDefense);
+    //
+    public int Speed => GetStat(Stat.Speed);
+    //
     public int MaxHp { get; private set; }
     
     ///<summary>
@@ -241,6 +268,10 @@ public class Poqimon
         return damageDetails;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="amount"></param>
     public void IncreaseHp(int amount)
     {
         CurrentHp = Mathf.Clamp(CurrentHp + amount, 0, MaxHp);
@@ -253,6 +284,10 @@ public class Poqimon
         OnHPChanged?.Invoke();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="conditionID"></param>
     public void SetStatus(ConditionID conditionID)
     {
         if (Status != null)
@@ -266,12 +301,19 @@ public class Poqimon
         OnStatusChanged?.Invoke();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void CureStatus()
     {
         Status = null;
         OnStatusChanged?.Invoke();
     }
     
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="conditionID"></param>
     public void SetVolatileStatus(ConditionID conditionID)
     {
         if (Status != null)
@@ -284,12 +326,18 @@ public class Poqimon
         StatusChanges.Enqueue($"{PoqimonBase.PoqimonName} {VolatileStatus.StartMsg}");
     }
     
+    /// <summary>
+    /// 
+    /// </summary>
     public void CureVolatileStatus()
     {
         VolatileStatus = null;
     }
-
-    // get a random move (IA enemey)
+    
+    /// <summary>
+    /// get a random move (IA enemey)
+    /// </summary>
+    /// <returns>Move the enemy will use</returns>
     public Move GetRndMove()
     {
         // To onlu use moves with more than 0 PP
@@ -299,14 +347,23 @@ public class Poqimon
         return movesWithPP[r];
     }
 
-    // Reset the Stats if the battle is over
+    
+    /// <summary>
+    /// Reset the Stats and supress the volatile statuses if the battle is over
+    /// </summary>
     public void OnBattleOver()
     {
         VolatileStatus = null;
         ResetStatBoost();
     }
 
-    // Event before move (used if it's paralyzed, sleeping, ...)
+    
+    /// <summary>
+    /// Event before move
+    /// Used in case the poqimon has some status don't let the poqimon attack like sleep, paralyzed, ...
+    /// Or make attack itself like confusion
+    /// </summary>
+    /// <returns></returns>
     public bool OnBeforeMove()
     {
         bool canPerformMove = true;
@@ -327,7 +384,10 @@ public class Poqimon
         return canPerformMove;
     }
     
-    // Event after the turn (used if it's poisoned, burned, ...)
+    /// <summary>
+    /// Event after the turn
+    /// Used in case the poqimon has some status which take life (volatiles or not) like posion, burn, ...
+    /// </summary>
     public void OnAfterTurn()
     {
         // (coditional call) We'll only call it if is not null
@@ -335,6 +395,10 @@ public class Poqimon
         VolatileStatus?.OnAfterTurn?.Invoke(this);
     }
     
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public bool CheckForLevelUp()
     {
         if (Exp > PoqimonBase.GetExperienceForLvl(poqimonLevel + 1))
@@ -346,11 +410,19 @@ public class Poqimon
         return false;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public LearnableMove GetLearnableMoveAtCurrentLvl()
     {
         return PoqimonBase.LearnableMoves.Where(x => x.LearnLevel ==  PoqimonLevel).FirstOrDefault(); 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="learnableMove"></param>
     public void LearnMove(LearnableMove learnableMove)
     {   
         if(Moves.Count <= PoqimonBase
@@ -359,14 +431,20 @@ public class Poqimon
             Moves.Add(new Move(learnableMove.MoveBase));
         }
     }
-
-
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public Evolution CheckForEvolution()
     {
         return PoqimonBase.Evolutions.FirstOrDefault(e => e.LevelRequired <= poqimonLevel);
     }
-
-    //Evolution Function
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="evolution"></param>
     public void Evolve (Evolution evolution)
     {   
         //Set Poqimon Base to the Evolution one
@@ -376,8 +454,79 @@ public class Poqimon
         //Set currentHP to new MaxHp (Heal up poqimon)
         CurrentHp = MaxHp;
     }
+    
+    /*
+     *      *************************
+     *      *   PRIVATE FUNCTIONS   *
+     *      *************************
+     */
+    
+    /// <summary>
+    /// Calculate the poqimon stats
+    ///  Stats Formulas from https://bulbapedia.bulbagarden.net/wiki/Stat
+    /// </summary>
+    private void CalcStats()
+    {
+        //Stats Formulas (from Bulbapedia)
+        Stats = new Dictionary<Stat, int>();
+        Stats.Add(Stat.Attack, Mathf.FloorToInt((poqimonBase.Attack*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.Defense, Mathf.FloorToInt((poqimonBase.Defense*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((poqimonBase.SpAttack*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((poqimonBase.SpDefense*poqimonLevel) / 100f) + 5);
+        Stats.Add(Stat.Speed, Mathf.FloorToInt((poqimonBase.Speed*poqimonLevel) / 100f) + 5);
+        
+        MaxHp = Mathf.FloorToInt((poqimonBase.MaxHP * poqimonLevel) / 100f) + 10;
+    }
+    
+    /// <summary>
+    /// Reset (to 0) all the stats
+    /// </summary>
+    private void ResetStatBoost()
+    {
+        StatBoosts = new Dictionary<Stat, int>()
+        {
+            { Stat.Attack , 0 },
+            { Stat.Defense , 0 },
+            { Stat.SpAttack , 0 },
+            { Stat.SpDefense , 0 },
+            { Stat.Speed , 0 }
+        };
+    }
+    
+    /// <summary>
+    /// Fully restore HP & PP
+    /// </summary>
+    public void Heal() {
+        CurrentHp = MaxHp;
+        foreach (var move in Moves)
+        {
+            move.MovePP = move.MoveBase.MovePP;
+        }
+
+        CureStatus();
+    }
+    
+    /// <summary>
+    /// Get calculate bounded stat (it has especified boosts heights values)
+    /// </summary>
+    /// <param name="stat"></param>
+    /// <returns></returns>
+    private int GetStat(Stat stat)
+    {
+        int statValue = Stats[stat];
+        
+        int boost = StatBoosts[stat];
+        var boostValues = new float[] {1f, 1.5f, 2f, 2.5f, 3f, 3.5f, 4f};
+
+        statValue = (boost >= 0) ? Mathf.FloorToInt(statValue * boostValues[boost]) : statValue = Mathf.FloorToInt(statValue / boostValues[-boost]);
+
+        return statValue;
+    }
 }
 
+/// <summary>
+/// 
+/// </summary>
 public class DamageDetails
 {
     public bool Fainted { get; set; }
@@ -385,6 +534,9 @@ public class DamageDetails
     public float TypeEffectiveness { get; set; }
 }
 
+/// <summary>
+/// 
+/// </summary>
 [System.Serializable]
 public class PoqimonSaveData
 {

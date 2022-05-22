@@ -6,48 +6,110 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, Bag, PartyScreen, ForgetMove, BattleOver}
+    /*
+     *      ********************************
+     *      *   GLOBAL VARIABLES - ENUMS   *
+     *      ********************************
+    */ 
+
+public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, ForgetMove, BattleOver}
 public enum BattleAction { Move, UseItem, SwitchPoqimon, Run}
 
 public class BattleSystemController : MonoBehaviour
 {
-    [SerializeField] BattleUnit playerUnit;
-    [SerializeField] BattleUnit enemyUnit;
-    [SerializeField] Image playerImage;
-    [SerializeField] Image trainerImage;
-    [SerializeField] BattleDialog dialog;
-    [SerializeField] PartyScreenController partyScreenController;
-    [SerializeField] private AudioSource audioSFX;
+    /*
+     *      *****************
+     *      *   ATRIBUTES   *
+     *      *****************
+     */ 
+    
+    /*
+     *      SERIALIZED FIELDS
+     */
+    
+    [Header("General")]
+    [SerializeField] private BattleDialog dialog;
+    [SerializeField] private PartyScreenController partyScreenController;
     [SerializeField] private GameObject poqibolSprite;
-    [SerializeField] MoveSelectionUI moveSelectionUI;
-    [SerializeField] InventoryUI inventoryUI;
+    [SerializeField] private MoveSelectionUI moveSelectionUI;
+
+    [Header("Fighters")]
+    [SerializeField] private BattleUnit playerUnit;
+    [SerializeField] private BattleUnit enemyUnit;
+    [SerializeField] private Image playerImage;
+    [SerializeField] private Image trainerImage;
     
     [Header("Audio")]
-    [SerializeField] AudioClip wildBattleMusic;
-    [SerializeField] AudioClip trainerBattleMusic;
+    [SerializeField] private AudioSource audioSFX;
+    [SerializeField] private AudioClip wildBattleMusic;
+    [SerializeField] private AudioClip trainerBattleMusic;
+
+    /*
+     *      STATES AND ACTIONS
+     */
     
-    //Event with a bool to be able to distinguish between Win & Lose
+    // Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver;
     
-    BattleState state;
-
-    int currentAction;
-    int currentMove;
-    int currentMember;
-
-    PoqimonParty playerParty;
-    PoqimonParty oponentParty; 
-    Poqimon enemyPoqimon;
+    //
+    private BattleState state;
     
-    Poqimon selectedMember;
-
-    bool isTrainerBattle = false;
-    int escapeAttemps;
-    MoveBase moveToLearn;
-
-    PlayerController playerController;
-    TrainerController trainerController;    
+    //
+    private int currentAction;
     
+    //
+    private int currentMove;
+    
+    //
+    private int currentMember;
+
+    /*
+    *      POQIMON AND MOVES
+    */
+    
+    //
+    private PoqimonParty playerParty;
+    
+    //
+    private PoqimonParty oponentParty; 
+    
+    //
+    private Poqimon enemyPoqimon;
+    
+    //
+    private Poqimon selectedMember;
+    
+    //
+    private MoveBase moveToLearn;
+    
+    //
+    private bool isTrainerBattle = false;
+    
+    //
+    private int escapeAttemps;
+
+    /*
+    *      CONTROLLERS
+    */
+    
+    //
+    private PlayerController playerController;
+    
+    //
+    private TrainerController trainerController;    
+    
+    
+    /*
+     *      ************************
+     *      *   PUBLIC FUNCTIONS   *
+     *      ************************
+     */
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="playerParty"></param>
+    /// <param name="enemyPoqimon"></param>
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {
         isTrainerBattle = false;
@@ -60,6 +122,11 @@ public class BattleSystemController : MonoBehaviour
         StartCoroutine(SetupBattle());
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="playerParty"></param>
+    /// <param name="oponentParty"></param>
     public void StartTrainerBattle(PoqimonParty playerParty, PoqimonParty oponentParty)
     {
         this.playerParty = playerParty;
@@ -73,7 +140,327 @@ public class BattleSystemController : MonoBehaviour
 		AudioManager.i.PlayMusic(trainerBattleMusic);
         StartCoroutine(SetupBattle());
     }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public void HandleUpdate()
+    {
+        if (state == BattleState.ActionSelection)
+        {
+            HandleActionSelection();
+        }
+        else if (state == BattleState.MoveSelection)
+        {
+            HandleMoveSelection();
+        }
+        else if (state == BattleState.PartyScreen)
+        {
+            HandlePartyScreenSelection();
+        }
 
+        else if (state == BattleState.ForgetMove)
+        {
+            Action<int> OnMoveSelected = (moveIndex) => 
+            {
+                moveSelectionUI.gameObject.SetActive(false);
+                if (moveIndex == PoqimonBase.MaxNumberOfMoves)
+                {
+                    //Don't learn new move
+                    StartCoroutine(dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} did not learn {moveToLearn.MoveName}"));
+                }
+                else
+                {
+                    //Forget selected move and learn the new one
+                    var selectedMove = playerUnit.Poqimon.Moves[moveIndex].MoveBase;
+                    StartCoroutine(dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} forgot {selectedMove.MoveName} and learned {moveToLearn.MoveName}"));
+                    playerUnit.Poqimon.Moves[moveIndex] = new Move(moveToLearn); 
+                }
+                moveToLearn = null;
+                state = BattleState.RunningTurn;
+            };
+            moveSelectionUI.HandleMoveSelectionUI(OnMoveSelected); 
+        }
+
+    }
+
+    
+    /*
+     *      ************************
+     *      *   PRIVATE FUNCTIONS   *
+     *      ************************
+     */
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="isWon"></param>
+    private void BattleOver(bool isWon)
+    {
+            state = BattleState.BattleOver;
+            // Reset All the Stats of every Poqimmon at the Party when the battle is over
+            playerParty.Party.ForEach(poq => poq.OnBattleOver());
+            playerUnit.Hud.ClearData();
+            enemyUnit.Hud.ClearData();
+            OnBattleOver(isWon);
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    private void ActionSelection()
+    {
+        state = BattleState.ActionSelection;
+        StartCoroutine(dialog.TypeTxt("Chose an action:"));
+        dialog.EnableActionSelector(true);
+    }
+	
+    /// <summary>
+    /// 
+    /// </summary>
+	private void usePoqibol()
+    {
+        //TODO: Check Inventroy
+        //Invoke Use Item from there:
+        //For now just Use Item poqibol by default
+        StartCoroutine(RunTurns(BattleAction.UseItem));
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OpenPartyScreen()
+    {
+        partyScreenController.CalledFrom = state;
+        state = BattleState.PartyScreen;
+        partyScreenController.gameObject.SetActive(true);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void MoveSelection()
+    {
+        state = BattleState.MoveSelection;
+        dialog.EnableDialogTxt(false);
+        dialog.EnableActionSelector(false);
+        dialog.EnableMoveSelector(true);
+        
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    private void HandleActionSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            currentAction++;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            currentAction--;
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+            currentAction += 2;
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
+            currentAction -= 2;
+        currentAction = Mathf.Clamp(currentAction, 0, 3);
+        
+        dialog.UpdateActionSelection(currentAction);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (currentAction == 0)
+            {
+                //Figth
+                MoveSelection();
+            }
+            else if (currentAction == 1)
+            {
+                //TODO: Open Bag window
+                //For now: Bag => (Use Item - Poqibol)
+                usePoqibol();
+            }
+            else if (currentAction == 2)
+            {
+                //Poqimon Party
+                OpenPartyScreen();
+            }
+            else if (currentAction == 3)
+            {
+                //Run
+                StartCoroutine(RunTurns(BattleAction.Run));
+            }
+        }
+    
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void HandleMoveSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            ++currentMove;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) 
+            --currentMove;
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) 
+            currentMove += 2;
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+            currentMove -= 2;
+
+        currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poqimon.Moves.Count - 1);
+        
+        dialog.UpdateMoveSelection(currentMove, playerUnit.Poqimon.Moves[currentMove]);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            // 0PP can't use the move
+            if (playerUnit.Poqimon.Moves[currentMove].MovePP == 0)
+            {
+                return;
+            }
+            
+            // > 0PP can use the move
+            dialog.EnableMoveSelector(false);
+            dialog.EnableDialogTxt(true);
+            StartCoroutine(RunTurns(BattleAction.Move));
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            dialog.EnableMoveSelector(false);
+            dialog.EnableDialogTxt(true);
+            ActionSelection();
+        }
+ 
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void HandlePartyScreenSelection()
+    {
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            currentMember++;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            currentMember--;
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+            currentMember++;
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
+            currentMember--;
+        currentMember = Mathf.Clamp(currentMember, 0, playerParty.Party.Count - 1);
+        
+        partyScreenController.UpdateMemberSelection(currentMember);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            selectedMember = playerParty.Party[currentMember];
+            if (selectedMember.CurrentHp <= 0){
+                partyScreenController.SetMessageText("Poqimon is fainted and cannot fight!");
+                return;
+            }
+            if (selectedMember == playerUnit.Poqimon)
+            {
+                partyScreenController.SetMessageText(selectedMember.PoqimonBase.PoqimonName + " is already fighting!");
+                return;
+            }
+            partyScreenController.gameObject.SetActive(false);
+            state = BattleState.Busy;
+            StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            partyScreenController.gameObject.SetActive(false);
+            dialog.EnableDialogTxt(true);
+            ActionSelection();
+        }
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="faintedUnit"></param>
+    private void CheckForBattleOver(BattleUnit faintedUnit) 
+    {
+        // if player poqimon is fainted
+        if (faintedUnit.IsPlayer)
+        {
+            //Check if there are more poqimons in the party
+            var nextPoqimon = playerParty.GetHealthyPoqimon();
+            if (nextPoqimon != null)
+            {
+                OpenPartyScreen();
+            }
+            //No more poqimons. Combat ended, player Lost!
+            else
+            {
+                BattleOver(false);   
+            }
+        }
+        // if enemy poqimon is fainted, Check for more poqimons
+        else
+        {
+            //If it is not Trainer battle => wild poqimon defeated!
+            if (!isTrainerBattle)
+            {
+                BattleOver(true);
+            }
+            else
+            {
+                var nextEnemyPoqimon = oponentParty.GetHealthyPoqimon();
+                if (nextEnemyPoqimon != null)
+                {
+                    StartCoroutine(SwitchTrainerPoqimon(nextEnemyPoqimon));
+                }
+                else 
+                {
+                    //The trainer lost the Battle
+                    trainerController.LostBattle();
+                    BattleOver(true);
+                }
+            }
+        }         
+    }
+    
+    /// <summary>
+    /// Using the original pokemon algorithm try to catch a poqimon (enter parameter)
+    /// It takes into account it's HP, Catch rate and Status (psn, brn, ...)
+    /// The shake count (poqibal shaking) tells us if the poqimon is been captured
+    /// if the shake count its 0 it's captured sucessfully, otherwise the poqimon has escaped
+    /// Data from https://bulbapedia.bulbagarden.net/wiki/Catch_rate
+    /// </summary>
+    /// <param name="poq">poqimon we're trying to catch</param>
+    /// <returns>Count of poqibal's shakes</returns>
+    private int TyoToCatch(Poqimon poq)
+    {
+        float a = (3 * poq.MaxHp - 2 * poq.CurrentHp) * poq.PoqimonBase.CatchRate * ConditionsDB.GetStatusBonus(poq.Status) / (3 * poq.MaxHp);
+        if (a >= 255)
+        {
+            return 4;
+        }
+
+        float b = 1048560 / Mathf.Sqrt(Mathf.Sqrt(16711680 / a));
+
+        int shakeCount = 0;
+        while (shakeCount < 4)
+        {
+            if (UnityEngine.Random.Range(0, 65535) > b)
+            {
+                break;
+            }
+            ++shakeCount;
+        }
+        return shakeCount;
+    }
+    
+    /*
+     *      ***********************************
+     *      *   PRIVATE COROUTINE FUNCTIONS   *
+     *      ***********************************
+     */
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SetupBattle()
     {
         //Remove HUD before battle start
@@ -126,50 +513,14 @@ public class BattleSystemController : MonoBehaviour
         partyScreenController.Init();
         ActionSelection();
     }
-
-    private void BattleOver(bool isWon)
-    {
-            state = BattleState.BattleOver;
-            // Reset All the Stats of every Poqimmon at the Party when the battle is over
-            playerParty.Party.ForEach(poq => poq.OnBattleOver());
-            playerUnit.Hud.ClearData();
-            enemyUnit.Hud.ClearData();
-            OnBattleOver(isWon);
-    }
     
-    private void ActionSelection()
-    {
-        state = BattleState.ActionSelection;
-        StartCoroutine(dialog.TypeTxt("Chose an action:"));
-        dialog.EnableActionSelector(true);
-    }
-	
-	void OpenBag()
-    {
-        //TODO: Check Inventroy
-        //Invoke Use Item from there:
-        //For now just Use Item poqibol by default
-        StartCoroutine(RunTurns(BattleAction.UseItem));
-    }
-
-
-    private void OpenPartyScreen()
-    {
-        partyScreenController.CalledFrom = state;
-        state = BattleState.PartyScreen;
-        partyScreenController.gameObject.SetActive(true);
-    }
-
-    private void MoveSelection()
-    {
-        state = BattleState.MoveSelection;
-        dialog.EnableDialogTxt(false);
-        dialog.EnableActionSelector(false);
-        dialog.EnableMoveSelector(true);
-        
-    }
-
-	IEnumerator ChooseMoveToForget(Poqimon poqimon, MoveBase learnableMove)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="poqimon"></param>
+    /// <param name="learnableMove"></param>
+    /// <returns></returns>
+	private IEnumerator ChooseMoveToForget(Poqimon poqimon, MoveBase learnableMove)
     {
         state = BattleState.Busy;
         yield return dialog.TypeTxt($"Choose a move to be forgetten");
@@ -181,7 +532,12 @@ public class BattleSystemController : MonoBehaviour
 
     }
 	
-	IEnumerator RunTurns(BattleAction playerAction)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="playerAction"></param>
+    /// <returns></returns>
+    private IEnumerator RunTurns(BattleAction playerAction)
     {
         state = BattleState.RunningTurn;
 
@@ -251,7 +607,14 @@ public class BattleSystemController : MonoBehaviour
             ActionSelection();
     }
 	
-	IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sourceUnit"></param>
+    /// <param name="targetUnit"></param>
+    /// <param name="move"></param>
+    /// <returns></returns>
+    private IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
         bool canRunMove = sourceUnit.Poqimon.OnBeforeMove();
         // breaks the coroutine in case the poqimon can't move
@@ -289,31 +652,36 @@ public class BattleSystemController : MonoBehaviour
             yield return targetUnit.Hud.WaitForHPUpdate();
             yield return ShowDamageDetails(damageDetails);
         }
-        // Enemy Dies
+        // Target Dies (Defender)
         if (targetUnit.Poqimon.CurrentHp <= 0)
         {
            yield return HandleFaintedPoqimon(targetUnit);
         }
         
-        // Some statuses (burn, poison hurt the poqimon after the turn)
-        sourceUnit.Poqimon.OnAfterTurn();
-        yield return ShowStatusChanges(sourceUnit.Poqimon);
-        yield return sourceUnit.Hud.WaitForHPUpdate();
-        if (sourceUnit.Poqimon.CurrentHp <= 0)
-        {
-            yield return HandleFaintedPoqimon(sourceUnit);
-        }
+        
     }
 
-    IEnumerator RunAfterTurns(BattleUnit sourceUnit)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sourceUnit"></param>
+    /// <returns></returns>
+    private IEnumerator RunAfterTurns(BattleUnit sourceUnit)
     {
-        if (state == BattleState.BattleOver) yield break;
+        // If the battle is over (enemy or player has been defeated -> break the coroutine)
+        if (state == BattleState.BattleOver)
+        {
+            yield break;
+        }
+        // Wait until the turn is ended to start the coroutine
         yield return new WaitUntil(() => state == BattleState.RunningTurn);
 
-        // Statuses like burn or psn will hurt the pokemon after the turn
+        // Some Statuses (burn or poison) will hurt the pokemon after the turn
         sourceUnit.Poqimon.OnAfterTurn();
         yield return ShowStatusChanges(sourceUnit.Poqimon);
         yield return sourceUnit.Hud.WaitForHPUpdate();
+        
+        // The target has fainted
         if (sourceUnit.Poqimon.CurrentHp <= 0)
         {
             yield return HandleFaintedPoqimon(sourceUnit);
@@ -321,206 +689,14 @@ public class BattleSystemController : MonoBehaviour
         }
     }
     
-    public void HandleUpdate()
-    {
-        if (state == BattleState.ActionSelection)
-        {
-            HandleActionSelection();
-        }
-        else if (state == BattleState.MoveSelection)
-        {
-            HandleMoveSelection();
-        }
-        else if (state == BattleState.PartyScreen)
-        {
-            HandlePartyScreenSelection();
-        }
-
-        else if (state == BattleState.ForgetMove)
-        {
-            Action<int> OnMoveSelected = (moveIndex) => 
-            {
-                moveSelectionUI.gameObject.SetActive(false);
-                if (moveIndex == PoqimonBase.MaxNumberOfMoves)
-                {
-                    //Don't learn new move
-                    StartCoroutine(dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} did not learn {moveToLearn.MoveName}"));
-                }
-                else
-                {
-                    //Forget selected move and learn the new one
-                    var selectedMove = playerUnit.Poqimon.Moves[moveIndex].MoveBase;
-                    StartCoroutine(dialog.TypeTxt($"{playerUnit.Poqimon.PoqimonBase.PoqimonName} forgot {selectedMove.MoveName} and learned {moveToLearn.MoveName}"));
-                    playerUnit.Poqimon.Moves[moveIndex] = new Move(moveToLearn); 
-                }
-                moveToLearn = null;
-                state = BattleState.RunningTurn;
-            };
-            moveSelectionUI.HandleMoveSelectionUI(OnMoveSelected); 
-        }
-
-    }
-
-    void HandleActionSelection()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            currentAction++;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            currentAction--;
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            currentAction += 2;
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
-            currentAction -= 2;
-        currentAction = Mathf.Clamp(currentAction, 0, 3);
-        
-        dialog.UpdateActionSelection(currentAction);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (currentAction == 0)
-            {
-                //Figth
-                MoveSelection();
-            }
-            else if (currentAction == 1)
-            {
-                //TODO: Open Bag window
-                //For now: Bag => (Use Item - Poqibol)
-                OpenBag();
-            }
-            else if (currentAction == 2)
-            {
-                //Poqimon Party
-                OpenPartyScreen();
-            }
-            else if (currentAction == 3)
-            {
-                //Run
-                StartCoroutine(RunTurns(BattleAction.Run));
-            }
-        }
-    
-    }
-
-    private void HandleMoveSelection()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            ++currentMove;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)) 
-            --currentMove;
-        else if (Input.GetKeyDown(KeyCode.DownArrow)) 
-            currentMove += 2;
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-            currentMove -= 2;
-
-        currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Poqimon.Moves.Count - 1);
-        
-        dialog.UpdateMoveSelection(currentMove, playerUnit.Poqimon.Moves[currentMove]);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            // 0PP can't use the move
-            if (playerUnit.Poqimon.Moves[currentMove].MovePP == 0)
-            {
-                return;
-            }
-            
-            // > 0PP can use the move
-            dialog.EnableMoveSelector(false);
-            dialog.EnableDialogTxt(true);
-            StartCoroutine(RunTurns(BattleAction.Move));
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            dialog.EnableMoveSelector(false);
-            dialog.EnableDialogTxt(true);
-            ActionSelection();
-        }
- 
-    }
-
-    private void HandlePartyScreenSelection()
-    {
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            currentMember++;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            currentMember--;
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            currentMember++;
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
-            currentMember--;
-        currentMember = Mathf.Clamp(currentMember, 0, playerParty.Party.Count - 1);
-        
-        partyScreenController.UpdateMemberSelection(currentMember);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            selectedMember = playerParty.Party[currentMember];
-            if (selectedMember.CurrentHp <= 0){
-                partyScreenController.SetMessageText("Poqimon is fainted and cannot fight!");
-                return;
-            }
-            if (selectedMember == playerUnit.Poqimon)
-            {
-                partyScreenController.SetMessageText(selectedMember.PoqimonBase.PoqimonName + " is already fighting!");
-                return;
-            }
-            partyScreenController.gameObject.SetActive(false);
-            state = BattleState.Busy;
-            StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            partyScreenController.gameObject.SetActive(false);
-            dialog.EnableDialogTxt(true);
-            ActionSelection();
-        }
-    }
-    
-    private void CheckForBattleOver(BattleUnit faintedUnit) 
-    {
-        // if player poqimon is fainted
-        if (faintedUnit.IsPlayer)
-        {
-            //Check if there are more poqimons in the party
-            var nextPoqimon = playerParty.GetHealthyPoqimon();
-            if (nextPoqimon != null)
-            {
-                OpenPartyScreen();
-            }
-            //No more poqimons. Combat ended, player Lost!
-            else
-            {
-                BattleOver(false);   
-            }
-        }
-        // if enemy poqimon is fainted, Check for more poqimons
-        else
-        {
-            //If it is not Trainer battle => wild poqimon defeated!
-            if (!isTrainerBattle)
-            {
-                BattleOver(true);
-            }
-            else
-            {
-                var nextEnemyPoqimon = oponentParty.GetHealthyPoqimon();
-                if (nextEnemyPoqimon != null)
-                {
-                    StartCoroutine(SwitchTrainerPoqimon(nextEnemyPoqimon));
-                }
-                else 
-                {
-                    //The trainer lost the Battle
-                    trainerController.LostBattle();
-                    BattleOver(true);
-                }
-            }
-        }         
-    }
-
-    IEnumerator RunMoveEffects(Move move, Poqimon source, Poqimon target)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="move"></param>
+    /// <param name="source"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    private IEnumerator RunMoveEffects(Move move, Poqimon source, Poqimon target)
     {
         var effects = move.MoveBase.Effects;
         // Boosts stats
@@ -553,7 +729,12 @@ public class BattleSystemController : MonoBehaviour
         yield return ShowStatusChanges(target);
     }
 
-    IEnumerator ShowStatusChanges(Poqimon poq)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="poq"></param>
+    /// <returns></returns>
+    private IEnumerator ShowStatusChanges(Poqimon poq)
     {
         if(poq.StatusChanges != null){
             while (poq.StatusChanges.Count > 0)
@@ -564,7 +745,13 @@ public class BattleSystemController : MonoBehaviour
         }
     }
     
-    IEnumerator SwitchPoqimon(Poqimon switchPoqimon, bool isTrainerAboutToUse=false)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="switchPoqimon"></param>
+    /// <param name="isTrainerAboutToUse"></param>
+    /// <returns></returns>
+    private IEnumerator SwitchPoqimon(Poqimon switchPoqimon, bool isTrainerAboutToUse=false)
     {
         if(playerUnit.Poqimon.CurrentHp > 0)
         {
@@ -583,7 +770,12 @@ public class BattleSystemController : MonoBehaviour
             state = BattleState.RunningTurn;
     }
 
-    IEnumerator SwitchTrainerPoqimon(Poqimon switchPoqimon)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="switchPoqimon"></param>
+    /// <returns></returns>
+    private IEnumerator SwitchTrainerPoqimon(Poqimon switchPoqimon)
     {
         state = BattleState.Busy;
                 
@@ -593,8 +785,12 @@ public class BattleSystemController : MonoBehaviour
         state = BattleState.RunningTurn;
     }
     
-    
-    IEnumerator HandleFaintedPoqimon(BattleUnit faintedUnit)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="faintedUnit"></param>
+    /// <returns></returns>
+    private IEnumerator HandleFaintedPoqimon(BattleUnit faintedUnit)
     {
         yield return dialog.TypeTxt($"{faintedUnit.Poqimon.PoqimonBase.PoqimonName} Fainted!");
         faintedUnit.PlayFaintedAnimation();
@@ -648,7 +844,12 @@ public class BattleSystemController : MonoBehaviour
         CheckForBattleOver(faintedUnit);
     }
 
-    IEnumerator ShowDamageDetails(DamageDetails damageDetails)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="damageDetails"></param>
+    /// <returns></returns>
+    private IEnumerator ShowDamageDetails(DamageDetails damageDetails)
     {
         if (damageDetails.Critical > 1f)
         {
@@ -664,7 +865,11 @@ public class BattleSystemController : MonoBehaviour
         }
     }
 
-    IEnumerator TryToRun()
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator TryToRun()
     {
         state = BattleState.Busy;
         if ( isTrainerBattle)
@@ -701,7 +906,11 @@ public class BattleSystemController : MonoBehaviour
         }
     }
 
-    IEnumerator ThrowPoqibol()
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator ThrowPoqibol()
     {
         state = BattleState.Busy;
         dialog.EnableActionSelector(false);
@@ -762,29 +971,5 @@ public class BattleSystemController : MonoBehaviour
             state = BattleState.RunningTurn;
         }
     }
-
-    // Data from https://bulbapedia.bulbagarden.net/wiki/Catch_rate
-    int TyoToCatch(Poqimon poq)
-    {
-        float a = (3 * poq.MaxHp - 2 * poq.CurrentHp) * poq.PoqimonBase.CatchRate * ConditionsDB.GetStatusBonus(poq.Status) / (3 * poq.MaxHp);
-        if (a >= 255)
-        {
-            return 4;
-        }
-
-        float b = 1048560 / Mathf.Sqrt(Mathf.Sqrt(16711680 / a));
-
-        int shakeCount = 0;
-        while (shakeCount < 4)
-        {
-            if (UnityEngine.Random.Range(0, 65535) > b)
-            {
-                break;
-            }
-            ++shakeCount;
-        }
-        return shakeCount;
-    }
-
 
 }
