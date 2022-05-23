@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14ea2f42b07b3e47855d53ce0421418, type: 3}
+  m_Name: 025_Peepochu
+  m_EditorClassIdentifier: 
+  poqimonNumber: 25
+  poqimonName: Peepochu
+  poqimonDescription: Electric rat Peepoclown
+  poqimonFrontSprite: {fileID: -1883449986, guid: 9211086dbc0d84e4fa858f95477a7e25, type: 3}
+  poqimonBackSprite: {fileID: -2091823271, guid: 8a34ac9a4b4a24e1bbf75faa1c4a7682, type: 3}
+  poqimonType1: 13
+  poqimonType2: 0
+  maxHP: 35
+  attack: 55
+  defense: 30
+  spAttack: 50
+  spDefense: 40
+  speed: 90
+  expYield: 112
+  growthRate: 1
+  catchRate: 190
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 00d870c8d68a87749b509820d0311b0d, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: b5f0f5ae23c50b5439a086fc0e1b8103, type: 2}
+    learnLevel: 1
+  - moveBase: {fileID: 11400000, guid: 4af740d19207749e388cbd248f9977a4, type: 2}
+    learnLevel: 4
+  - moveBase: {fileID: 11400000, guid: ff7da5f044fd0482f91273d074ba10ee, type: 2}
+    learnLevel: 8
+  evolutions: []

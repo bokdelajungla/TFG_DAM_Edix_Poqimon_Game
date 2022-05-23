@@ -123,14 +123,14 @@ Library: lib_burst_generated
 --compilation-defines=MODULE_PHYSICS_EXISTS
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
---compilation-defines=ENABLE_ANIMATION_BURST
---compilation-defines=TIMELINE_FRAMEACCURATE
---compilation-defines=ENABLE_SPRITESHAPE_BURST
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
 --compilation-defines=UNITY_XR_AVAILABLE
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS2D
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_UI
+--compilation-defines=ENABLE_ANIMATION_BURST
+--compilation-defines=TIMELINE_FRAMEACCURATE
+--compilation-defines=ENABLE_SPRITESHAPE_BURST
 --linker-options=PdbAltPath="Poqimon - Learning Version_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
 --output=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
@@ -138,6 +138,7 @@ Library: lib_burst_generated
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
+--root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.Burst.dll
@@ -151,7 +152,6 @@ Library: lib_burst_generated
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
---root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
 --assembly-folder=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -282,14 +282,14 @@ Library: lib_burst_generated
 --compilation-defines=MODULE_PHYSICS_EXISTS
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
---compilation-defines=ENABLE_ANIMATION_BURST
---compilation-defines=TIMELINE_FRAMEACCURATE
---compilation-defines=ENABLE_SPRITESHAPE_BURST
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
 --compilation-defines=UNITY_XR_AVAILABLE
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS2D
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_UI
+--compilation-defines=ENABLE_ANIMATION_BURST
+--compilation-defines=TIMELINE_FRAMEACCURATE
+--compilation-defines=ENABLE_SPRITESHAPE_BURST
 --linker-options=PdbAltPath="Poqimon - Learning Version_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
 --output=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
@@ -297,6 +297,7 @@ Library: lib_burst_generated
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
+--root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.Burst.dll
@@ -310,7 +311,6 @@ Library: lib_burst_generated
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
 --root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
---root-assembly=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
 --assembly-folder=D:\UnityHub\UnityProjects\TFG_DAM_Edix_Poqimon_Game\Poqimon\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10

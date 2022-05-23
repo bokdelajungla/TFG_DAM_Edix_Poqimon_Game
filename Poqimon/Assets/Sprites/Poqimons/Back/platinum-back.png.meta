@@ -245,7 +245,7 @@ TextureImporter:
       name: platinum-back_6
       rect:
         serializedVersion: 2
-        x: 480
+        x: 481
         y: 1360
         width: 80
         height: 80
@@ -10600,8 +10600,8 @@ TextureImporter:
       platinum-back_411: 1447897700
       platinum-back_414: -451858893
       platinum-back_221: -921876827
-      platinum-back_394: -2083202712
       platinum-back_239: 2059994888
+      platinum-back_394: -2083202712
       platinum-back_352: 534189392
       platinum-back_207: -1952181456
       platinum-back_380: -1347974426
