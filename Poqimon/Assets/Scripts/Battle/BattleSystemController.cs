@@ -12,7 +12,9 @@ using System.Linq;
      *      ********************************
     */ 
 
+// Battle states
 public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, ForgetMove, BattleOver}
+// Battle actions
 public enum BattleAction { Move, UseItem, SwitchPoqimon, Run}
 
 public class BattleSystemController : MonoBehaviour
@@ -53,54 +55,54 @@ public class BattleSystemController : MonoBehaviour
     // Event with a bool to be able to distinguish between Win & Lose
     public event Action<bool> OnBattleOver;
     
-    //
+    // Current battle state
     private BattleState state;
     
-    //
+    // Current battle action's index
     private int currentAction;
     
-    //
+    // Current poqimon move's index 
     private int currentMove;
     
-    //
+    // Current player poqimon (one's used from the party)
     private int currentMember;
 
     /*
     *      POQIMON AND MOVES
     */
     
-    //
+    // Player's party
     private PoqimonParty playerParty;
     
-    //
+    // Enemy's party
     private PoqimonParty oponentParty; 
     
-    //
+    // Player's poqimon
     private Poqimon enemyPoqimon;
     
-    //
+    // Current poqimon move
     private Poqimon selectedMember;
 
-    //
+    // Unit which has fainted
     private BattleUnit faintedUnit;
     
-    //
+    // Next move the poqimon is gonna learn
     private MoveBase moveToLearn;
     
-    //
+    // Use to diffeence trainer and wild battles
     private bool isTrainerBattle = false;
     
-    //
+    // Number of wild poqimon's escape attemps
     private int escapeAttemps;
 
     /*
     *      CONTROLLERS
     */
     
-    //
+    // Controller of the player
     private PlayerController playerController;
     
-    //
+    // Controller of the oponent (trainer)
     private TrainerController trainerController;    
     
     
@@ -111,10 +113,10 @@ public class BattleSystemController : MonoBehaviour
      */
 
     /// <summary>
-    /// 
+    /// When it's called start a wild battle. It's the init function from wild poqimon's battles of this class 
     /// </summary>
-    /// <param name="playerParty"></param>
-    /// <param name="enemyPoqimon"></param>
+    /// <param name="playerParty">Party (team) of the player</param>
+    /// <param name="enemyPoqimon">WIld poqimon</param>
     public void StartBattle(PoqimonParty playerParty, Poqimon enemyPoqimon)
     {
         isTrainerBattle = false;
@@ -128,10 +130,10 @@ public class BattleSystemController : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// When it's called start a trainer battle. It's the init function from trainers' battles of this class 
     /// </summary>
-    /// <param name="playerParty"></param>
-    /// <param name="oponentParty"></param>
+    /// <param name="playerParty">Party (team) of the player</param>
+    /// <param name="oponentParty">Party (team) of the oponent (trainer)</param>
     public void StartTrainerBattle(PoqimonParty playerParty, PoqimonParty oponentParty)
     {
         this.playerParty = playerParty;
@@ -147,7 +149,8 @@ public class BattleSystemController : MonoBehaviour
     }
     
     /// <summary>
-    /// 
+    /// Update the battle. WHen it's called, depending of the battle state,
+    /// call the specific function which implements the required action
     /// </summary>
     public void HandleUpdate()
     {
@@ -163,10 +166,9 @@ public class BattleSystemController : MonoBehaviour
         {
             HandlePartyScreenSelection();
         }
-
         else if (state == BattleState.ForgetMove)
         {
-            Action<int> OnMoveSelected = (moveIndex) => 
+            Action<int> OnMoveSelected = moveIndex => 
             {
                 moveSelectionUI.gameObject.SetActive(false);
                 if (moveIndex == PoqimonBase.MaxNumberOfMoves)
@@ -197,14 +199,16 @@ public class BattleSystemController : MonoBehaviour
      */
 
     /// <summary>
-    /// 
+    /// Clean the stats and the HUD. And return the result of the battle.
+    /// This function must be called when the battle is over
     /// </summary>
-    /// <param name="isWon"></param>
+    /// <param name="isWon">True if the player wins the battle; false otherwise</param>
     private void BattleOver(bool isWon)
     {
             state = BattleState.BattleOver;
             // Reset All the Stats of every Poqimmon at the Party when the battle is over
             playerParty.Party.ForEach(poq => poq.OnBattleOver());
+            // Clear the HUDs of the player and the enemy
             playerUnit.Hud.ClearData();
             enemyUnit.Hud.ClearData();
             OnBattleOver(isWon);
@@ -342,7 +346,6 @@ public class BattleSystemController : MonoBehaviour
     /// </summary>
     private void HandlePartyScreenSelection()
     {
-
         if (Input.GetKeyDown(KeyCode.RightArrow))
             currentMember++;
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -367,9 +370,9 @@ public class BattleSystemController : MonoBehaviour
                 partyScreenController.SetMessageText(selectedMember.PoqimonBase.PoqimonName + " is already fighting!");
                 return;
             }
-                partyScreenController.gameObject.SetActive(false);
-                state = BattleState.Busy;
-                StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
+            partyScreenController.gameObject.SetActive(false);
+            state = BattleState.Busy;
+            StartCoroutine(RunTurns(BattleAction.SwitchPoqimon));
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
@@ -380,7 +383,11 @@ public class BattleSystemController : MonoBehaviour
     }
     
     /// <summary>
-    /// 
+    /// When an unit is fainted, check if the battle is over.
+    /// If the player has no more units he's lost
+    /// In case it's a wild battle and the poqimon has died the player's won
+    /// In case it's a trainer battle and that triner has no more poqimon, the player's won,
+    /// otherwise the player has won
     /// </summary>
     /// <param name="faintedUnit"></param>
     private void CheckForBattleOver(BattleUnit faintedUnit) 
@@ -522,7 +529,7 @@ public class BattleSystemController : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="poqimon"></param>
+    /// <param name="poqimon">Poqimon which is forgetting a move</param>
     /// <param name="learnableMove"></param>
     /// <returns></returns>
 	private IEnumerator ChooseMoveToForget(Poqimon poqimon, MoveBase learnableMove)
@@ -875,7 +882,8 @@ public class BattleSystemController : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Coroutine wich shows at the dialog box the damageDeails of an special or physical movement
+    /// If it critical, not effective or effective
     /// </summary>
     /// <param name="damageDetails"></param>
     /// <returns></returns>
